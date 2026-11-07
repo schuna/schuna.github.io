@@ -1,11 +1,11 @@
 /**
- * Schuna Engineering & Project Hub — Main Application Controller
+ * Schuna Engineering & Project Hub — Main Application Controller (v2.1)
  */
 
 (function () {
   "use strict";
 
-  const STORAGE_KEY_TODOS = "schuna_hub_todos_v1";
+  const STORAGE_KEY_TODOS = "schuna_hub_todos_v2";
   const STORAGE_KEY_THEME = "schuna_hub_theme_v1";
 
   const data = window.SCHUNA_HUB_DATA;
@@ -152,6 +152,7 @@
     const totalRepos = data.repositories.length;
     const publicCount = data.repositories.filter((r) => r.visibility === "public").length;
     const privateCount = totalRepos - publicCount;
+    const liveWebAppsCount = (data.liveWebApps || []).length;
     const completedRepos = data.repositories.filter((r) => r.statusLevel === "completed").length;
     const activeRepos = totalRepos - completedRepos;
 
@@ -170,7 +171,7 @@
       });
     });
 
-    const todoPercent = totalTodos > 0 ? Math.round((doneTodos / totalTodos) * 100) : 0;
+    const pendingTodos = totalTodos - doneTodos;
 
     const kpiContainer = document.getElementById("kpi-summary-grid");
     if (!kpiContainer) return;
@@ -183,7 +184,7 @@
         </div>
         <div class="mt-2 flex items-baseline gap-2">
           <span class="text-3xl font-extrabold text-slate-900 dark:text-white">${totalRepos}</span>
-          <span class="text-xs text-slate-500 dark:text-slate-400">Repos</span>
+          <span class="text-xs text-slate-500 dark:text-slate-400">Repos (로컬 9/9 동기화)</span>
         </div>
         <p class="mt-1.5 text-xs text-slate-600 dark:text-slate-400">
           🌐 Public <strong>${publicCount}</strong> · 🔒 Private <strong>${privateCount}</strong>
@@ -192,49 +193,106 @@
 
       <div class="p-4 sm:p-5 rounded-2xl bg-white/90 dark:bg-slate-900/80 border border-slate-200/80 dark:border-slate-800 shadow-sm">
         <div class="flex items-center justify-between text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
-          <span>구현 완료 / 안정화</span>
-          <span class="px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400">Production / MVP</span>
+          <span>온라인 Live 웹앱</span>
+          <span class="px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400">GitHub Pages</span>
         </div>
-        <div class="mt-2 flex items-baseline gap-2">
-          <span class="text-3xl font-extrabold text-emerald-600 dark:text-emerald-400">${completedRepos}</span>
-          <span class="text-xs text-slate-500 dark:text-slate-400">/ ${totalRepos} 프로젝트</span>
+        <div class="mt-2 flex items-baseline justify-between">
+          <div class="flex items-baseline gap-2">
+            <span class="text-3xl font-extrabold text-emerald-600 dark:text-emerald-400">${liveWebAppsCount}</span>
+            <span class="text-xs text-slate-500 dark:text-slate-400">종 즉시 실행 가능</span>
+          </div>
+          <a href="#live-demos" class="text-xs font-semibold text-emerald-600 dark:text-emerald-400 hover:underline">런처 이동 ↓</a>
         </div>
         <p class="mt-1.5 text-xs text-slate-600 dark:text-slate-400">
-          Squadron · ClaudeLearn · Regex/Docker/DfeLearn · Workout/Suunto
+          Workout · Regex · Docker · Dfe · SemiLearn
         </p>
       </div>
 
       <div class="p-4 sm:p-5 rounded-2xl bg-white/90 dark:bg-slate-900/80 border border-slate-200/80 dark:border-slate-800 shadow-sm">
         <div class="flex items-center justify-between text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
-          <span>집중 진행 마일스톤</span>
-          <span class="px-2 py-0.5 rounded-full bg-amber-500/10 text-amber-600 dark:text-amber-400">Active Focus</span>
+          <span>프로젝트 성숙도</span>
+          <span class="px-2 py-0.5 rounded-full bg-amber-500/10 text-amber-600 dark:text-amber-400">진행중 ${activeRepos}건</span>
         </div>
         <div class="mt-2 flex items-baseline gap-2">
-          <span class="text-3xl font-extrabold text-amber-600 dark:text-amber-400">${activeRepos}</span>
-          <span class="text-xs text-slate-500 dark:text-slate-400">진행 중</span>
+          <span class="text-3xl font-extrabold text-slate-900 dark:text-white">${completedRepos}</span>
+          <span class="text-xs text-slate-500 dark:text-slate-400">완료 / 안정화 단계</span>
         </div>
         <p class="mt-1.5 text-xs text-slate-600 dark:text-slate-400">
-          <strong>CodexWorkFlow</strong> (P3~P5 수용 검증) · <strong>SemiLearn</strong> (Ch 1~13 확장)
+          집중 과제: <strong>CodexWorkFlow</strong> · <strong>SemiLearn</strong>
         </p>
       </div>
 
       <div class="p-4 sm:p-5 rounded-2xl bg-white/90 dark:bg-slate-900/80 border border-slate-200/80 dark:border-slate-800 shadow-sm">
         <div class="flex items-center justify-between text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
-          <span>통합 To-Do 진행률</span>
+          <span>남은 할 일 (To-Do)</span>
           <span class="px-2 py-0.5 rounded-full bg-rose-500/10 text-rose-600 dark:text-rose-400">우선순위 High ${highPending}건</span>
         </div>
         <div class="mt-2 flex items-baseline justify-between">
           <div class="flex items-baseline gap-2">
-            <span class="text-3xl font-extrabold text-slate-900 dark:text-white">${doneTodos}/${totalTodos}</span>
-            <span class="text-xs font-semibold text-indigo-600 dark:text-indigo-400">(${todoPercent}%)</span>
+            <span class="text-3xl font-extrabold text-slate-900 dark:text-white">${pendingTodos}</span>
+            <span class="text-xs text-slate-500 dark:text-slate-400">건 남음 (완료 체크 ${doneTodos}건)</span>
           </div>
           <a href="#action-center" class="text-xs font-medium text-indigo-600 dark:text-indigo-400 hover:underline">할 일 보드 →</a>
         </div>
-        <div class="mt-2 w-full h-2 rounded-full bg-slate-200 dark:bg-slate-800 overflow-hidden">
-          <div class="progress-bar-fill h-full bg-gradient-to-r from-indigo-500 to-emerald-500 rounded-full" style="width: ${todoPercent}%"></div>
-        </div>
+        <p class="mt-1.5 text-xs text-slate-600 dark:text-slate-400">
+          카드 및 하단 보드에서 실시간 완료 체크 가능
+        </p>
       </div>
     `;
+  }
+
+  // Render Live Web Apps Launcher Section (5 Apps)
+  function renderLiveWebApps() {
+    const container = document.getElementById("live-webapps-grid");
+    if (!container || !data.liveWebApps) return;
+
+    const accentStyles = {
+      rose: "border-rose-500/30 hover:border-rose-500 bg-rose-500/5",
+      emerald: "border-emerald-500/30 hover:border-emerald-500 bg-emerald-500/5",
+      sky: "border-sky-500/30 hover:border-sky-500 bg-sky-500/5",
+      amber: "border-amber-500/30 hover:border-amber-500 bg-amber-500/5",
+      violet: "border-violet-500/30 hover:border-violet-500 bg-violet-500/5"
+    };
+
+    container.innerHTML = data.liveWebApps
+      .map((app) => {
+        const boxClass = accentStyles[app.accent] || accentStyles.emerald;
+        return `
+          <div class="p-4 rounded-2xl bg-white/95 dark:bg-slate-900/95 border ${boxClass} shadow-sm flex flex-col justify-between transition hover:-translate-y-1">
+            <div>
+              <div class="flex items-center justify-between gap-1.5 mb-2">
+                <span class="px-2 py-0.5 rounded-md text-[11px] font-bold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200">
+                  ${escapeHtml(app.badge)}
+                </span>
+                <span class="text-[10px] font-mono text-emerald-600 dark:text-emerald-400 font-bold">● LIVE</span>
+              </div>
+              <h3 class="text-sm sm:text-base font-extrabold text-slate-900 dark:text-white">
+                <a href="${escapeHtml(app.url)}" target="_blank" rel="noopener noreferrer" class="hover:text-emerald-600 dark:hover:text-emerald-400 transition">
+                  ${escapeHtml(app.name)}
+                </a>
+              </h3>
+              <p class="text-[11px] font-mono text-slate-400 dark:text-slate-500 mt-0.5 mb-2">
+                ${escapeHtml(app.tech)}
+              </p>
+              <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
+                ${escapeHtml(app.description)}
+              </p>
+            </div>
+            <div class="flex items-center gap-1.5 pt-2 border-t border-slate-200/70 dark:border-slate-800">
+              <a href="${escapeHtml(app.url)}" target="_blank" rel="noopener noreferrer"
+                class="flex-1 py-2 px-3 rounded-xl text-xs font-bold bg-emerald-600 hover:bg-emerald-500 text-white text-center shadow-sm transition">
+                🚀 바로 실행 ↗
+              </a>
+              <a href="${escapeHtml(app.repoUrl)}" target="_blank" rel="noopener noreferrer"
+                title="GitHub 저장소 열기"
+                class="py-2 px-2.5 rounded-xl text-xs font-semibold bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 transition">
+                 코드
+              </a>
+            </div>
+          </div>
+        `;
+      })
+      .join("");
   }
 
   // Render Ecosystem Synergy Tracks
@@ -536,26 +594,19 @@
           })
           .join("");
 
-        // Live Demo or Deploy Guide button
+        // Live Demo or Local Server Info button
         let liveBtnHtml = "";
         if (repo.liveStatus === "live" && repo.liveUrl) {
           liveBtnHtml = `
             <a href="${escapeHtml(repo.liveUrl)}" target="_blank" rel="noopener noreferrer"
               class="px-3 py-2 rounded-xl text-xs font-bold bg-emerald-600 hover:bg-emerald-500 text-white shadow-sm transition flex items-center justify-center gap-1.5">
-              <span>🚀 Live Demo 실행</span>
-            </a>
-          `;
-        } else if (repo.deployType === "static-webapp") {
-          liveBtnHtml = `
-            <a href="#learning-apps-deploy" data-highlight-deploy="${escapeHtml(repo.name)}"
-              class="px-3 py-2 rounded-xl text-xs font-semibold bg-indigo-500/10 hover:bg-indigo-500/20 text-indigo-600 dark:text-indigo-300 border border-indigo-500/30 transition flex items-center justify-center gap-1.5">
-              <span>🌐 Pages 배포 준비됨 (가이드)</span>
+              <span>🚀 Live Demo 실행 ↗</span>
             </a>
           `;
         } else {
           liveBtnHtml = `
             <span class="px-3 py-2 rounded-xl text-xs font-medium bg-slate-100 dark:bg-slate-800/70 text-slate-500 dark:text-slate-400 flex items-center justify-center gap-1">
-              <span>🖥️ 로컬 서버/CLI 구동형 (${escapeHtml(repo.localLaunch.port)})</span>
+              <span>🖥️ 로컬 구동형 (${escapeHtml(repo.localLaunch.port)})</span>
             </span>
           `;
         }
@@ -619,7 +670,7 @@
               <!-- Key Highlights -->
               <div class="mt-4">
                 <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 mb-2">
-                  핵심 구현 내용 (Key Features)
+                  현재 상태 및 핵심 구현 내용 (Status &amp; Features)
                 </h4>
                 <ul class="space-y-1.5">
                   ${highlightsHtml}
@@ -640,10 +691,10 @@
               <div class="mt-5 pt-4 border-t border-slate-200/80 dark:border-slate-800">
                 <div class="flex items-center justify-between mb-2">
                   <h4 class="text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-200 flex items-center gap-1.5">
-                    <span>📋 해야 할 일 (To-Do)</span>
+                    <span>📋 앞으로 해야 할 일 (Next Steps / To-Do)</span>
                   </h4>
                   <span class="text-[11px] font-mono px-2 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">
-                    ${doneCount} / ${totalTodoCount} 완료
+                    남은 항목 ${totalTodoCount - doneCount}건
                   </span>
                 </div>
                 <div class="space-y-1">
@@ -701,7 +752,7 @@
     });
   }
 
-  // Render Unified Action Center (Priority To-Dos + Local Sync Diagnostics)
+  // Render Unified Action Center (Priority To-Dos + Local Sync Status)
   function renderActionCenter() {
     const todoListEl = document.getElementById("unified-todo-list");
     const syncListEl = document.getElementById("sync-diagnostics-list");
@@ -791,7 +842,7 @@
           diag.status === "warning"
             ? `<span class="px-2 py-0.5 rounded-full text-[11px] font-bold bg-amber-500/15 text-amber-600 dark:text-amber-400 border border-amber-500/30">⚠️ ${escapeHtml(diag.statusLabel)}</span>`
             : diag.status === "info"
-            ? `<span class="px-2 py-0.5 rounded-full text-[11px] font-bold bg-sky-500/15 text-sky-600 dark:text-sky-400 border border-sky-500/30">ℹ️ ${escapeHtml(diag.statusLabel)}</span>`
+            ? `<span class="px-2 py-0.5 rounded-full text-[11px] font-bold bg-sky-500/15 text-sky-600 dark:text-sky-400 border border-sky-500/30">🛠️ ${escapeHtml(diag.statusLabel)}</span>`
             : `<span class="px-2 py-0.5 rounded-full text-[11px] font-bold bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30">✅ ${escapeHtml(diag.statusLabel)}</span>`;
 
         return `
@@ -817,78 +868,7 @@
 
     syncListEl.querySelectorAll("[data-copy-sync-cmd]").forEach((btn) => {
       btn.addEventListener("click", () => {
-        copyText(btn.getAttribute("data-copy-sync-cmd"), "동기화 복구 명령어");
-      });
-    });
-  }
-
-  // Render Learning Apps Public Conversion & Static Build Deployment Review Section
-  function renderDeployReview() {
-    const strategiesEl = document.getElementById("deploy-strategies-grid");
-    const appsEl = document.getElementById("deploy-apps-grid");
-    if (!strategiesEl || !appsEl) return;
-
-    const review = data.learningAppsDeployReview;
-
-    strategiesEl.innerHTML = review.strategies
-      .map(
-        (st, idx) => `
-        <div class="p-5 rounded-2xl bg-white/95 dark:bg-slate-900/90 border ${
-          idx === 0
-            ? "border-indigo-500/30 dark:border-indigo-500/30"
-            : "border-emerald-500/30 dark:border-emerald-500/30"
-        } shadow-sm">
-          <h4 class="text-sm sm:text-base font-bold text-slate-900 dark:text-white mb-2">
-            ${escapeHtml(st.name)}
-          </h4>
-          <p class="text-xs text-emerald-700 dark:text-emerald-300 mb-1.5">
-            <strong>👍 장점:</strong> ${escapeHtml(st.pros)}
-          </p>
-          <p class="text-xs text-slate-600 dark:text-slate-400">
-            <strong>📌 고려사항:</strong> ${escapeHtml(st.cons)}
-          </p>
-        </div>
-      `
-      )
-      .join("");
-
-    appsEl.innerHTML = review.apps
-      .map(
-        (app) => `
-        <div class="p-5 rounded-2xl bg-white/95 dark:bg-slate-900/90 border border-slate-200/90 dark:border-slate-800 shadow-sm flex flex-col justify-between">
-          <div>
-            <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
-              <h4 class="text-base font-bold text-slate-900 dark:text-white">${escapeHtml(app.name)}</h4>
-              <span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-indigo-500/10 text-indigo-600 dark:text-indigo-300">
-                ${escapeHtml(app.readiness)}
-              </span>
-            </div>
-            <div class="text-xs text-slate-500 dark:text-slate-400 mb-3 flex flex-wrap gap-3">
-              <span>현재 상태: <strong>${escapeHtml(app.currentVisibility)}</strong></span>
-              <span>빌드 방식: <strong>${escapeHtml(app.buildType)}</strong></span>
-            </div>
-            <p class="text-xs text-slate-700 dark:text-slate-300 leading-relaxed mb-3 p-3 rounded-xl bg-slate-50 dark:bg-slate-950/60 border border-slate-200/60 dark:border-slate-800">
-              ${escapeHtml(app.precaution)}
-            </p>
-          </div>
-          <div>
-            <div class="flex items-center justify-between text-[11px] text-slate-400 mb-1">
-              <span class="font-mono">배포 / 전환 실행 스크립트</span>
-              <button type="button" data-copy-deploy-cmd="${escapeHtml(app.command)}"
-                class="text-indigo-600 dark:text-indigo-400 font-semibold hover:underline cursor-pointer">
-                📋 스크립트 복사
-              </button>
-            </div>
-            <pre class="p-3 rounded-xl bg-slate-900 text-indigo-200 font-mono text-[11px] overflow-x-auto whitespace-pre-wrap leading-relaxed border border-slate-800">${escapeHtml(app.command)}</pre>
-          </div>
-        </div>
-      `
-      )
-      .join("");
-
-    appsEl.querySelectorAll("[data-copy-deploy-cmd]").forEach((btn) => {
-      btn.addEventListener("click", () => {
-        copyText(btn.getAttribute("data-copy-deploy-cmd"), "배포 스크립트");
+        copyText(btn.getAttribute("data-copy-sync-cmd"), "명령어");
       });
     });
   }
@@ -904,7 +884,10 @@
       lines.push(`## ${repo.title} (${repo.visibility.toUpperCase()} · ${repo.progress}%)`);
       lines.push(`- **상태**: ${repo.statusBadge}`);
       lines.push(`- **저장소**: ${repo.repoUrl}`);
-      lines.push(`- **할 일 목록**:`);
+      if (repo.liveUrl) {
+        lines.push(`- **Live Demo**: ${repo.liveUrl}`);
+      }
+      lines.push(`- **남은 할 일 목록**:`);
       repo.todos.forEach((t) => {
         const mark = isTodoDone(t) ? "x" : " ";
         lines.push(`  - [${mark}] (${t.priority.toUpperCase()}) ${t.text}`);
@@ -917,12 +900,12 @@
 
   function renderAll() {
     renderHeroAndKpis();
+    renderLiveWebApps();
     renderEcosystem();
     renderCategoryTabs();
     renderQuickFilters();
     renderRepositoryGrid();
     renderActionCenter();
-    renderDeployReview();
   }
 
   // Initialize Event Listeners on DOMContentLoaded
