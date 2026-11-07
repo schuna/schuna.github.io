@@ -190,7 +190,7 @@ window.SCHUNA_HUB_DATA = {
       ],
       relationNote: "Docker 컨테이너 기반 개발 환경에서 Claude CLI 비용을 극적으로 낮추는 핵심 도구로, 로컬 C:\\Gemini\\ClaudeLearn 폴더에 git pull만 수행하면 최신 본이 반영됩니다.",
       todos: [
-        { id: "cl-1", text: "[로컬 동기화 필수] C:\\Gemini\\ClaudeLearn 에서 git pull origin main 실행하여 Phase 1~4 구현본 반영", priority: "high", done: false },
+        { id: "cl-1", text: "[완료] C:\\Gemini\\ClaudeLearn 에서 git pull origin main 실행하여 Phase 1~4 구현본 로컬 반영", priority: "high", done: true },
         { id: "cl-2", text: "WSL Ubuntu ~/.bashrc 에 bash ./bin/install-wsl.sh 실행하여 cx 별칭 상시 등록", priority: "medium", done: false },
         { id: "cl-3", text: "실제 구동 컨테이너 장기 세션 JSONL 데이터를 통한 Habit Score 가중치 미세 튜닝", priority: "low", done: false }
       ],
@@ -208,17 +208,17 @@ window.SCHUNA_HUB_DATA = {
       subtitle: "Step-by-Step AST 매칭 트레이서 & 월드맵 기반 Python re 정규표현식 시각적 학습 웹앱",
       category: "sw-learning",
       categoryLabel: "💻 SW & DevOps 학습",
-      visibility: "private",
+      visibility: "public",
       language: "JavaScript",
       techStack: ["React 18", "Vite 2.9", "Tailwind CSS", "Generator AST Tracer", "Lucide Icons"],
       repoUrl: "https://github.com/schuna/RegexLearn",
       liveUrl: "https://schuna.github.io/RegexLearn/",
-      liveStatus: "ready-to-deploy",
+      liveStatus: "live",
       deployType: "static-webapp",
-      statusBadge: "v2.0 메이저 완료 · 배포 준비",
+      statusBadge: "v2.0 메이저 완료 · Live 배포 중",
       statusLevel: "completed",
-      progress: 95,
-      lastUpdated: "2026-10-24",
+      progress: 98,
+      lastUpdated: "2026-11-07",
       summary: "Python(re 모듈) 정규표현식을 기초부터 전후방 탐색·명명된 그룹·백트래킹 최적화까지 체계적으로 체득할 수 있도록, 제너레이터 기반 Step-by-Step 디버거와 시각적 Goal Diff 뷰어를 결합한 인터랙티브 학습 플랫폼입니다.",
       highlights: [
         "Step-by-Step 매칭 트레이서: 토큰 포인터, 텍스트 커서, Zero-width(|) 포인터, 백트래킹 과정을 스텝 단위로 재생 및 슬라이더 탐색",
@@ -228,15 +228,15 @@ window.SCHUNA_HUB_DATA = {
       ],
       relationNote: "DockerLearn과 함께 'Learn Git Branching'의 시각적 디버깅 UX를 벤치마킹한 대표적인 100% 클라이언트 사이드 교육용 웹앱입니다.",
       todos: [
-        { id: "rl-1", text: "[정적 배포] vite.config.js에 base: './' 추가 후 GitHub Pages (또는 schuna.github.io/apps/regex-learn) 정적 빌드 배포", priority: "high", done: false },
-        { id: "rl-2", text: "저장소 Public 전환 후 메인 허브 Live Demo 버튼 활성화", priority: "medium", done: false },
+        { id: "rl-1", text: "[완료] vite.config.js에 base: './' 추가 및 GitHub Pages 정적 빌드 배포 완료", priority: "high", done: true },
+        { id: "rl-2", text: "[완료] 저장소 Public 전환 및 메인 허브 Live Demo 버튼 활성화", priority: "medium", done: true },
         { id: "rl-3", text: "사용자 커스텀 정규식 퀴즈 JSON 공유 기능 및 ReDoS 백트래킹 심화 미션 추가 검토", priority: "low", done: false }
       ],
       localLaunch: {
         path: "C:\\Gemini\\RegexLearn",
-        port: "5188",
+        port: "Live / 5188",
         command: "cd C:\\Gemini\\RegexLearn\nnpm run dev",
-        note: "5173 포트 충돌 회피 적용 완료 · http://localhost:5188 접속"
+        note: "온라인 배포본 즉시 사용 가능: https://schuna.github.io/RegexLearn/ (로컬: 5188 포트)"
       }
     },
     {
@@ -246,17 +246,17 @@ window.SCHUNA_HUB_DATA = {
       subtitle: "인메모리 가상 도커 엔진 & React Flow 실시간 토폴로지 시각화 학습 플랫폼",
       category: "sw-learning",
       categoryLabel: "💻 SW & DevOps 학습",
-      visibility: "private",
+      visibility: "public",
       language: "TypeScript",
       techStack: ["React 18", "TypeScript", "React Flow", "Zustand", "Tailwind CSS", "Vite 2.9"],
       repoUrl: "https://github.com/schuna/DockerLearn",
       liveUrl: "https://schuna.github.io/DockerLearn/",
-      liveStatus: "ready-to-deploy",
+      liveStatus: "live",
       deployType: "static-webapp",
-      statusBadge: "v3.0 완료 · 9개 레벨 검증 통과",
+      statusBadge: "v3.0 완료 · Live 배포 중",
       statusLevel: "completed",
-      progress: 95,
-      lastUpdated: "2026-10-21",
+      progress: 98,
+      lastUpdated: "2026-11-07",
       summary: "백엔드 서버나 실제 Docker 데몬 없이 웹 브라우저 메모리 상에서 컨테이너·이미지 레이어·볼륨·브리지 네트워크 라이프사이클을 완벽히 시뮬레이션하고 React Flow 캔버스에 실시간 애니메이션으로 시각화하는 학습 플랫폼입니다.",
       highlights: [
         "100% 클라이언트 가상 도커 엔진 + 최대 20스텝 상태 스냅샷 타임머신(undo / redo) 및 화이트리스트 CLI 파서",
@@ -266,15 +266,15 @@ window.SCHUNA_HUB_DATA = {
       ],
       relationNote: "서버리스 인메모리 시뮬레이션 구조 덕분에 GitHub Pages 정적 호스팅만으로 전 세계 어디서나 무료 도커 실습 환경을 제공할 수 있습니다.",
       todos: [
-        { id: "dl-1", text: "[정적 배포] vite.config.ts에 base: './' 설정 후 프로덕션 빌드(dist) GitHub Pages 배포", priority: "high", done: false },
-        { id: "dl-2", text: "저장소 Public 전환 및 PWA(Service Worker) 오프라인 실행 지원 추가 검토", priority: "medium", done: false },
+        { id: "dl-1", text: "[완료] vite.config.ts에 base: './' 설정 및 프로덕션 빌드(dist) GitHub Pages 배포 완료", priority: "high", done: true },
+        { id: "dl-2", text: "[완료] 저장소 Public 전환 완료 (추후 PWA Service Worker 오프라인 확장 검토)", priority: "medium", done: true },
         { id: "dl-3", text: "커스텀 실습 시나리오 JSON 에디터 및 다국어(i18n) 확장 검토", priority: "low", done: false }
       ],
       localLaunch: {
         path: "C:\\Gemini\\DockerLearn",
-        port: "5188",
+        port: "Live / 5188",
         command: "cd C:\\Gemini\\DockerLearn\nnpm run dev",
-        note: "Node v14 호환 Vite 2.9 구성 · http://localhost:5188 접속"
+        note: "온라인 배포본 즉시 사용 가능: https://schuna.github.io/DockerLearn/ (로컬: 5188 포트)"
       }
     },
     {
@@ -289,12 +289,12 @@ window.SCHUNA_HUB_DATA = {
       techStack: ["TypeScript", "React", "Vite 2.9", "HTML5 Canvas", "JEDEC JESD79-5 DB"],
       repoUrl: "https://github.com/schuna/DfeLearn",
       liveUrl: "https://schuna.github.io/DfeLearn/",
-      liveStatus: "ready-to-deploy",
+      liveStatus: "live",
       deployType: "static-webapp",
-      statusBadge: "v2.1 완료 · 번들 67.5KB 경량화",
+      statusBadge: "v2.1 완료 · Live 배포 중 (dist 호스팅)",
       statusLevel: "completed",
-      progress: 95,
-      lastUpdated: "2026-10-21",
+      progress: 98,
+      lastUpdated: "2026-11-07",
       summary: "고속 DDR5 메모리 인터페이스(6.4Gbps+)의 채널 손실(ISI)과 반사 노이즈를 보정하는 4-Tap DFE 아키텍처, 위상 인터리빙(1/2/4-way), JEDEC 모드 레지스터(MR111~MR255) 제어 및 2D Eye Shmoo 플롯을 웹에서 직접 조작하며 학습하는 전문 시뮬레이터입니다.",
       highlights: [
         "초급 모듈: 전송선 삽입 손실(dB)·스텁 반사 슬라이더, CTLE(노이즈 증폭 부작용) vs DFE(순수 ISI 차감) A/B 비교 및 논문 프리셋",
@@ -302,17 +302,17 @@ window.SCHUNA_HUB_DATA = {
         "고급 & 챌린지 모듈: MR111 극성 반전 함정(0B=Enabled) 반영, 18개 핀 그룹(DML/DMU/DQL/DQU) 개별 레지스터 디코딩 및 2D Shmoo 플롯",
         "TypeScript 에러 0건, 프로덕션 Gzip 번들 67.57 KiB 초경량 빌드 달성"
       ],
-      relationNote: "SemiLearn의 기초 소자 학습 이후 고속 디지털 I/O 및 메모리 신호 무결성(SI) 엔지니어링으로 넘어가는 고급 실무형 플랫폼입니다.",
+      relationNote: "JEDEC 표준 문서 PDF 보호를 위해 원본 레포지터리는 Private으로 유지하고, 컴파일된 정적 번들(dist)만 https://schuna.github.io/DfeLearn/ 에 안전하게 배포했습니다.",
       todos: [
-        { id: "df-1", text: "[배포 보안 점검] 루트 내 JEDEC 표준 문서 PDF(DDR5 Spec JESD79-5.pdf 등 24MB) 분리/제외 후 Public 전환 또는 dist 산출물만 정적 배포", priority: "high", done: false },
-        { id: "df-2", text: "[정적 배포] vite.config.ts에 base: './' 반영 및 온라인 Live Demo 오픈", priority: "high", done: false },
+        { id: "df-1", text: "[완료] JEDEC 표준 PDF(24MB) 비공개 보호를 위해 원본 저장소 Private 유지 + dist 산출물만 정적 배포 완료", priority: "high", done: true },
+        { id: "df-2", text: "[완료] vite.config.ts에 base: './' 반영 및 온라인 Live Demo (https://schuna.github.io/DfeLearn/) 오픈", priority: "high", done: true },
         { id: "df-3", text: "DDR5 JEDEC 차기 개정판(6.8Gbps+ 규격) 수치 업데이트 및 Touchstone(.s4p) 파일 파서 확장 검토", priority: "low", done: false }
       ],
       localLaunch: {
         path: "C:\\Gemini\\DfeLearn",
-        port: "5188",
+        port: "Live / 5188",
         command: "cd C:\\Gemini\\DfeLearn\nnpm run dev",
-        note: "5188 포트 고정 설정 완료 · http://localhost:5188 접속"
+        note: "온라인 배포본 즉시 사용 가능: https://schuna.github.io/DfeLearn/ (로컬: 5188 포트)"
       }
     },
     {
@@ -327,12 +327,12 @@ window.SCHUNA_HUB_DATA = {
       techStack: ["HTML5", "Vanilla JS", "Tailwind CDN", "KaTeX", "Canvas Simulation", "Playwright"],
       repoUrl: "https://github.com/schuna/SemiLearn",
       liveUrl: "https://schuna.github.io/SemiLearn/",
-      liveStatus: "ready-to-enable-pages",
+      liveStatus: "live",
       deployType: "static-webapp",
-      statusBadge: "Phase 1 & Ch 1 번역 파일럿 (진행중)",
+      statusBadge: "Phase 1 & Ch 1 번역 파일럿 · Live 배포 중",
       statusLevel: "active",
-      progress: 42,
-      lastUpdated: "2026-10-10",
+      progress: 55,
+      lastUpdated: "2026-11-07",
       summary: "Tony R. Kuphaldt의 명저(CC BY 4.0) 13개 챕터를 바탕으로 핵심 개념 요약, 전자/정공 이동 및 정류 회로 Canvas 시뮬레이션, KaTeX 수식 분석, 그리고 영어 원문·한국어 문단 대조 읽기 탭을 제공하는 정적 웹 플랫폼입니다.",
       highlights: [
         "13개 챕터 내비게이션 셸 및 5대 학습 탭(핵심 요약 / 인터랙티브 랩 / 심층 탐구 / 교재 원문·번역 / 추천 보충 자료) 구축",
@@ -340,18 +340,18 @@ window.SCHUNA_HUB_DATA = {
         "Ch 1(증폭기와 능동 소자) 1.1~1.7절 원문·한국어 병렬 번역 및 Analog Devices/Keysight 보충 해설 파일럿 탑재",
         "별도 번들/빌드 과정 없이 순수 정적 파일로 즉시 호스팅 가능한 구조"
       ],
-      relationNote: "이미 Public 저장소이자 무빌드 정적 구조이므로 GitHub Pages 설정만 켜면 1분 내에 라이브 서비스를 오픈할 수 있습니다.",
+      relationNote: "로컬 최신 수정본(Ch 1 원문·번역 리더 및 테스트 스위트)을 원격에 동기화하고 GitHub Pages(https://schuna.github.io/SemiLearn/)를 활성화 완료했습니다.",
       todos: [
-        { id: "sl-1", text: "[로컬 Git 복구] C:\\Gemini\\SemiLearn 폴더에 누락된 .git 연결 복구 (git init 후 remote 연결 및 git reset --mixed origin/main)", priority: "high", done: false },
-        { id: "sl-2", text: "[즉시 배포 가능] GitHub Settings > Pages (main 브랜치 /) 활성화하여 https://schuna.github.io/SemiLearn/ 오픈", priority: "high", done: false },
+        { id: "sl-1", text: "[완료] C:\\Gemini\\SemiLearn 폴더 .git 연결 복구 및 로컬 최신 파일(ch1-reader.js 등) 원격 푸시 완료", priority: "high", done: true },
+        { id: "sl-2", text: "[완료] GitHub Pages 활성화하여 https://schuna.github.io/SemiLearn/ 라이브 오픈 완료", priority: "high", done: true },
         { id: "sl-3", text: "Phase 1 마감 검증: Ch 2/3 그래픽 결함 수정본 Playwright 재캡처(npm run capture:phase1) 및 외부 PhET/Falstad 링크 실브라우저 확인", priority: "medium", done: false },
         { id: "sl-4", text: "Ch 1 잔여 문단·수식·그림 대조 완료 후 Phase 2(Ch 4~6: BJT, JFET, MOSFET) 시뮬레이터 및 번역 착수", priority: "medium", done: false }
       ],
       localLaunch: {
         path: "C:\\Gemini\\SemiLearn",
-        port: "8000",
+        port: "Live / 8000",
         command: "cd C:\\Gemini\\SemiLearn\npython -m http.server 8000",
-        note: "빌드 불필요 순수 정적 웹앱 · http://localhost:8000 접속"
+        note: "온라인 배포본 즉시 사용 가능: https://schuna.github.io/SemiLearn/ (로컬: 8000 포트)"
       }
     },
     {
@@ -434,18 +434,18 @@ window.SCHUNA_HUB_DATA = {
     {
       repo: "ClaudeLearn",
       localPath: "C:\\Gemini\\ClaudeLearn",
-      status: "warning",
-      statusLabel: "git pull 필요",
-      detail: "원격(GitHub main)에는 Phase 1~4 전체 구현 및 E2E 테스트가 푸시되어 있으나, 로컬 폴더는 초기 기획 문서 커밋(a62b1a9)에 머물러 있습니다.",
-      fixCommand: "cd C:\\Gemini\\ClaudeLearn ; git pull origin main"
+      status: "ok",
+      statusLabel: "동기화 완료 (Phase 1~4 Pull 반영)",
+      detail: "원격(GitHub main)의 Phase 1~4 전체 구현본(4,499줄)을 로컬 C:\\Gemini\\ClaudeLearn 폴더에 Fast-forward 병합 완료했습니다.",
+      fixCommand: "cd C:\\Gemini\\ClaudeLearn ; git status"
     },
     {
       repo: "SemiLearn",
       localPath: "C:\\Gemini\\SemiLearn",
-      status: "warning",
-      statusLabel: ".git 연결 복구 필요",
-      detail: "로컬 폴더에 소스 파일은 존재하나 .git 디렉터리가 누락되어 버전 관리 및 원격 푸시가 끊어져 있습니다.",
-      fixCommand: "cd C:\\Gemini\\SemiLearn ; git init ; git remote add origin https://github.com/schuna/SemiLearn.git ; git fetch origin ; git branch -M main ; git reset --mixed origin/main"
+      status: "ok",
+      statusLabel: ".git 복구 및 최신본 푸시 완료",
+      detail: "로컬 폴더 .git 연결을 복구하고, 로컬에 있던 Ch 1 원문·번역 리더(ch1-reader.js) 및 테스트 스위트를 origin/main에 푸시 완료했습니다.",
+      fixCommand: "cd C:\\Gemini\\SemiLearn ; git status"
     },
     {
       repo: "CodexWorkFlow",
@@ -491,35 +491,35 @@ window.SCHUNA_HUB_DATA = {
     apps: [
       {
         name: "SemiLearn",
-        currentVisibility: "Public (이미 공개됨)",
+        currentVisibility: "Public (Live 배포 중)",
         buildType: "No-Build 순수 정적 (HTML + Vanilla JS + CDN)",
-        readiness: "🟢 즉시 활성화 가능 (소요 시간 10초)",
-        precaution: "SEMI.pdf는 CC BY 4.0 오픈 라이선스 교재이므로 공개 문제 없음. 별도 코드 수정 없이 GitHub Pages 스위치만 켜면 즉시 배포 완료.",
-        command: "& \"C:\\Program Files\\GitHub CLI\\gh.exe\" api repos/schuna/SemiLearn/pages -X POST -f source[branch]=main -f source[path]=/"
+        readiness: "🟢 Live 배포 완료 (https://schuna.github.io/SemiLearn/)",
+        precaution: "로컬 .git 복구 및 Ch 1 원문·번역 리더 최신본 푸시 후 GitHub Pages 활성화 완료. 클릭 시 즉시 실행됩니다.",
+        command: "# 라이브 접속 URL:\nStart-Process \"https://schuna.github.io/SemiLearn/\""
       },
       {
         name: "RegexLearn (PyRegex Studio v2.0)",
-        currentVisibility: "Private",
-        buildType: "Vite 2.9 + React 18 (정적 번들링)",
-        readiness: "🟢 base 경로 1줄 추가 후 즉시 배포 가능",
-        precaution: "서브경로(/RegexLearn/) 배포 시 에셋 404 방지를 위해 vite.config.js에 base: './' 설정 필요. 내부 보안/저작권 이슈 파일 없음.",
-        command: "# 1) vite.config.js 에 base: './' 추가 후 빌드\ncd C:\\Gemini\\RegexLearn\nnpm run build\n# 2) Public 전환 시:\n& \"C:\\Program Files\\GitHub CLI\\gh.exe\" repo edit schuna/RegexLearn --visibility public --accept-visibility-change-consequences"
+        currentVisibility: "Public (전환 및 Live 배포 완료)",
+        buildType: "Vite 2.9 + React 18 (base: './' 정적 번들링)",
+        readiness: "🟢 Live 배포 완료 (https://schuna.github.io/RegexLearn/)",
+        precaution: "vite.config.js에 base: './' 적용, 저장소 Public 전환 및 schuna.github.io/RegexLearn/ 정적 빌드 배포가 모두 완료되었습니다.",
+        command: "# 라이브 접속 URL:\nStart-Process \"https://schuna.github.io/RegexLearn/\""
       },
       {
         name: "DockerLearn (Virtual Docker v3.0)",
-        currentVisibility: "Private",
-        buildType: "Vite 2.9 + React + TypeScript (정적 번들링)",
-        readiness: "🟢 base 경로 1줄 추가 후 즉시 배포 가능",
-        precaution: "vite.config.ts에 base: './' 설정 필요. 100% 인메모리 가상 도커 엔진이므로 백엔드 없이 GitHub Pages에서 완벽 작동.",
-        command: "# 1) vite.config.ts 에 base: './' 추가 후 빌드\ncd C:\\Gemini\\DockerLearn\nnpm run build\n# 2) Public 전환 시:\n& \"C:\\Program Files\\GitHub CLI\\gh.exe\" repo edit schuna/DockerLearn --visibility public --accept-visibility-change-consequences"
+        currentVisibility: "Public (전환 및 Live 배포 완료)",
+        buildType: "Vite 2.9 + React + TypeScript (base: './' 정적 번들링)",
+        readiness: "🟢 Live 배포 완료 (https://schuna.github.io/DockerLearn/)",
+        precaution: "vite.config.ts에 base: './' 적용, 저장소 Public 전환 및 schuna.github.io/DockerLearn/ 정적 빌드 배포가 모두 완료되었습니다.",
+        command: "# 라이브 접속 URL:\nStart-Process \"https://schuna.github.io/DockerLearn/\""
       },
       {
         name: "DfeLearn (DDR5 DFE Platform v2.1)",
-        currentVisibility: "Private",
+        currentVisibility: "Private 유지 + Live Demo 공개 (전략 B 적용 완료)",
         buildType: "Vite 2.9 + React + TypeScript (Gzip 67.5KB)",
-        readiness: "🟡 PDF 파일 분리 후 Public 전환 (또는 전략 B dist 배포 권장)",
-        precaution: "⚠️ 중요: 루트 폴더에 'DDR5 Spec JESD79-5.pdf'(9.5MB) 및 'ddr5_sdram_core.pdf'(15MB)가 커밋되어 있습니다. JEDEC 표준 문서는 저작권 보호 대상이므로 저장소 전체를 Public으로 전환하기 전에 PDF를 제거(orphan 초기화)하거나, 저장소는 Private으로 두고 dist/ 빌드본만 배포(전략 B)하는 것이 안전합니다.",
-        command: "# 안전한 배포(전략 B): 저장소는 Private 유지 + 빌드 결과물(dist)만 추출\ncd C:\\Gemini\\DfeLearn\nnpm run build\n# 생성된 dist/ 폴더(약 240KB)를 schuna.github.io/DfeLearn/ 에 복사하여 배포하면 PDF 노출 없이 Live Demo 즉시 구동!"
+        readiness: "🟢 Live 배포 완료 (https://schuna.github.io/DfeLearn/)",
+        precaution: "✅ JEDEC 표준 문서 PDF(24MB) 보호를 위해 원본 레포지터리(schuna/DfeLearn)는 Private으로 안전하게 유지하고, 컴파일된 dist/ 정적 번들만 schuna.github.io/DfeLearn/ 에 호스팅하여 안전하게 Live Demo를 오픈했습니다.",
+        command: "# 라이브 접속 URL:\nStart-Process \"https://schuna.github.io/DfeLearn/\""
       }
     ]
   }

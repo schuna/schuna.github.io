@@ -12,12 +12,12 @@
 - **[ClaudeLearn](https://github.com/schuna/ClaudeLearn)** (`Private` · Node.js/Bash): WSL Ubuntu & Docker 컨테이너용 Claude CLI 토큰 80~90% 절감 스마트 래퍼(`cx`) 및 웹 컨트롤 센터 (`Port 3200`)
 
 ### 2. 💻 SW & 인프라 인터랙티브 학습
-- **[RegexLearn](https://github.com/schuna/RegexLearn)** (`Private` · React/Vite): *PyRegex Studio v2.0* — Step-by-Step AST 매칭 트레이서, Goal Diff 뷰어 및 5단계 월드맵 기반 Python `re` 정규표현식 학습 웹앱 (`Port 5188`)
-- **[DockerLearn](https://github.com/schuna/DockerLearn)** (`Private` · TypeScript/React Flow): *Learn Git Branching* 벤치마킹 기반 100% 인메모리 가상 도커 엔진 & React Flow 시각화 학습 플랫폼 (`Port 5188`)
+- **[RegexLearn](https://github.com/schuna/RegexLearn)** (`Public` · React/Vite · **[🚀 Live Demo](https://schuna.github.io/RegexLearn/)**): *PyRegex Studio v2.0* — Step-by-Step AST 매칭 트레이서, Goal Diff 뷰어 및 5단계 월드맵 기반 Python `re` 정규표현식 학습 웹앱 (`Port 5188`)
+- **[DockerLearn](https://github.com/schuna/DockerLearn)** (`Public` · TypeScript/React Flow · **[🚀 Live Demo](https://schuna.github.io/DockerLearn/)**): *Learn Git Branching* 벤치마킹 기반 100% 인메모리 가상 도커 엔진 & React Flow 시각화 학습 플랫폼 (`Port 5188`)
 
 ### 3. ⚡ 반도체 & 고속 I/O 시뮬레이션
-- **[DfeLearn](https://github.com/schuna/DfeLearn)** (`Private` · TypeScript/Vite): JEDEC JESD79-5 규격 기반 DDR5 DFE (Decision Feedback Equalizer) 인터랙티브 시뮬레이터 (`Port 5188`)
-- **[SemiLearn](https://github.com/schuna/SemiLearn)** (`Public` · Vanilla JS/Canvas/KaTeX): *Lessons In Electric Circuits Vol. III* 기반 반도체 이론 요약, 영어 원문·한국어 병렬 번역 및 Canvas 실험실 (`Port 8000`)
+- **[DfeLearn](https://github.com/schuna/DfeLearn)** (`Private (dist Live)` · TypeScript/Vite · **[🚀 Live Demo](https://schuna.github.io/DfeLearn/)**): JEDEC JESD79-5 규격 기반 DDR5 DFE (Decision Feedback Equalizer) 인터랙티브 시뮬레이터 (`Port 5188`)
+- **[SemiLearn](https://github.com/schuna/SemiLearn)** (`Public` · Vanilla JS/Canvas/KaTeX · **[🚀 Live Demo](https://schuna.github.io/SemiLearn/)**): *Lessons In Electric Circuits Vol. III* 기반 반도체 이론 요약, 영어 원문·한국어 병렬 번역 및 Canvas 실험실 (`Port 8000`)
 
 ### 4. 🏃‍♂️ 피트니스 & 스포츠 데이터 애널리틱스
 - **[workout_coach](https://github.com/schuna/workout_coach)** (`Public` · HTML/JS PWA · **[🚀 Live Demo](https://schuna.github.io/workout_coach/)**): 실시간 세트 가이드, 절대시간 휴식 타이머, 1RM 추정, 잔디 히트맵, 구글 시트 양방향 동기화 모바일 웨이트 코치

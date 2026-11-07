@@ -395,9 +395,9 @@
 
     const filters = [
       { id: "all", label: "전체 보기" },
-      { id: "public", label: "🌐 Public (3)" },
-      { id: "private", label: "🔒 Private (6)" },
-      { id: "webapp", label: "🚀 웹앱 / Live 대상 (5)" }
+      { id: "public", label: "🌐 Public (5)" },
+      { id: "private", label: "🔒 Private (4)" },
+      { id: "webapp", label: "🚀 Live 웹앱 (5)" }
     ];
 
     container.innerHTML = filters
