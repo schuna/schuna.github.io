@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Schuna Engineering & Project Command Center — Custom Styles
+   Schuna Engineering & Project Command Center — Custom & Mobile Styles
    Supports Dark (default) and Light themes via html.dark class
    ========================================================================== */
 
@@ -11,13 +11,34 @@
 html {
   font-family: var(--font-sans);
   scroll-behavior: smooth;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  word-break: keep-all;
+  overflow-wrap: break-word;
 }
 
 code, pre, .font-mono {
   font-family: var(--font-mono);
+  word-break: break-all;
 }
 
-/* Custom Scrollbar */
+button, a, label {
+  touch-action: manipulation;
+}
+
+/* Hide scrollbar for mobile horizontal swipe bars */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Custom Scrollbar for Desktop */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
@@ -51,12 +72,14 @@ html:not(.dark) .bg-grid-pattern {
 }
 
 /* Card hover & highlight transitions */
-.repo-card {
+.repo-card, .live-app-card {
   transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
-.repo-card:hover {
-  transform: translateY(-3px);
+@media (hover: hover) {
+  .repo-card:hover, .live-app-card:hover {
+    transform: translateY(-3px);
+  }
 }
 
 .repo-card.ring-highlight {

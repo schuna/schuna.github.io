@@ -1,5 +1,5 @@
 /**
- * Schuna Engineering & Project Hub — Main Application Controller (v2.1)
+ * Schuna Engineering & Project Hub — Main Application Controller (v2.2 Mobile-First & Live Launcher)
  */
 
 (function () {
@@ -109,7 +109,7 @@
   function copyText(text, label) {
     if (navigator.clipboard && navigator.clipboard.writeText) {
       navigator.clipboard.writeText(text).then(() => {
-        showToast(`📋 ${label || "명령어"}가 클립보드에 복사되었습니다.`);
+        showToast(`📋 ${label || "명령어"}가 복사되었습니다.`);
       }).catch(() => fallbackCopy(text, label));
     } else {
       fallbackCopy(text, label);
@@ -125,7 +125,7 @@
     ta.select();
     try {
       document.execCommand("copy");
-      showToast(`📋 ${label || "명령어"}가 클립보드에 복사되었습니다.`);
+      showToast(`📋 ${label || "명령어"}가 복사되었습니다.`);
     } catch (e) {
       showToast("⚠️ 복사에 실패했습니다. 수동으로 선택해 주세요.");
     }
@@ -137,7 +137,7 @@
     if (!container) return;
     const toast = document.createElement("div");
     toast.className =
-      "toast-enter px-4 py-2.5 rounded-xl bg-slate-900 dark:bg-indigo-600 text-white text-sm font-medium shadow-xl border border-slate-700/60 dark:border-indigo-400/40 flex items-center gap-2";
+      "toast-enter px-3.5 py-2.5 rounded-xl bg-slate-900 dark:bg-indigo-600 text-white text-xs sm:text-sm font-medium shadow-xl border border-slate-700/60 dark:border-indigo-400/40 flex items-center gap-2";
     toast.textContent = message;
     container.appendChild(toast);
     setTimeout(() => {
@@ -147,7 +147,7 @@
     }, 2600);
   }
 
-  // Render Header & KPI Summary
+  // Render Header & KPI Summary (2x2 compact on mobile, 4-col on desktop)
   function renderHeroAndKpis() {
     const totalRepos = data.repositories.length;
     const publicCount = data.repositories.filter((r) => r.visibility === "public").length;
@@ -177,122 +177,179 @@
     if (!kpiContainer) return;
 
     kpiContainer.innerHTML = `
-      <div class="p-4 sm:p-5 rounded-2xl bg-white/90 dark:bg-slate-900/80 border border-slate-200/80 dark:border-slate-800 shadow-sm">
-        <div class="flex items-center justify-between text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
+      <div class="p-3.5 sm:p-5 rounded-2xl bg-white/90 dark:bg-slate-900/80 border border-slate-200/80 dark:border-slate-800 shadow-sm">
+        <div class="flex items-center justify-between gap-1 text-[11px] sm:text-xs font-semibold text-slate-500 dark:text-slate-400">
           <span>관리 레포지터리</span>
-          <span class="px-2 py-0.5 rounded-full bg-indigo-500/10 text-indigo-600 dark:text-indigo-400">4 Categories</span>
+          <span class="hidden sm:inline-block px-2 py-0.5 rounded-full bg-indigo-500/10 text-indigo-600 dark:text-indigo-400">4 분류</span>
         </div>
-        <div class="mt-2 flex items-baseline gap-2">
-          <span class="text-3xl font-extrabold text-slate-900 dark:text-white">${totalRepos}</span>
-          <span class="text-xs text-slate-500 dark:text-slate-400">Repos (로컬 9/9 동기화)</span>
+        <div class="mt-1.5 sm:mt-2 flex items-baseline gap-1.5">
+          <span class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">${totalRepos}</span>
+          <span class="text-[11px] sm:text-xs text-slate-500 dark:text-slate-400">개 (동기화 완료)</span>
         </div>
-        <p class="mt-1.5 text-xs text-slate-600 dark:text-slate-400">
-          🌐 Public <strong>${publicCount}</strong> · 🔒 Private <strong>${privateCount}</strong>
+        <p class="mt-1 text-[11px] sm:text-xs text-slate-600 dark:text-slate-400">
+          🌐 공개 <strong>${publicCount}</strong> · 🔒 비공개 <strong>${privateCount}</strong>
         </p>
       </div>
 
-      <div class="p-4 sm:p-5 rounded-2xl bg-white/90 dark:bg-slate-900/80 border border-slate-200/80 dark:border-slate-800 shadow-sm">
-        <div class="flex items-center justify-between text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
-          <span>온라인 Live 웹앱</span>
-          <span class="px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400">GitHub Pages</span>
+      <div class="p-3.5 sm:p-5 rounded-2xl bg-white/90 dark:bg-slate-900/80 border border-emerald-500/30 dark:border-emerald-500/30 shadow-sm">
+        <div class="flex items-center justify-between gap-1 text-[11px] sm:text-xs font-semibold text-slate-500 dark:text-slate-400">
+          <span>Live 웹앱</span>
+          <span class="px-1.5 py-0.5 rounded-full text-[10px] bg-emerald-500/10 text-emerald-600 dark:text-emerald-400">온라인</span>
         </div>
-        <div class="mt-2 flex items-baseline justify-between">
-          <div class="flex items-baseline gap-2">
-            <span class="text-3xl font-extrabold text-emerald-600 dark:text-emerald-400">${liveWebAppsCount}</span>
-            <span class="text-xs text-slate-500 dark:text-slate-400">종 즉시 실행 가능</span>
+        <div class="mt-1.5 sm:mt-2 flex items-baseline justify-between">
+          <div class="flex items-baseline gap-1.5">
+            <span class="text-2xl sm:text-3xl font-extrabold text-emerald-600 dark:text-emerald-400">${liveWebAppsCount}</span>
+            <span class="text-[11px] sm:text-xs text-slate-500 dark:text-slate-400">종 즉시 실행</span>
           </div>
-          <a href="#live-demos" class="text-xs font-semibold text-emerald-600 dark:text-emerald-400 hover:underline">런처 이동 ↓</a>
+          <a href="#live-demos" class="text-[11px] sm:text-xs font-bold text-emerald-600 dark:text-emerald-400 hover:underline">보기 ↓</a>
         </div>
-        <p class="mt-1.5 text-xs text-slate-600 dark:text-slate-400">
-          Workout · Regex · Docker · Dfe · SemiLearn
+        <p class="mt-1 text-[11px] sm:text-xs text-slate-600 dark:text-slate-400 truncate">
+          Workout·Regex·Docker·Dfe·Semi
         </p>
       </div>
 
-      <div class="p-4 sm:p-5 rounded-2xl bg-white/90 dark:bg-slate-900/80 border border-slate-200/80 dark:border-slate-800 shadow-sm">
-        <div class="flex items-center justify-between text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
-          <span>프로젝트 성숙도</span>
-          <span class="px-2 py-0.5 rounded-full bg-amber-500/10 text-amber-600 dark:text-amber-400">진행중 ${activeRepos}건</span>
+      <div class="p-3.5 sm:p-5 rounded-2xl bg-white/90 dark:bg-slate-900/80 border border-slate-200/80 dark:border-slate-800 shadow-sm">
+        <div class="flex items-center justify-between gap-1 text-[11px] sm:text-xs font-semibold text-slate-500 dark:text-slate-400">
+          <span>구현 완료/안정화</span>
+          <span class="px-1.5 py-0.5 rounded-full text-[10px] bg-amber-500/10 text-amber-600 dark:text-amber-400">진행 ${activeRepos}</span>
         </div>
-        <div class="mt-2 flex items-baseline gap-2">
-          <span class="text-3xl font-extrabold text-slate-900 dark:text-white">${completedRepos}</span>
-          <span class="text-xs text-slate-500 dark:text-slate-400">완료 / 안정화 단계</span>
+        <div class="mt-1.5 sm:mt-2 flex items-baseline gap-1.5">
+          <span class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">${completedRepos}</span>
+          <span class="text-[11px] sm:text-xs text-slate-500 dark:text-slate-400">/ ${totalRepos} 프로젝트</span>
         </div>
-        <p class="mt-1.5 text-xs text-slate-600 dark:text-slate-400">
-          집중 과제: <strong>CodexWorkFlow</strong> · <strong>SemiLearn</strong>
+        <p class="mt-1 text-[11px] sm:text-xs text-slate-600 dark:text-slate-400 truncate">
+          진행중: CodexWorkFlow · SemiLearn
         </p>
       </div>
 
-      <div class="p-4 sm:p-5 rounded-2xl bg-white/90 dark:bg-slate-900/80 border border-slate-200/80 dark:border-slate-800 shadow-sm">
-        <div class="flex items-center justify-between text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
-          <span>남은 할 일 (To-Do)</span>
-          <span class="px-2 py-0.5 rounded-full bg-rose-500/10 text-rose-600 dark:text-rose-400">우선순위 High ${highPending}건</span>
+      <div class="p-3.5 sm:p-5 rounded-2xl bg-white/90 dark:bg-slate-900/80 border border-slate-200/80 dark:border-slate-800 shadow-sm">
+        <div class="flex items-center justify-between gap-1 text-[11px] sm:text-xs font-semibold text-slate-500 dark:text-slate-400">
+          <span>남은 할 일</span>
+          <span class="px-1.5 py-0.5 rounded-full text-[10px] bg-rose-500/10 text-rose-600 dark:text-rose-400">HIGH ${highPending}</span>
         </div>
-        <div class="mt-2 flex items-baseline justify-between">
-          <div class="flex items-baseline gap-2">
-            <span class="text-3xl font-extrabold text-slate-900 dark:text-white">${pendingTodos}</span>
-            <span class="text-xs text-slate-500 dark:text-slate-400">건 남음 (완료 체크 ${doneTodos}건)</span>
+        <div class="mt-1.5 sm:mt-2 flex items-baseline justify-between">
+          <div class="flex items-baseline gap-1.5">
+            <span class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">${pendingTodos}</span>
+            <span class="text-[11px] sm:text-xs text-slate-500 dark:text-slate-400">건 (체크 ${doneTodos})</span>
           </div>
-          <a href="#action-center" class="text-xs font-medium text-indigo-600 dark:text-indigo-400 hover:underline">할 일 보드 →</a>
+          <a href="#action-center" class="text-[11px] sm:text-xs font-semibold text-indigo-600 dark:text-indigo-400 hover:underline">보드 ↓</a>
         </div>
-        <p class="mt-1.5 text-xs text-slate-600 dark:text-slate-400">
-          카드 및 하단 보드에서 실시간 완료 체크 가능
+        <p class="mt-1 text-[11px] sm:text-xs text-slate-600 dark:text-slate-400 truncate">
+          체크박스로 완료 상태 직접 관리
         </p>
       </div>
     `;
   }
 
-  // Render Live Web Apps Launcher Section (5 Apps)
+  // Render Live Web Apps Section (5 Apps with Concise Intro + Key Points + Direct Launch Button)
   function renderLiveWebApps() {
     const container = document.getElementById("live-webapps-grid");
     if (!container || !data.liveWebApps) return;
 
     const accentStyles = {
-      rose: "border-rose-500/30 hover:border-rose-500 bg-rose-500/5",
-      emerald: "border-emerald-500/30 hover:border-emerald-500 bg-emerald-500/5",
-      sky: "border-sky-500/30 hover:border-sky-500 bg-sky-500/5",
-      amber: "border-amber-500/30 hover:border-amber-500 bg-amber-500/5",
-      violet: "border-violet-500/30 hover:border-violet-500 bg-violet-500/5"
+      rose: {
+        border: "border-rose-500/35 hover:border-rose-500",
+        badge: "bg-rose-500/10 text-rose-700 dark:text-rose-300 border-rose-500/20",
+        btn: "bg-rose-600 hover:bg-rose-500 active:bg-rose-700 text-white shadow-rose-600/20"
+      },
+      emerald: {
+        border: "border-emerald-500/35 hover:border-emerald-500",
+        badge: "bg-emerald-500/10 text-emerald-700 dark:text-emerald-300 border-emerald-500/20",
+        btn: "bg-emerald-600 hover:bg-emerald-500 active:bg-emerald-700 text-white shadow-emerald-600/20"
+      },
+      sky: {
+        border: "border-sky-500/35 hover:border-sky-500",
+        badge: "bg-sky-500/10 text-sky-700 dark:text-sky-300 border-sky-500/20",
+        btn: "bg-sky-600 hover:bg-sky-500 active:bg-sky-700 text-white shadow-sky-600/20"
+      },
+      amber: {
+        border: "border-amber-500/35 hover:border-amber-500",
+        badge: "bg-amber-500/10 text-amber-700 dark:text-amber-300 border-amber-500/20",
+        btn: "bg-amber-600 hover:bg-amber-500 active:bg-amber-700 text-white shadow-amber-600/20"
+      },
+      violet: {
+        border: "border-violet-500/35 hover:border-violet-500",
+        badge: "bg-violet-500/10 text-violet-700 dark:text-violet-300 border-violet-500/20",
+        btn: "bg-violet-600 hover:bg-violet-500 active:bg-violet-700 text-white shadow-violet-600/20"
+      }
     };
 
     container.innerHTML = data.liveWebApps
       .map((app) => {
-        const boxClass = accentStyles[app.accent] || accentStyles.emerald;
+        const st = accentStyles[app.accent] || accentStyles.emerald;
+        const keyPointsHtml = (app.keyPoints || [])
+          .map(
+            (pt) => `
+            <li class="flex items-start gap-1.5 text-xs text-slate-600 dark:text-slate-300 leading-snug">
+              <span class="text-emerald-500 font-bold mt-0.5 select-none">✓</span>
+              <span>${escapeHtml(pt)}</span>
+            </li>
+          `
+          )
+          .join("");
+
         return `
-          <div class="p-4 rounded-2xl bg-white/95 dark:bg-slate-900/95 border ${boxClass} shadow-sm flex flex-col justify-between transition hover:-translate-y-1">
+          <div class="live-app-card p-4 sm:p-5 rounded-2xl bg-white/95 dark:bg-slate-900/95 border ${st.border} shadow-sm flex flex-col justify-between">
             <div>
-              <div class="flex items-center justify-between gap-1.5 mb-2">
-                <span class="px-2 py-0.5 rounded-md text-[11px] font-bold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200">
+              <!-- Badge & Live Indicator -->
+              <div class="flex items-center justify-between gap-2 mb-2.5">
+                <span class="px-2.5 py-0.5 rounded-full text-[11px] font-bold border ${st.badge}">
                   ${escapeHtml(app.badge)}
                 </span>
-                <span class="text-[10px] font-mono text-emerald-600 dark:text-emerald-400 font-bold">● LIVE</span>
+                <span class="inline-flex items-center gap-1 text-[11px] font-mono text-emerald-600 dark:text-emerald-400 font-bold">
+                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                  LIVE
+                </span>
               </div>
-              <h3 class="text-sm sm:text-base font-extrabold text-slate-900 dark:text-white">
+
+              <!-- Title & Subtitle -->
+              <h3 class="text-base sm:text-lg font-extrabold text-slate-900 dark:text-white leading-snug">
                 <a href="${escapeHtml(app.url)}" target="_blank" rel="noopener noreferrer" class="hover:text-emerald-600 dark:hover:text-emerald-400 transition">
                   ${escapeHtml(app.name)}
                 </a>
               </h3>
-              <p class="text-[11px] font-mono text-slate-400 dark:text-slate-500 mt-0.5 mb-2">
-                ${escapeHtml(app.tech)}
+              <p class="text-xs font-semibold text-indigo-600 dark:text-indigo-400 mt-0.5">
+                ${escapeHtml(app.subtitle || app.tech)}
               </p>
-              <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
+
+              <!-- Concise Description -->
+              <p class="mt-2.5 text-xs sm:text-[13px] text-slate-700 dark:text-slate-200 leading-relaxed">
                 ${escapeHtml(app.description)}
               </p>
+
+              <!-- Key Points Summary -->
+              <ul class="mt-3 pt-2.5 border-t border-slate-200/60 dark:border-slate-800/80 space-y-1.5 mb-4">
+                ${keyPointsHtml}
+              </ul>
             </div>
-            <div class="flex items-center gap-1.5 pt-2 border-t border-slate-200/70 dark:border-slate-800">
+
+            <!-- Action Buttons (Thumb-friendly on mobile) -->
+            <div class="pt-3 border-t border-slate-200/80 dark:border-slate-800 flex items-center gap-2">
               <a href="${escapeHtml(app.url)}" target="_blank" rel="noopener noreferrer"
-                class="flex-1 py-2 px-3 rounded-xl text-xs font-bold bg-emerald-600 hover:bg-emerald-500 text-white text-center shadow-sm transition">
-                🚀 바로 실행 ↗
+                class="flex-1 py-2.5 px-3 rounded-xl text-xs sm:text-sm font-extrabold ${st.btn} text-center shadow-md transition flex items-center justify-center gap-1.5">
+                <span>🚀 웹앱 바로가기 ↗</span>
               </a>
+              <button type="button" data-live-jump-repo="${escapeHtml(app.repoName)}"
+                class="py-2.5 px-2.5 rounded-xl text-xs font-semibold bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 transition cursor-pointer shrink-0">
+                상세 ↓
+              </button>
               <a href="${escapeHtml(app.repoUrl)}" target="_blank" rel="noopener noreferrer"
-                title="GitHub 저장소 열기"
-                class="py-2 px-2.5 rounded-xl text-xs font-semibold bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 transition">
-                 코드
+                title="GitHub 저장소"
+                class="py-2.5 px-2.5 rounded-xl text-xs font-semibold bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 transition shrink-0">
+                코드 ↗
               </a>
             </div>
           </div>
         `;
       })
       .join("");
+
+    container.querySelectorAll("[data-live-jump-repo]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const repoName = btn.getAttribute("data-live-jump-repo");
+        jumpToRepoCard(repoName);
+      });
+    });
   }
 
   // Render Ecosystem Synergy Tracks
@@ -325,7 +382,7 @@
           .map(
             (repoName, idx) => `
             <button type="button" data-jump-repo="${escapeHtml(repoName)}"
-              class="px-3 py-1.5 rounded-lg text-xs font-bold ${c.pill} shadow-sm transition transform hover:scale-105 cursor-pointer">
+              class="px-3 py-1.5 rounded-lg text-xs font-bold ${c.pill} shadow-sm transition transform active:scale-95 cursor-pointer">
               ${escapeHtml(repoName)}
             </button>
             ${
@@ -338,19 +395,19 @@
           .join("");
 
         return `
-          <div class="p-5 rounded-2xl bg-white/90 dark:bg-slate-900/80 border ${c.border} shadow-sm flex flex-col justify-between">
+          <div class="p-4 sm:p-5 rounded-2xl bg-white/90 dark:bg-slate-900/80 border ${c.border} shadow-sm flex flex-col justify-between">
             <div>
-              <div class="flex items-center justify-between gap-2 mb-3">
+              <div class="flex items-center justify-between gap-2 mb-2.5">
                 <span class="px-2.5 py-0.5 text-xs font-semibold rounded-full border ${c.badge}">
                   ${escapeHtml(flow.badge)}
                 </span>
                 <span class="text-[11px] font-mono text-slate-400">${escapeHtml(flow.track)}</span>
               </div>
-              <div class="flex flex-wrap items-center gap-2 my-3">
+              <div class="flex flex-wrap items-center gap-1.5 sm:gap-2 my-2.5">
                 ${nodesHtml}
               </div>
             </div>
-            <p class="text-xs leading-relaxed text-slate-600 dark:text-slate-300 mt-2">
+            <p class="text-xs leading-relaxed text-slate-600 dark:text-slate-300 mt-1.5">
               ${escapeHtml(flow.summary)}
             </p>
           </div>
@@ -385,7 +442,7 @@
     }
   }
 
-  // Render Category Tabs
+  // Render Category Tabs (Swipeable on mobile)
   function renderCategoryTabs() {
     const container = document.getElementById("category-tabs");
     if (!container) return;
@@ -400,10 +457,10 @@
 
         return `
           <button type="button" data-cat-id="${escapeHtml(cat.id)}"
-            class="px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold transition flex items-center gap-2 cursor-pointer ${
+            class="shrink-0 px-3 sm:px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold transition flex items-center gap-1.5 cursor-pointer ${
               active
                 ? "bg-indigo-600 text-white shadow-md shadow-indigo-500/20"
-                : "bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-800 hover:border-indigo-400 dark:hover:border-indigo-500"
+                : "bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-800 hover:border-indigo-400"
             }">
             <span>${escapeHtml(cat.shortName)}</span>
             <span class="px-1.5 py-0.5 text-[11px] rounded-full ${
@@ -423,7 +480,7 @@
       if (selectedCat && selectedCat.synergy) {
         banner.classList.remove("hidden");
         banner.innerHTML = `
-          <div class="p-3.5 rounded-xl bg-indigo-50/80 dark:bg-indigo-950/40 border border-indigo-200/70 dark:border-indigo-800/60 text-xs sm:text-sm text-slate-700 dark:text-slate-200 flex items-start gap-2.5">
+          <div class="p-3 sm:p-3.5 rounded-xl bg-indigo-50/80 dark:bg-indigo-950/40 border border-indigo-200/70 dark:border-indigo-800/60 text-xs sm:text-sm text-slate-700 dark:text-slate-200 flex items-start gap-2">
             <span class="text-base">🔗</span>
             <div>
               <strong class="font-semibold text-indigo-700 dark:text-indigo-300">${escapeHtml(selectedCat.name)} 연관성:</strong>
@@ -463,7 +520,7 @@
         const active = state.activeFilter === f.id;
         return `
           <button type="button" data-filter-id="${f.id}"
-            class="px-2.5 py-1.5 rounded-lg text-xs font-medium transition cursor-pointer ${
+            class="shrink-0 px-2.5 py-1.5 rounded-lg text-xs font-medium transition cursor-pointer ${
               active
                 ? "bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 font-semibold"
                 : "bg-slate-100 dark:bg-slate-800/90 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-700"
@@ -518,7 +575,7 @@
     });
   }
 
-  // Render Repository Cards Grid
+  // Render Repository Cards Grid (Mobile Optimized)
   function renderRepositoryGrid() {
     const grid = document.getElementById("repo-cards-grid");
     if (!grid) return;
@@ -576,10 +633,10 @@
             const checked = isTodoDone(t);
             const prioBadge =
               t.priority === "high"
-                ? `<span class="px-1.5 py-0.2 rounded text-[10px] font-bold bg-rose-500/15 text-rose-600 dark:text-rose-400 shrink-0">HIGH</span>`
+                ? `<span class="px-1.5 py-0.5 rounded text-[10px] font-bold bg-rose-500/15 text-rose-600 dark:text-rose-400 shrink-0">HIGH</span>`
                 : t.priority === "medium"
-                ? `<span class="px-1.5 py-0.2 rounded text-[10px] font-bold bg-amber-500/15 text-amber-600 dark:text-amber-400 shrink-0">MED</span>`
-                : `<span class="px-1.5 py-0.2 rounded text-[10px] font-bold bg-slate-500/15 text-slate-500 dark:text-slate-400 shrink-0">LOW</span>`;
+                ? `<span class="px-1.5 py-0.5 rounded text-[10px] font-bold bg-amber-500/15 text-amber-600 dark:text-amber-400 shrink-0">MED</span>`
+                : `<span class="px-1.5 py-0.5 rounded text-[10px] font-bold bg-slate-500/15 text-slate-500 dark:text-slate-400 shrink-0">LOW</span>`;
 
             return `
               <label class="todo-item-row flex items-start gap-2.5 p-2 rounded-lg hover:bg-slate-100/80 dark:hover:bg-slate-800/60 cursor-pointer transition">
@@ -599,14 +656,14 @@
         if (repo.liveStatus === "live" && repo.liveUrl) {
           liveBtnHtml = `
             <a href="${escapeHtml(repo.liveUrl)}" target="_blank" rel="noopener noreferrer"
-              class="px-3 py-2 rounded-xl text-xs font-bold bg-emerald-600 hover:bg-emerald-500 text-white shadow-sm transition flex items-center justify-center gap-1.5">
-              <span>🚀 Live Demo 실행 ↗</span>
+              class="px-3 py-2.5 rounded-xl text-xs font-extrabold bg-emerald-600 hover:bg-emerald-500 active:bg-emerald-700 text-white shadow-sm transition flex items-center justify-center gap-1">
+              <span>🚀 Live 실행 ↗</span>
             </a>
           `;
         } else {
           liveBtnHtml = `
-            <span class="px-3 py-2 rounded-xl text-xs font-medium bg-slate-100 dark:bg-slate-800/70 text-slate-500 dark:text-slate-400 flex items-center justify-center gap-1">
-              <span>🖥️ 로컬 구동형 (${escapeHtml(repo.localLaunch.port)})</span>
+            <span class="px-2.5 py-2.5 rounded-xl text-[11px] sm:text-xs font-medium bg-slate-100 dark:bg-slate-800/70 text-slate-500 dark:text-slate-400 flex items-center justify-center gap-1 truncate">
+              <span>🖥️ 로컬 (${escapeHtml(repo.localLaunch.port)})</span>
             </span>
           `;
         }
@@ -617,38 +674,36 @@
           <article data-repo-name="${escapeHtml(repo.name)}"
             class="repo-card rounded-2xl bg-white/95 dark:bg-slate-900/90 border border-slate-200/90 dark:border-slate-800 shadow-sm flex flex-col justify-between overflow-hidden">
             
-            <div class="p-5 sm:p-6">
+            <div class="p-4 sm:p-6">
               <!-- Top Meta Row -->
-              <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+              <div class="flex flex-wrap items-center justify-between gap-1.5 mb-2.5">
                 <div class="flex items-center gap-1.5">
-                  <span class="px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
+                  <span class="px-2 py-0.5 rounded-full text-[11px] font-semibold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
                     ${escapeHtml(repo.categoryLabel)}
                   </span>
                   ${visBadge}
                 </div>
                 <span class="text-[11px] font-mono text-slate-400 dark:text-slate-500">
-                  Updated: ${escapeHtml(repo.lastUpdated)}
+                  ${escapeHtml(repo.lastUpdated)}
                 </span>
               </div>
 
               <!-- Title & Subtitle -->
-              <div class="flex items-start justify-between gap-3">
-                <div>
-                  <h3 class="text-lg sm:text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
-                    <a href="${escapeHtml(repo.repoUrl)}" target="_blank" rel="noopener noreferrer" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition">
-                      ${escapeHtml(repo.title)}
-                    </a>
-                  </h3>
-                  <p class="text-xs sm:text-sm font-medium text-indigo-600 dark:text-indigo-400 mt-0.5">
-                    ${escapeHtml(repo.subtitle)}
-                  </p>
-                </div>
+              <div>
+                <h3 class="text-base sm:text-xl font-extrabold text-slate-900 dark:text-white leading-snug">
+                  <a href="${escapeHtml(repo.repoUrl)}" target="_blank" rel="noopener noreferrer" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition">
+                    ${escapeHtml(repo.title)}
+                  </a>
+                </h3>
+                <p class="text-xs sm:text-sm font-medium text-indigo-600 dark:text-indigo-400 mt-0.5 leading-snug">
+                  ${escapeHtml(repo.subtitle)}
+                </p>
               </div>
 
               <!-- Status & Progress Bar -->
-              <div class="mt-4 p-3 rounded-xl bg-slate-50 dark:bg-slate-950/60 border border-slate-200/60 dark:border-slate-800/80">
+              <div class="mt-3.5 p-2.5 sm:p-3 rounded-xl bg-slate-50 dark:bg-slate-950/60 border border-slate-200/60 dark:border-slate-800/80">
                 <div class="flex items-center justify-between gap-2 text-xs mb-1.5">
-                  <span class="px-2 py-0.5 rounded-md font-semibold border ${statusColor}">
+                  <span class="px-2 py-0.5 rounded-md text-[11px] sm:text-xs font-semibold border ${statusColor}">
                     ${escapeHtml(repo.statusBadge)}
                   </span>
                   <span class="font-mono font-bold text-slate-700 dark:text-slate-300">${repo.progress}%</span>
@@ -663,14 +718,14 @@
               </div>
 
               <!-- Summary -->
-              <p class="mt-4 text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+              <p class="mt-3.5 text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
                 ${escapeHtml(repo.summary)}
               </p>
 
               <!-- Key Highlights -->
-              <div class="mt-4">
-                <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 mb-2">
-                  현재 상태 및 핵심 구현 내용 (Status &amp; Features)
+              <div class="mt-3.5">
+                <h4 class="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 mb-1.5">
+                  현재 상태 및 핵심 기능 (Status &amp; Features)
                 </h4>
                 <ul class="space-y-1.5">
                   ${highlightsHtml}
@@ -678,20 +733,20 @@
               </div>
 
               <!-- Relation Note -->
-              <div class="mt-4 p-2.5 rounded-lg bg-indigo-500/5 border border-indigo-500/15 text-xs text-slate-600 dark:text-slate-300">
+              <div class="mt-3.5 p-2.5 rounded-lg bg-indigo-500/5 border border-indigo-500/15 text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
                 <strong class="text-indigo-600 dark:text-indigo-400">🔗 연관성:</strong> ${escapeHtml(repo.relationNote)}
               </div>
 
               <!-- Tech Stack -->
-              <div class="mt-4 flex flex-wrap gap-1.5">
+              <div class="mt-3.5 flex flex-wrap gap-1.5">
                 ${stackHtml}
               </div>
 
               <!-- Interactive To-Do Checklist -->
-              <div class="mt-5 pt-4 border-t border-slate-200/80 dark:border-slate-800">
-                <div class="flex items-center justify-between mb-2">
+              <div class="mt-4 pt-3.5 border-t border-slate-200/80 dark:border-slate-800">
+                <div class="flex items-center justify-between mb-1.5">
                   <h4 class="text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-200 flex items-center gap-1.5">
-                    <span>📋 앞으로 해야 할 일 (Next Steps / To-Do)</span>
+                    <span>📋 앞으로 해야 할 일 (To-Do)</span>
                   </h4>
                   <span class="text-[11px] font-mono px-2 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">
                     남은 항목 ${totalTodoCount - doneCount}건
@@ -703,25 +758,25 @@
               </div>
             </div>
 
-            <!-- Card Footer Actions -->
-            <div class="px-5 py-3.5 bg-slate-50/90 dark:bg-slate-950/80 border-t border-slate-200/80 dark:border-slate-800/90 flex flex-col gap-2.5">
-              <div class="grid grid-cols-1 sm:grid-cols-3 gap-2">
-                <a href="${escapeHtml(repo.repoUrl)}" target="_blank" rel="noopener noreferrer"
-                  class="px-3 py-2 rounded-xl text-xs font-semibold bg-slate-900 hover:bg-slate-800 dark:bg-slate-800 dark:hover:bg-slate-700 text-white transition flex items-center justify-center gap-1.5">
-                  <span>GitHub 저장소 ↗</span>
-                </a>
+            <!-- Card Footer Actions (Compact 3-col on both Mobile & Desktop for easy thumb tapping) -->
+            <div class="px-4 sm:px-5 py-3 bg-slate-50/90 dark:bg-slate-950/80 border-t border-slate-200/80 dark:border-slate-800/90 flex flex-col gap-2">
+              <div class="grid grid-cols-3 gap-1.5 sm:gap-2">
                 ${liveBtnHtml}
+                <a href="${escapeHtml(repo.repoUrl)}" target="_blank" rel="noopener noreferrer"
+                  class="px-2.5 py-2.5 rounded-xl text-xs font-semibold bg-slate-900 hover:bg-slate-800 dark:bg-slate-800 dark:hover:bg-slate-700 text-white transition flex items-center justify-center gap-1">
+                  <span>GitHub ↗</span>
+                </a>
                 <button type="button" data-copy-cmd-repo="${escapeHtml(repo.id)}"
-                  class="px-3 py-2 rounded-xl text-xs font-semibold bg-white dark:bg-slate-900 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200 border border-slate-300 dark:border-slate-700 transition flex items-center justify-center gap-1.5 cursor-pointer">
-                  <span>💻 로컬 실행 복사</span>
+                  class="px-2.5 py-2.5 rounded-xl text-xs font-semibold bg-white dark:bg-slate-900 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200 border border-slate-300 dark:border-slate-700 transition flex items-center justify-center gap-1 cursor-pointer">
+                  <span>💻 명령어</span>
                 </button>
               </div>
 
               <!-- Expandable Local Command Preview -->
               <div id="cmd-box-${escapeHtml(repo.id)}" class="${isCmdOpen ? "" : "hidden"} mt-1 p-3 rounded-xl bg-slate-900 text-slate-100 text-xs font-mono border border-slate-700">
                 <div class="flex items-center justify-between text-[11px] text-slate-400 mb-1">
-                  <span>경로: ${escapeHtml(repo.localLaunch.path)} (Port: ${escapeHtml(repo.localLaunch.port)})</span>
-                  <span class="text-emerald-400">클립보드 복사됨 ✓</span>
+                  <span class="truncate">${escapeHtml(repo.localLaunch.path)}</span>
+                  <span class="text-emerald-400 shrink-0 ml-2">복사됨 ✓</span>
                 </div>
                 <pre class="overflow-x-auto whitespace-pre-wrap text-[11px] text-indigo-200 leading-relaxed">${escapeHtml(repo.localLaunch.command)}</pre>
                 <p class="mt-1.5 text-[11px] text-slate-400 font-sans">💡 ${escapeHtml(repo.localLaunch.note)}</p>
@@ -805,7 +860,7 @@
                       <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-indigo-500/10 text-indigo-600 dark:text-indigo-400">
                         ${escapeHtml(item.repoName)}
                       </span>
-                      <span class="px-1.5 py-0.2 rounded text-[10px] font-bold border ${prioClass}">
+                      <span class="px-1.5 py-0.5 rounded text-[10px] font-bold border ${prioClass}">
                         ${escapeHtml(item.priority.toUpperCase())}
                       </span>
                     </div>
@@ -857,8 +912,8 @@
             <div class="flex items-center justify-between gap-2 p-2 rounded-lg bg-slate-900 text-slate-200 font-mono text-[11px]">
               <code class="truncate flex-1">${escapeHtml(diag.fixCommand)}</code>
               <button type="button" data-copy-sync-cmd="${escapeHtml(diag.fixCommand)}"
-                class="px-2 py-1 rounded bg-indigo-600 hover:bg-indigo-500 text-white text-[10px] font-sans font-semibold shrink-0 cursor-pointer">
-                명령어 복사
+                class="px-2.5 py-1 rounded bg-indigo-600 hover:bg-indigo-500 text-white text-[10px] font-sans font-semibold shrink-0 cursor-pointer">
+                복사
               </button>
             </div>
           </div>

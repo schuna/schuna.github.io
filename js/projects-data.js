@@ -19,52 +19,87 @@ window.SCHUNA_HUB_DATA = {
   liveWebApps: [
     {
       id: "workout-coach",
+      repoName: "workout_coach",
       name: "Workout Coach",
+      subtitle: "모바일 웨이트 트레이닝 코치 PWA",
       badge: "🏃‍♂️ 피트니스 PWA",
-      tech: "HTML5 · JS · PWA · Google Sheets",
+      tech: "HTML5 · Vanilla JS · PWA · Google Sheets",
       url: "https://schuna.github.io/workout_coach/",
       repoUrl: "https://github.com/schuna/workout_coach",
-      description: "오프라인 체육관 환경 지원, 지난 세트 기록 원터치 불러오기, 절대시간 휴식 타이머, 1RM 자동 추정 및 구글 시트 양방향 동기화 웨이트 코치",
+      description: "체육관 현장에서 스마트폰으로 바로 쓰는 웨이트 트레이닝 전용 어시스턴트입니다. 오프라인 환경에서도 작동하며 운동 기록을 구글 시트와 양방향 동기화합니다.",
+      keyPoints: [
+        "종목별 지난 수행 무게·횟수 원터치 불러오기 & 실시간 Epley 1RM 계산",
+        "백그라운드 오차 없는 절대시간 휴식 카운트다운 타이머 & 화면 꺼짐 방지",
+        "최근 10주 운동 잔디 히트맵 & 구글 스프레드시트 원클릭 자동 백업"
+      ],
       accent: "rose"
     },
     {
       id: "regex-learn",
+      repoName: "RegexLearn",
       name: "RegexLearn (PyRegex v2.0)",
+      subtitle: "Python 정규표현식 시각적 디버거 & 실습",
       badge: "💻 정규식 트레이서",
-      tech: "React 18 · Vite · AST Generator",
+      tech: "React 18 · Vite · AST Step Tracer",
       url: "https://schuna.github.io/RegexLearn/",
       repoUrl: "https://github.com/schuna/RegexLearn",
-      description: "Python re 정규표현식의 토큰·커서·백트래킹 과정을 스텝 단위로 추적하는 디버거, Goal Diff 뷰어 및 5단계 스테이지 월드맵",
+      description: "복잡한 Python(re 모듈) 정규표현식이 텍스트를 어떻게 탐색하고 백트래킹하는지 눈으로 보면서 마스터하는 인터랙티브 학습 웹앱입니다.",
+      keyPoints: [
+        "Step-by-Step 매칭 트레이서: 정규식 포인터와 커서 이동을 스텝별 애니메이션 재생",
+        "Goal Diff 뷰어: 목표 매칭 영역과 내 패턴의 과다/누락 매칭을 색상으로 즉시 진단",
+        "기초부터 전후방 탐색까지 5단계 스테이지 월드맵 & 실무 로그/마스킹 프리셋"
+      ],
       accent: "emerald"
     },
     {
       id: "docker-learn",
+      repoName: "DockerLearn",
       name: "DockerLearn (Virtual Docker v3.0)",
-      badge: "🐳 가상 도커 실습",
+      subtitle: "인메모리 가상 도커 & 토폴로지 시각화 실습",
+      badge: "🐳 가상 도커 엔진",
       tech: "React · TypeScript · React Flow",
       url: "https://schuna.github.io/DockerLearn/",
       repoUrl: "https://github.com/schuna/DockerLearn",
-      description: "백엔드 없이 브라우저 인메모리에서 컨테이너·이미지·볼륨·네트워크를 시뮬레이션하고 React Flow 토폴로지로 실시간 시각화하는 9레벨 실습 앱",
+      description: "Docker 설치나 서버 없이 브라우저 메모리 상에서 docker 명령어와 Compose를 실행하고 컨테이너·볼륨·네트워크 연결 구조를 실시간 그래프로 실습합니다.",
+      keyPoints: [
+        "100% 인메모리 가상 도커 엔진 & 최대 20단계 상태 타임머신(Undo / Redo)",
+        "React Flow 캔버스: 컨테이너 기동·포트 바인딩·볼륨 트래픽 파티클 실시간 렌더링",
+        "가상 터미널 + Dockerfile/Compose 에디터 + 초보·중급·고급 9개 미션 자동 채점"
+      ],
       accent: "sky"
     },
     {
       id: "dfe-learn",
+      repoName: "DfeLearn",
       name: "DfeLearn (DDR5 DFE v2.1)",
+      subtitle: "JEDEC DDR5 고속 신호 무결성 시뮬레이터",
       badge: "⚡ DDR5 신호 무결성",
-      tech: "TypeScript · Canvas · JEDEC DB",
+      tech: "TypeScript · HTML5 Canvas · JEDEC DB",
       url: "https://schuna.github.io/DfeLearn/",
       repoUrl: "https://github.com/schuna/DfeLearn",
-      description: "JEDEC JESD79-5 규격 기반 CTLE vs DFE 비교, 4-Tap DFE 계수 및 위상 구조 제어, MR111~MR255 콘솔 및 2D Eye Shmoo 시뮬레이터",
+      description: "6.4Gbps+ 고속 DDR5 메모리 채널의 신호 왜곡(ISI)을 보정하는 Decision Feedback Equalizer(DFE) 회로와 아이 다이어그램(Eye Diagram)을 시뮬레이션합니다.",
+      keyPoints: [
+        "채널 손실 슬라이더 및 CTLE(노이즈 증폭) vs DFE(순수 ISI 차감) 파형 A/B 비교",
+        "4-Tap DFE 계수 조절, 슬라이서 연산 추적기 및 1/2/4-way 위상 구조 비교",
+        "JEDEC MR111~MR255 레지스터 제어 콘솔 & 실시간 2D Eye Shmoo 마진 플롯"
+      ],
       accent: "amber"
     },
     {
       id: "semi-learn",
+      repoName: "SemiLearn",
       name: "SemiLearn (반도체 실험실)",
-      badge: "📘 반도체 원문·번역 & 랩",
+      subtitle: "반도체 소자 이론 · 원문/번역 리더 · Canvas 랩",
+      badge: "📘 반도체 물리 & 회로",
       tech: "Vanilla JS · Canvas · KaTeX",
       url: "https://schuna.github.io/SemiLearn/",
       repoUrl: "https://github.com/schuna/SemiLearn",
-      description: "Lessons In Electric Circuits Vol. III 기반 반도체 소자 요약, 영어 원문·한국어 병렬 번역 리더 및 증폭기·P-N접합·정류기 Canvas 실험실",
+      description: "Lessons In Electric Circuits Vol. III 교재를 기반으로 반도체 소자 핵심 요약, 영어 원문·한국어 문단 병렬 번역, 그리고 인터랙티브 회로 실험실을 제공합니다.",
+      keyPoints: [
+        "Ch 1~3 인터랙티브 랩: 증폭기 클리핑/dB 계산, 에너지 밴드갭 & P-N 접합, 브리지 정류기",
+        "교재 영어 원문과 한국어 번역 문단 1:1 병렬 읽기 탭 및 전문 기술 보충 해설",
+        "KaTeX 수식 실시간 렌더링 및 모바일/데스크톱 반응형 다크 모드 지원"
+      ],
       accent: "violet"
     }
   ],

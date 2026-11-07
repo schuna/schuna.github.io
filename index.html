@@ -2,7 +2,7 @@
 <html lang="ko" class="dark">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
   <title>Schuna Engineering & Project Hub · GitHub Pages</title>
   <meta name="description" content="AI 에이전트 거버넌스, 반도체/고속 인터페이스 시뮬레이션, 인터랙티브 개발 학습, 피트니스 데이터 애널리틱스 9대 핵심 레포지터리 통합 관제 허브" />
 
@@ -32,207 +32,255 @@
   <!-- Custom Styles -->
   <link rel="stylesheet" href="css/style.css" />
 </head>
-<body class="bg-slate-100 dark:bg-slate-950 text-slate-800 dark:text-slate-100 min-h-screen bg-grid-pattern antialiased selection:bg-indigo-500 selection:text-white transition-colors duration-200">
+<body class="bg-slate-100 dark:bg-slate-950 text-slate-800 dark:text-slate-100 min-h-screen bg-grid-pattern antialiased selection:bg-indigo-500 selection:text-white transition-colors duration-200 pb-16 sm:pb-8">
 
-  <!-- Top Sticky Navigation Bar -->
-  <header class="sticky top-0 z-40 backdrop-blur-md bg-white/80 dark:bg-slate-950/85 border-b border-slate-200/80 dark:border-slate-800/80">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
-      <a href="#" class="flex items-center gap-2.5 group">
-        <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-indigo-600 to-violet-600 flex items-center justify-center text-white font-extrabold text-sm shadow-md shadow-indigo-500/20">
+  <!-- Top Sticky Navigation Bar (Desktop + Mobile Optimized) -->
+  <header class="sticky top-0 z-40 backdrop-blur-md bg-white/90 dark:bg-slate-950/90 border-b border-slate-200/80 dark:border-slate-800/80">
+    <div class="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8 h-14 sm:h-16 flex items-center justify-between gap-2">
+      <a href="#" class="flex items-center gap-2 group shrink-0">
+        <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-gradient-to-br from-indigo-600 to-violet-600 flex items-center justify-center text-white font-extrabold text-xs sm:text-sm shadow-md shadow-indigo-500/20">
           S
         </div>
         <div>
           <span class="text-sm sm:text-base font-extrabold tracking-tight text-slate-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition">
             schuna.github.io
           </span>
-          <span class="hidden md:inline-block ml-2 px-2 py-0.5 text-[11px] font-mono rounded-md bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 border border-indigo-500/20">
-            Command Center v2.1
+          <span class="hidden md:inline-block ml-1.5 px-2 py-0.5 text-[11px] font-mono rounded-md bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 border border-indigo-500/20">
+            Hub v2.2
           </span>
         </div>
       </a>
 
+      <!-- Desktop Nav Links -->
       <nav class="hidden lg:flex items-center gap-6 text-xs font-semibold text-slate-600 dark:text-slate-300">
-        <a href="#live-demos" class="hover:text-emerald-600 dark:hover:text-emerald-400 transition">🚀 라이브 데모 모음 (5)</a>
-        <a href="#ecosystem" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition">🔗 생태계 & 연관성</a>
-        <a href="#repositories" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition">📦 9개 레포지터리</a>
-        <a href="#action-center" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition">📋 통합 할 일 & 로컬 동기화</a>
+        <a href="#live-demos" class="hover:text-emerald-600 dark:hover:text-emerald-400 transition">🚀 Live 웹앱 5종 소개 &amp; 실행</a>
+        <a href="#repositories" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition">📦 9개 레포지터리 현황</a>
+        <a href="#ecosystem" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition">🔗 생태계 &amp; 연관성</a>
+        <a href="#action-center" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition">📋 통합 할 일 &amp; 동기화</a>
       </nav>
 
-      <div class="flex items-center gap-2">
+      <!-- Right Action Buttons (Always visible on mobile too!) -->
+      <div class="flex items-center gap-1.5 sm:gap-2">
         <a href="#live-demos"
-          class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold bg-emerald-600 hover:bg-emerald-500 text-white shadow-sm transition">
+          class="inline-flex items-center gap-1 px-2.5 sm:px-3.5 py-1.5 rounded-xl text-xs font-bold bg-emerald-600 hover:bg-emerald-500 active:scale-95 text-white shadow-sm shadow-emerald-600/20 transition">
           <span>🚀 Live 웹앱 5종</span>
         </a>
         <a href="https://github.com/schuna" target="_blank" rel="noopener noreferrer"
-          class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 transition">
+          class="hidden sm:inline-flex px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 transition">
           GitHub @schuna ↗
         </a>
-        <button id="theme-toggle-btn" type="button"
-          class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 transition flex items-center gap-1.5 cursor-pointer">
+        <button id="theme-toggle-btn" type="button" aria-label="테마 전환"
+          class="px-2.5 sm:px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 transition flex items-center gap-1 cursor-pointer">
           <span id="theme-toggle-icon">☀️</span>
-          <span id="theme-toggle-label" class="hidden sm:inline">라이트 모드</span>
+          <span id="theme-toggle-label" class="hidden md:inline">라이트 모드</span>
         </button>
+      </div>
+    </div>
+
+    <!-- Mobile & Tablet Sub-Navigation Bar (Swipeable Horizontal Menu) -->
+    <div class="lg:hidden border-t border-slate-200/70 dark:border-slate-800/80 bg-slate-50/90 dark:bg-slate-900/90">
+      <div class="max-w-7xl mx-auto px-3 py-1.5 flex items-center gap-1.5 overflow-x-auto no-scrollbar text-xs font-semibold">
+        <a href="#live-demos" class="shrink-0 px-2.5 py-1 rounded-lg bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 border border-emerald-500/30">
+          🚀 Live 웹앱 5종
+        </a>
+        <a href="#repositories" class="shrink-0 px-2.5 py-1 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-200/60 dark:hover:bg-slate-800">
+          📦 9개 레포지터리
+        </a>
+        <a href="#action-center" class="shrink-0 px-2.5 py-1 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-200/60 dark:hover:bg-slate-800">
+          📋 통합 할 일 보드
+        </a>
+        <a href="#ecosystem" class="shrink-0 px-2.5 py-1 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-200/60 dark:hover:bg-slate-800">
+          🔗 기술 계보
+        </a>
+        <a href="https://github.com/schuna" target="_blank" rel="noopener noreferrer" class="shrink-0 px-2.5 py-1 rounded-lg text-slate-500 dark:text-slate-400">
+          GitHub ↗
+        </a>
       </div>
     </div>
   </header>
 
-  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 space-y-12">
+  <main class="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8 py-5 sm:py-10 space-y-8 sm:space-y-12">
 
-    <!-- 1. Hero & Profile Overview + 4 KPI Cards -->
-    <section class="space-y-6">
-      <div class="p-6 sm:p-8 rounded-3xl bg-gradient-to-br from-slate-900 via-slate-900 to-indigo-950 text-white border border-slate-800 shadow-xl relative overflow-hidden">
+    <!-- 1. Hero & Profile Overview + 4 KPI Cards (2x2 on Smartphone, 4-col on Desktop) -->
+    <section class="space-y-4 sm:space-y-6">
+      <div class="p-5 sm:p-8 rounded-2xl sm:rounded-3xl bg-gradient-to-br from-slate-900 via-slate-900 to-indigo-950 text-white border border-slate-800 shadow-xl relative overflow-hidden">
         <div class="relative z-10 max-w-4xl">
-          <div class="inline-flex flex-wrap items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/20 border border-indigo-400/30 text-indigo-200 text-xs font-semibold mb-4">
-            <span>🚀 Engineering Portfolio & Repository Control Tower</span>
+          <div class="inline-flex flex-wrap items-center gap-1.5 px-2.5 py-1 rounded-full bg-indigo-500/20 border border-indigo-400/30 text-indigo-200 text-[11px] sm:text-xs font-semibold mb-3">
+            <span>🚀 Engineering Portfolio &amp; Control Tower</span>
             <span class="text-indigo-400">·</span>
-            <span class="font-mono">Updated: 2026-11-07</span>
+            <span class="font-mono">2026-11-07</span>
           </div>
-          <h1 class="text-2xl sm:text-4xl font-extrabold tracking-tight leading-tight">
+          <h1 class="text-xl sm:text-4xl font-extrabold tracking-tight leading-snug">
             Schuna Engineering &amp; Project Hub
           </h1>
-          <p class="mt-2 text-sm sm:text-base font-semibold text-indigo-300">
+          <p class="mt-1.5 text-xs sm:text-base font-semibold text-indigo-300 leading-relaxed">
             AI 에이전트 오케스트레이션 · 반도체/DDR5 신호 무결성 · 인메모리 인터랙티브 러닝 · 스포츠 데이터 애널리틱스
           </p>
-          <p class="mt-3 text-xs sm:text-sm text-slate-300 leading-relaxed">
-            단일 세션 AI의 한계를 넘는 멀티 에이전트 거버넌스(<strong>Squadron</strong>, <strong>CodexWorkFlow</strong>, <strong>ClaudeLearn</strong>)부터,
+          <p class="mt-2.5 text-xs sm:text-sm text-slate-300 leading-relaxed">
+            단일 세션 AI의 한계를 넘는 멀티 에이전트 거버넌스(<strong>Squadron</strong>, <strong>CodexWorkFlow</strong>, <strong>ClaudeLearn</strong>),
             고속 메모리 인터페이스 및 반도체 소자 시뮬레이션(<strong>DfeLearn</strong>, <strong>SemiLearn</strong>),
             서버리스 인메모리 개발 실습 앱(<strong>RegexLearn</strong>, <strong>DockerLearn</strong>),
-            그리고 모바일 웨이트 PWA 및 웨어러블 생체 데이터 분석(<strong>workout_coach</strong>, <strong>suunto-fit-analytics</strong>)까지
-            9개 핵심 레포지터리의 연관성·현재 상태·해야 할 일을 통합 관리합니다.
+            그리고 모바일 웨이트 PWA 및 웨어러블 데이터 분석(<strong>workout_coach</strong>, <strong>suunto-fit-analytics</strong>)까지
+            9개 핵심 레포지터리의 소개·연관성·현재 상태·해야 할 일을 통합 관리합니다.
           </p>
-          <div class="mt-4 pt-4 border-t border-slate-800/80 flex flex-wrap items-center gap-3 text-xs text-slate-400 font-mono">
-            <span>⚙️ 로컬 개발 표준: Node.js v14.15.1 호환</span>
+          <div class="mt-4 pt-3 border-t border-slate-800/80 flex flex-wrap items-center gap-x-3 gap-y-1.5 text-[11px] sm:text-xs text-slate-400 font-mono">
+            <span>⚙️ Node.js v14.15.1 호환</span>
             <span>•</span>
-            <span>🚫 Port 5173 충돌 회피 (5188 / 3200 / 8080 / 8000 사용)</span>
+            <span>🚫 Port 5173 회피 (5188/3200/8080/8000)</span>
             <span>•</span>
-            <span class="text-emerald-400">✅ C:\Gemini 9개 저장소 전체 동기화 완료</span>
+            <span class="text-emerald-400">✅ C:\Gemini 9개 저장소 동기화 완료</span>
           </div>
         </div>
       </div>
 
-      <!-- KPI Cards Grid -->
-      <div id="kpi-summary-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4"></div>
+      <!-- KPI Cards Grid: 2x2 on Smartphone, 4 columns on Desktop -->
+      <div id="kpi-summary-grid" class="grid grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-4"></div>
     </section>
 
-    <!-- 2. Live Web Apps Showcase (5 Online Interactive Web Apps) -->
-    <section id="live-demos" class="space-y-4 scroll-mt-20">
-      <div class="p-6 sm:p-7 rounded-3xl bg-gradient-to-br from-emerald-950/15 via-indigo-950/10 to-slate-900/10 dark:from-emerald-950/30 dark:via-slate-900/90 dark:to-indigo-950/30 border border-emerald-500/30 shadow-sm space-y-5">
-        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2">
+    <!-- 2. Live Web Apps Showcase (Target of "🚀 Live 웹앱 5종" button) -->
+    <section id="live-demos" class="scroll-mt-28 sm:scroll-mt-24">
+      <div class="p-4 sm:p-7 rounded-2xl sm:rounded-3xl bg-gradient-to-br from-emerald-950/10 via-indigo-950/5 to-slate-900/5 dark:from-emerald-950/35 dark:via-slate-900/95 dark:to-indigo-950/35 border-2 border-emerald-500/35 shadow-md space-y-4 sm:space-y-6">
+        
+        <!-- Section Header + Quick One-Tap Launch Chips -->
+        <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-3 pb-3 sm:pb-4 border-b border-emerald-500/20">
           <div>
-            <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-bold bg-emerald-500/15 text-emerald-600 dark:text-emerald-300 border border-emerald-500/30 mb-2">
+            <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] sm:text-xs font-bold bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 border border-emerald-500/30 mb-2">
               <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-              <span>GitHub Pages Live Hosted · 5 Web Apps Online</span>
+              <span>GitHub Pages Live Hosted · 브라우저 즉시 실행 5종</span>
             </div>
-            <h2 class="text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-white">
-              🚀 라이브 데모 모음 (브라우저 즉시 실행 바로가기)
+            <h2 class="text-lg sm:text-2xl font-extrabold text-slate-900 dark:text-white">
+              🚀 Live 웹앱 5종 소개 및 바로가기
             </h2>
-            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mt-1">
-              설치나 서버 구동 없이 웹 브라우저에서 바로 실습하고 사용할 수 있는 5종의 정적 배포 웹 애플리케이션입니다.
+            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mt-1 leading-relaxed">
+              별도 설치나 백엔드 서버 없이 스마트폰·PC 웹 브라우저에서 즉시 실행 가능한 5종의 인터랙티브 웹 애플리케이션입니다.
             </p>
           </div>
+
+          <!-- Instant 1-Tap Launch Bar -->
+          <div class="flex items-center gap-1.5 overflow-x-auto no-scrollbar py-1">
+            <span class="text-[11px] font-bold text-emerald-700 dark:text-emerald-400 shrink-0 mr-1">⚡ 즉시 실행:</span>
+            <a href="https://schuna.github.io/workout_coach/" target="_blank" rel="noopener noreferrer"
+              class="shrink-0 px-2.5 py-1.5 rounded-lg text-xs font-bold bg-emerald-600 hover:bg-emerald-500 text-white shadow-sm transition">
+              🏋️ Workout Coach ↗
+            </a>
+            <a href="https://schuna.github.io/RegexLearn/" target="_blank" rel="noopener noreferrer"
+              class="shrink-0 px-2.5 py-1.5 rounded-lg text-xs font-bold bg-slate-800 hover:bg-slate-700 text-white shadow-sm transition">
+              💻 RegexLearn ↗
+            </a>
+            <a href="https://schuna.github.io/DockerLearn/" target="_blank" rel="noopener noreferrer"
+              class="shrink-0 px-2.5 py-1.5 rounded-lg text-xs font-bold bg-slate-800 hover:bg-slate-700 text-white shadow-sm transition">
+              🐳 DockerLearn ↗
+            </a>
+            <a href="https://schuna.github.io/DfeLearn/" target="_blank" rel="noopener noreferrer"
+              class="shrink-0 px-2.5 py-1.5 rounded-lg text-xs font-bold bg-slate-800 hover:bg-slate-700 text-white shadow-sm transition">
+              ⚡ DfeLearn ↗
+            </a>
+            <a href="https://schuna.github.io/SemiLearn/" target="_blank" rel="noopener noreferrer"
+              class="shrink-0 px-2.5 py-1.5 rounded-lg text-xs font-bold bg-slate-800 hover:bg-slate-700 text-white shadow-sm transition">
+              📘 SemiLearn ↗
+            </a>
+          </div>
         </div>
 
-        <!-- 5 Live App Cards Grid -->
-        <div id="live-webapps-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-3.5"></div>
+        <!-- 5 Live App Intro + Direct Launch Cards Grid -->
+        <div id="live-webapps-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3.5 sm:gap-4"></div>
       </div>
     </section>
 
-    <!-- 3. Ecosystem & Synergy Architecture Section -->
-    <section id="ecosystem" class="space-y-4 scroll-mt-20">
-      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2">
+    <!-- 3. Category Tabs, Search & 9 Repository Cards Grid -->
+    <section id="repositories" class="space-y-4 sm:space-y-5 scroll-mt-28 sm:scroll-mt-24">
+      <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-3 sm:gap-4">
         <div>
-          <h2 class="text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-white flex items-center gap-2">
-            <span>🔗 레포지터리 연관성 &amp; 시너지 아키텍처</span>
-          </h2>
-          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-1">
-            9개 레포지터리는 독립된 단발성 프로젝트가 아니라 3대 기술 계보로 유기적으로 연결됩니다. (버튼 클릭 시 해당 카드로 이동)
-          </p>
-        </div>
-      </div>
-
-      <div id="ecosystem-tracks" class="grid grid-cols-1 lg:grid-cols-3 gap-4"></div>
-    </section>
-
-    <!-- 4. Category Tabs, Search & 9 Repository Cards Grid -->
-    <section id="repositories" class="space-y-5 scroll-mt-20">
-      <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
-        <div>
-          <h2 class="text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-white">
+          <h2 class="text-lg sm:text-2xl font-extrabold text-slate-900 dark:text-white">
             📦 카테고리별 레포지터리 현황 및 해야 할 일 (9)
           </h2>
-          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-1">
-            카테고리 탭과 상태 필터를 선택하거나, 각 카드의 체크박스를 클릭해 남은 과제 진행 상황을 직접 관리하세요.
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-0.5">
+            카테고리 탭을 좌우로 스와이프하여 선택하거나, 각 카드의 체크박스를 눌러 진행 상황을 관리하세요.
           </p>
         </div>
 
         <!-- Search Input -->
         <div class="relative w-full lg:w-80">
           <input id="repo-search-input" type="search" placeholder="레포지터리, 기술 스택, 할 일 검색..."
-            class="w-full pl-9 pr-4 py-2 rounded-xl text-xs sm:text-sm bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-800 text-slate-800 dark:text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
-          <span class="absolute left-3 top-2.5 text-slate-400 text-xs select-none">🔍</span>
+            class="w-full pl-9 pr-4 py-2.5 rounded-xl text-xs sm:text-sm bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-800 text-slate-800 dark:text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+          <span class="absolute left-3 top-3 text-slate-400 text-xs select-none">🔍</span>
         </div>
       </div>
 
-      <!-- Category Filter Tabs -->
-      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-        <div id="category-tabs" class="flex flex-wrap items-center gap-2"></div>
-        <div id="quick-filter-pills" class="flex flex-wrap items-center gap-1.5"></div>
+      <!-- Category Filter Tabs (Horizontal Swipe on Smartphone, Wrap on Desktop) -->
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5">
+        <div id="category-tabs" class="flex items-center gap-1.5 sm:gap-2 overflow-x-auto no-scrollbar pb-1 sm:pb-0 sm:flex-wrap"></div>
+        <div id="quick-filter-pills" class="flex items-center gap-1.5 overflow-x-auto no-scrollbar pb-1 sm:pb-0"></div>
       </div>
 
       <!-- Category Synergy Banner -->
       <div id="category-synergy-banner" class="hidden"></div>
 
       <!-- Cards Grid -->
-      <div id="repo-cards-grid" class="grid grid-cols-1 lg:grid-cols-2 gap-6"></div>
+      <div id="repo-cards-grid" class="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6"></div>
+    </section>
+
+    <!-- 4. Ecosystem & Synergy Architecture Section -->
+    <section id="ecosystem" class="space-y-3.5 sm:space-y-4 scroll-mt-28 sm:scroll-mt-24">
+      <div>
+        <h2 class="text-lg sm:text-2xl font-extrabold text-slate-900 dark:text-white flex items-center gap-2">
+          <span>🔗 레포지터리 연관성 &amp; 시너지 아키텍처</span>
+        </h2>
+        <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-0.5">
+          9개 레포지터리는 3대 기술 계보로 유기적으로 연결됩니다. (버튼 터치 시 해당 레포지터리 카드로 이동)
+        </p>
+      </div>
+
+      <div id="ecosystem-tracks" class="grid grid-cols-1 lg:grid-cols-3 gap-3.5 sm:gap-4"></div>
     </section>
 
     <!-- 5. Unified Action Center (Priority To-Dos + Local C:\Gemini Sync Status) -->
-    <section id="action-center" class="space-y-4 scroll-mt-20">
+    <section id="action-center" class="space-y-4 scroll-mt-28 sm:scroll-mt-24">
       <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-3">
         <div>
-          <h2 class="text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-white">
+          <h2 class="text-lg sm:text-2xl font-extrabold text-slate-900 dark:text-white">
             📋 통합 실행 보드 &amp; 로컬 PC (<code class="text-indigo-600 dark:text-indigo-400">C:\Gemini</code>) 동기화 현황
           </h2>
-          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-1">
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-0.5">
             9개 레포지터리의 향후 과제를 우선순위별로 모아보고, 로컬 워크스페이스 동기화 및 재배포 원클릭 명령어를 제공합니다.
           </p>
         </div>
         <div class="flex items-center gap-2">
           <button id="export-md-btn" type="button"
-            class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-indigo-600 hover:bg-indigo-500 text-white shadow-sm transition cursor-pointer">
-            📋 전체 현황 마크다운 복사
+            class="flex-1 sm:flex-initial px-3 py-2 rounded-xl text-xs font-semibold bg-indigo-600 hover:bg-indigo-500 text-white shadow-sm transition cursor-pointer">
+            📋 현황 마크다운 복사
           </button>
           <button id="reset-todo-btn" type="button"
-            class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-white dark:bg-slate-900 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-300 dark:border-slate-700 transition cursor-pointer">
+            class="px-3 py-2 rounded-xl text-xs font-semibold bg-white dark:bg-slate-900 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-300 dark:border-slate-700 transition cursor-pointer">
             🔄 체크 초기화
           </button>
         </div>
       </div>
 
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-6">
         <!-- Left: Unified Priority To-Do List (7 cols) -->
-        <div class="lg:col-span-7 p-5 sm:p-6 rounded-2xl bg-white/95 dark:bg-slate-900/90 border border-slate-200/90 dark:border-slate-800 shadow-sm flex flex-col">
-          <div class="flex flex-wrap items-center justify-between gap-2 mb-4 pb-3 border-b border-slate-200/80 dark:border-slate-800">
-            <h3 class="text-base font-bold text-slate-900 dark:text-white">
+        <div class="lg:col-span-7 p-4 sm:p-6 rounded-2xl bg-white/95 dark:bg-slate-900/90 border border-slate-200/90 dark:border-slate-800 shadow-sm flex flex-col">
+          <div class="flex flex-wrap items-center justify-between gap-2 mb-3.5 pb-3 border-b border-slate-200/80 dark:border-slate-800">
+            <h3 class="text-sm sm:text-base font-bold text-slate-900 dark:text-white">
               🎯 우선순위별 남은 할 일 (Action Items)
             </h3>
             <div class="flex items-center gap-1.5">
               <button type="button" data-todo-filter="pending">미완료만</button>
-              <button type="button" data-todo-filter="high">🔥 HIGH 우선순위</button>
-              <button type="button" data-todo-filter="all">전체 보기</button>
+              <button type="button" data-todo-filter="high">🔥 HIGH</button>
+              <button type="button" data-todo-filter="all">전체</button>
             </div>
           </div>
-          <div id="unified-todo-list" class="space-y-2.5 max-h-[540px] overflow-y-auto pr-1"></div>
+          <div id="unified-todo-list" class="space-y-2.5 max-h-[480px] overflow-y-auto pr-1"></div>
         </div>
 
         <!-- Right: Local Environment Sync & Maintenance (5 cols) -->
-        <div class="lg:col-span-5 p-5 sm:p-6 rounded-2xl bg-white/95 dark:bg-slate-900/90 border border-slate-200/90 dark:border-slate-800 shadow-sm flex flex-col">
-          <div class="mb-4 pb-3 border-b border-slate-200/80 dark:border-slate-800">
-            <h3 class="text-base font-bold text-slate-900 dark:text-white flex items-center gap-2">
+        <div class="lg:col-span-5 p-4 sm:p-6 rounded-2xl bg-white/95 dark:bg-slate-900/90 border border-slate-200/90 dark:border-slate-800 shadow-sm flex flex-col">
+          <div class="mb-3.5 pb-3 border-b border-slate-200/80 dark:border-slate-800">
+            <h3 class="text-sm sm:text-base font-bold text-slate-900 dark:text-white flex items-center gap-2">
               <span>✅ 로컬 워크스페이스 동기화 &amp; 유지보수</span>
             </h3>
             <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
-              2026-11-07 기준 9개 저장소 모두 <code class="font-mono">C:\Gemini\*</code> 하위에 최신 상태로 동기화 완료되었습니다.
+              9개 저장소 모두 <code class="font-mono">C:\Gemini\*</code> 하위에 최신 상태로 동기화 완료되었습니다.
             </p>
           </div>
           <div id="sync-diagnostics-list" class="space-y-3"></div>
@@ -242,8 +290,21 @@
 
   </main>
 
+  <!-- Mobile Bottom Floating Quick Navigation Bar -->
+  <div class="sm:hidden fixed bottom-3 inset-x-3 z-30 flex items-center justify-between gap-2 px-3 py-2 rounded-2xl bg-slate-900/95 dark:bg-slate-900/95 text-white border border-slate-700/80 shadow-xl backdrop-blur-md">
+    <a href="#" class="flex-1 py-1.5 rounded-xl text-center text-xs font-semibold bg-slate-800 active:bg-slate-700">
+      ↑ 맨 위로
+    </a>
+    <a href="#live-demos" class="flex-1 py-1.5 rounded-xl text-center text-xs font-bold bg-emerald-600 active:bg-emerald-500">
+      🚀 Live 웹앱 5종
+    </a>
+    <a href="#repositories" class="flex-1 py-1.5 rounded-xl text-center text-xs font-semibold bg-indigo-600 active:bg-indigo-500">
+      📦 9개 레포
+    </a>
+  </div>
+
   <!-- Footer -->
-  <footer class="border-t border-slate-200/80 dark:border-slate-800/80 py-8 mt-12 text-center text-xs text-slate-500 dark:text-slate-400">
+  <footer class="border-t border-slate-200/80 dark:border-slate-800/80 py-8 mt-8 sm:mt-12 text-center text-xs text-slate-500 dark:text-slate-400">
     <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-3">
       <p>
         © 2026 <strong>schuna</strong> · Built as a Zero-Dependency Static Command Center on GitHub Pages
@@ -265,7 +326,7 @@
   </footer>
 
   <!-- Toast Container -->
-  <div id="toast-container" class="fixed bottom-5 right-5 z-50 flex flex-col gap-2"></div>
+  <div id="toast-container" class="fixed bottom-16 sm:bottom-5 right-4 sm:right-5 z-50 flex flex-col gap-2 max-w-[90vw]"></div>
 
   <!-- Scripts -->
   <script src="js/projects-data.js"></script>
