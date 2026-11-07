@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="ko" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Schuna Engineering & Project Hub · GitHub Pages</title>
+  <meta name="description" content="AI 에이전트 거버넌스, 반도체/고속 인터페이스 시뮬레이션, 인터랙티브 개발 학습, 피트니스 데이터 애널리틱스 9대 핵심 레포지터리 통합 관제 허브" />
+
+  <!-- Web Fonts: Pretendard & JetBrains Mono -->
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            slate: {
+              950: '#060a14'
+            }
+          }
+        }
+      }
+    };
+  </script>
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="bg-slate-100 dark:bg-slate-950 text-slate-800 dark:text-slate-100 min-h-screen bg-grid-pattern antialiased selection:bg-indigo-500 selection:text-white transition-colors duration-200">
+
+  <!-- Top Sticky Navigation Bar -->
+  <header class="sticky top-0 z-40 backdrop-blur-md bg-white/80 dark:bg-slate-950/85 border-b border-slate-200/80 dark:border-slate-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
+      <a href="#" class="flex items-center gap-2.5 group">
+        <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-indigo-600 to-violet-600 flex items-center justify-center text-white font-extrabold text-sm shadow-md shadow-indigo-500/20">
+          S
+        </div>
+        <div>
+          <span class="text-sm sm:text-base font-extrabold tracking-tight text-slate-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition">
+            schuna.github.io
+          </span>
+          <span class="hidden md:inline-block ml-2 px-2 py-0.5 text-[11px] font-mono rounded-md bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 border border-indigo-500/20">
+            Command Center v2.0
+          </span>
+        </div>
+      </a>
+
+      <nav class="hidden lg:flex items-center gap-6 text-xs font-semibold text-slate-600 dark:text-slate-300">
+        <a href="#ecosystem" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition">🔗 생태계 & 연관성</a>
+        <a href="#repositories" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition">📦 9개 레포지터리</a>
+        <a href="#action-center" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition">📋 통합 할 일 & 로컬 동기화</a>
+        <a href="#learning-apps-deploy" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition">🌐 학습앱 정적 배포 검토</a>
+      </nav>
+
+      <div class="flex items-center gap-2">
+        <a href="https://schuna.github.io/workout_coach/" target="_blank" rel="noopener noreferrer"
+          class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold bg-emerald-600 hover:bg-emerald-500 text-white shadow-sm transition">
+          <span>🏋️ Workout Coach Live</span>
+        </a>
+        <a href="https://github.com/schuna" target="_blank" rel="noopener noreferrer"
+          class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 transition">
+          GitHub @schuna ↗
+        </a>
+        <button id="theme-toggle-btn" type="button"
+          class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 transition flex items-center gap-1.5 cursor-pointer">
+          <span id="theme-toggle-icon">☀️</span>
+          <span id="theme-toggle-label" class="hidden sm:inline">라이트 모드</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 space-y-12">
+
+    <!-- 1. Hero & Profile Overview + 4 KPI Cards -->
+    <section class="space-y-6">
+      <div class="p-6 sm:p-8 rounded-3xl bg-gradient-to-br from-slate-900 via-slate-900 to-indigo-950 text-white border border-slate-800 shadow-xl relative overflow-hidden">
+        <div class="relative z-10 max-w-4xl">
+          <div class="inline-flex flex-wrap items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/20 border border-indigo-400/30 text-indigo-200 text-xs font-semibold mb-4">
+            <span>🚀 Engineering Portfolio & Repository Control Tower</span>
+            <span class="text-indigo-400">·</span>
+            <span class="font-mono">Last Checked: 2026-11-07</span>
+          </div>
+          <h1 class="text-2xl sm:text-4xl font-extrabold tracking-tight leading-tight">
+            Schuna Engineering &amp; Project Hub
+          </h1>
+          <p class="mt-2 text-sm sm:text-base font-semibold text-indigo-300">
+            AI 에이전트 오케스트레이션 · 반도체/DDR5 신호 무결성 · 인메모리 인터랙티브 러닝 · 스포츠 데이터 애널리틱스
+          </p>
+          <p class="mt-3 text-xs sm:text-sm text-slate-300 leading-relaxed">
+            단일 세션 AI의 한계를 넘는 멀티 에이전트 거버넌스(<strong>Squadron</strong>, <strong>CodexWorkFlow</strong>, <strong>ClaudeLearn</strong>)부터,
+            고속 메모리 인터페이스 및 반도체 소자 시뮬레이션(<strong>DfeLearn</strong>, <strong>SemiLearn</strong>),
+            서버리스 인메모리 개발 실습 앱(<strong>RegexLearn</strong>, <strong>DockerLearn</strong>),
+            그리고 모바일 웨이트 PWA 및 웨어러블 생체 데이터 분석(<strong>workout_coach</strong>, <strong>suunto-fit-analytics</strong>)까지
+            9개 핵심 레포지터리의 연관성·현재 상태·해야 할 일을 통합 관리합니다.
+          </p>
+          <div class="mt-4 pt-4 border-t border-slate-800/80 flex flex-wrap items-center gap-3 text-xs text-slate-400 font-mono">
+            <span>⚙️ 로컬 개발 표준: Node.js v14.15.1 호환</span>
+            <span>•</span>
+            <span>🚫 Port 5173 충돌 회피 (5188 / 3200 / 8080 / 8000 사용)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- KPI Cards Grid -->
+      <div id="kpi-summary-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4"></div>
+    </section>
+
+    <!-- 2. Ecosystem & Synergy Architecture Section -->
+    <section id="ecosystem" class="space-y-4 scroll-mt-20">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2">
+        <div>
+          <h2 class="text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-white flex items-center gap-2">
+            <span>🔗 레포지터리 연관성 &amp; 시너지 아키텍처</span>
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-1">
+            9개 레포지터리는 독립된 단발성 프로젝트가 아니라 3대 기술 계보로 유기적으로 연결됩니다. (버튼 클릭 시 해당 카드로 이동)
+          </p>
+        </div>
+      </div>
+
+      <div id="ecosystem-tracks" class="grid grid-cols-1 lg:grid-cols-3 gap-4"></div>
+    </section>
+
+    <!-- 3. Category Tabs, Search & 9 Repository Cards Grid -->
+    <section id="repositories" class="space-y-5 scroll-mt-20">
+      <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+        <div>
+          <h2 class="text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-white">
+            📦 카테고리별 레포지터리 현황 및 해야 할 일 (9)
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-1">
+            카테고리 탭과 상태 필터를 선택하거나, 각 카드의 체크박스를 클릭해 진행 상황을 직접 관리하세요.
+          </p>
+        </div>
+
+        <!-- Search Input -->
+        <div class="relative w-full lg:w-80">
+          <input id="repo-search-input" type="search" placeholder="레포지터리, 기술 스택, 할 일 검색..."
+            class="w-full pl-9 pr-4 py-2 rounded-xl text-xs sm:text-sm bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-800 text-slate-800 dark:text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+          <span class="absolute left-3 top-2.5 text-slate-400 text-xs select-none">🔍</span>
+        </div>
+      </div>
+
+      <!-- Category Filter Tabs -->
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+        <div id="category-tabs" class="flex flex-wrap items-center gap-2"></div>
+        <div id="quick-filter-pills" class="flex flex-wrap items-center gap-1.5"></div>
+      </div>
+
+      <!-- Category Synergy Banner -->
+      <div id="category-synergy-banner" class="hidden"></div>
+
+      <!-- Cards Grid -->
+      <div id="repo-cards-grid" class="grid grid-cols-1 lg:grid-cols-2 gap-6"></div>
+    </section>
+
+    <!-- 4. Unified Action Center (Priority To-Dos + Local C:\Gemini Sync Diagnostics) -->
+    <section id="action-center" class="space-y-4 scroll-mt-20">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-3">
+        <div>
+          <h2 class="text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-white">
+            📋 통합 실행 보드 &amp; 로컬 PC (<code class="text-indigo-600 dark:text-indigo-400">C:\Gemini</code>) 동기화 진단
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-1">
+            9개 레포지터리의 남은 과제를 우선순위별로 모아보고, 원격(GitHub)과 로컬 워크스페이스 간 동기화 격차를 원클릭 명령어로 해결합니다.
+          </p>
+        </div>
+        <div class="flex items-center gap-2">
+          <button id="export-md-btn" type="button"
+            class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-indigo-600 hover:bg-indigo-500 text-white shadow-sm transition cursor-pointer">
+            📋 전체 현황 마크다운 복사
+          </button>
+          <button id="reset-todo-btn" type="button"
+            class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-white dark:bg-slate-900 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-300 dark:border-slate-700 transition cursor-pointer">
+            🔄 체크 초기화
+          </button>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+        <!-- Left: Unified Priority To-Do List (7 cols) -->
+        <div class="lg:col-span-7 p-5 sm:p-6 rounded-2xl bg-white/95 dark:bg-slate-900/90 border border-slate-200/90 dark:border-slate-800 shadow-sm flex flex-col">
+          <div class="flex flex-wrap items-center justify-between gap-2 mb-4 pb-3 border-b border-slate-200/80 dark:border-slate-800">
+            <h3 class="text-base font-bold text-slate-900 dark:text-white">
+              🎯 우선순위별 통합 할 일 (Action Items)
+            </h3>
+            <div class="flex items-center gap-1.5">
+              <button type="button" data-todo-filter="pending">미완료만</button>
+              <button type="button" data-todo-filter="high">🔥 HIGH 우선순위</button>
+              <button type="button" data-todo-filter="all">전체 보기</button>
+            </div>
+          </div>
+          <div id="unified-todo-list" class="space-y-2.5 max-h-[540px] overflow-y-auto pr-1"></div>
+        </div>
+
+        <!-- Right: Local Environment Sync Diagnostics (5 cols) -->
+        <div class="lg:col-span-5 p-5 sm:p-6 rounded-2xl bg-white/95 dark:bg-slate-900/90 border border-slate-200/90 dark:border-slate-800 shadow-sm flex flex-col">
+          <div class="mb-4 pb-3 border-b border-slate-200/80 dark:border-slate-800">
+            <h3 class="text-base font-bold text-slate-900 dark:text-white flex items-center gap-2">
+              <span>🔄 로컬 워크스페이스 동기화 점검표</span>
+            </h3>
+            <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
+              2026-11-07 기준 GitHub 원격 브랜치와 로컬 <code class="font-mono">C:\Gemini\*</code> 상태 비교 결과입니다.
+            </p>
+          </div>
+          <div id="sync-diagnostics-list" class="space-y-3"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Web Learning Apps Public Conversion & Static Build Deployment Review Section -->
+    <section id="learning-apps-deploy" class="space-y-5 scroll-mt-20">
+      <div class="p-6 sm:p-8 rounded-3xl bg-indigo-950/10 dark:bg-indigo-950/25 border border-indigo-500/25 space-y-6">
+        <div>
+          <span class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-indigo-500/15 text-indigo-600 dark:text-indigo-300 border border-indigo-500/30">
+            Static Build &amp; GitHub Pages Review
+          </span>
+          <h2 class="text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-white mt-2">
+            🌐 인터랙티브 웹 학습 앱 4종 Public 전환 &amp; 정적 빌드 배포 검토
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mt-1 leading-relaxed">
+            현재 Live 배포 중인 <strong>workout_coach</strong> 외에 100% 브라우저 기반으로 동작하는 4종의 학습 플랫폼(<strong>SemiLearn</strong>, <strong>RegexLearn</strong>, <strong>DockerLearn</strong>, <strong>DfeLearn</strong>)을
+            온라인 Live Demo로 전환하기 위한 아키텍처 옵션과 앱별 사전 점검 사항입니다.
+          </p>
+        </div>
+
+        <!-- Strategy Comparison -->
+        <div id="deploy-strategies-grid" class="grid grid-cols-1 lg:grid-cols-2 gap-4"></div>
+
+        <!-- Per-App Readiness & Commands -->
+        <div id="deploy-apps-grid" class="grid grid-cols-1 lg:grid-cols-2 gap-4"></div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-200/80 dark:border-slate-800/80 py-8 mt-12 text-center text-xs text-slate-500 dark:text-slate-400">
+    <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-3">
+      <p>
+        © 2026 <strong>schuna</strong> · Built as a Zero-Dependency Static Command Center on GitHub Pages
+      </p>
+      <div class="flex items-center gap-4">
+        <a href="https://github.com/schuna" target="_blank" rel="noopener noreferrer" class="hover:text-indigo-500 transition">GitHub Profile</a>
+        <span>·</span>
+        <a href="https://schuna.github.io/workout_coach/" target="_blank" rel="noopener noreferrer" class="hover:text-indigo-500 transition">Workout Coach PWA</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Container -->
+  <div id="toast-container" class="fixed bottom-5 right-5 z-50 flex flex-col gap-2"></div>
+
+  <!-- Scripts -->
+  <script src="js/projects-data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
