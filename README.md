@@ -4,14 +4,15 @@
 
 ---
 
-## 📦 관리 대상 레포지터리 (4대 카테고리 · 총 9개)
+## 📦 관리 대상 레포지터리 (4대 카테고리 · 총 10개)
 
 ### 1. 🤖 AI 에이전트 & 워크플로우 엔지니어링
 - **[Squadron](https://github.com/schuna/Squadron)** (`Private` · Python/FastAPI/Docker): OpenAI Codex CLI + Google Antigravity 이종 멀티 에이전트 교차 검증 및 3계층 하이브리드 거버넌스 플랫폼
 - **[CodexWorkFlow](https://github.com/schuna/CodexWorkFlow)** (`Public` · Python/JS): 작업 단위 상태 벡터(`PROGRESS.md`) 기반 Codex CLI & 로컬 GUI 실행·검증 워크플로우
 - **[ClaudeLearn](https://github.com/schuna/ClaudeLearn)** (`Private` · Node.js/Bash): WSL Ubuntu & Docker 컨테이너용 Claude CLI 토큰 80~90% 절감 스마트 래퍼(`cx`) 및 웹 컨트롤 센터 (`Port 3200`)
 
-### 2. 💻 SW & 인프라 인터랙티브 학습
+### 2. 💻 SW · 인프라 & 어학 인터랙티브 학습
+- **[EnglishStudio](https://github.com/schuna/EnglishStudio)** (`Public` · HTML/JS/Web Speech API · **[🚀 Live Demo](https://schuna.github.io/EnglishStudio/)**): *Media English Review Studio* — 스트리밍·더빙·몰아보기·여행 6대 테마 24문장 유연 채점 타이핑, 실시간 AI 음성 스피킹(STT) 및 3D 플래시카드 어학 스튜디오
 - **[RegexLearn](https://github.com/schuna/RegexLearn)** (`Public` · React/Vite · **[🚀 Live Demo](https://schuna.github.io/RegexLearn/)**): *PyRegex Studio v2.0* — Step-by-Step AST 매칭 트레이서, Goal Diff 뷰어 및 5단계 월드맵 기반 Python `re` 정규표현식 학습 웹앱 (`Port 5188`)
 - **[DockerLearn](https://github.com/schuna/DockerLearn)** (`Public` · TypeScript/React Flow · **[🚀 Live Demo](https://schuna.github.io/DockerLearn/)**): *Learn Git Branching* 벤치마킹 기반 100% 인메모리 가상 도커 엔진 & React Flow 시각화 학습 플랫폼 (`Port 5188`)
 

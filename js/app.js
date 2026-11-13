@@ -204,7 +204,7 @@
           <a href="#live-demos" class="text-[11px] sm:text-xs font-bold text-emerald-600 dark:text-emerald-400 hover:underline">보기 ↓</a>
         </div>
         <p class="mt-1 text-[11px] sm:text-xs text-slate-600 dark:text-slate-400 truncate">
-          Workout·Regex·Docker·Dfe·Semi
+          English·Workout·Regex·Docker·Dfe·Semi
         </p>
       </div>
 
@@ -247,6 +247,11 @@
     if (!container || !data.liveWebApps) return;
 
     const accentStyles = {
+      indigo: {
+        border: "border-indigo-500/35 hover:border-indigo-500",
+        badge: "bg-indigo-500/10 text-indigo-700 dark:text-indigo-300 border-indigo-500/20",
+        btn: "bg-indigo-600 hover:bg-indigo-500 active:bg-indigo-700 text-white shadow-indigo-600/20"
+      },
       rose: {
         border: "border-rose-500/35 hover:border-rose-500",
         badge: "bg-rose-500/10 text-rose-700 dark:text-rose-300 border-rose-500/20",
@@ -510,9 +515,9 @@
 
     const filters = [
       { id: "all", label: "전체 보기" },
-      { id: "public", label: "🌐 Public (5)" },
+      { id: "public", label: "🌐 Public (6)" },
       { id: "private", label: "🔒 Private (4)" },
-      { id: "webapp", label: "🚀 Live 웹앱 (5)" }
+      { id: "webapp", label: "🚀 Live 웹앱 (6)" }
     ];
 
     container.innerHTML = filters

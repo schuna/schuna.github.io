@@ -1,7 +1,7 @@
 /**
- * Schuna Engineering & Project Command Center — Master Data (v2.1)
- * 9 Core Repositories (All synced in C:\Gemini\*),
- * 5 Live Web Apps Showcase, Category Ecosystem & Actionable To-Do Tracking
+ * Schuna Engineering & Project Command Center — Master Data (v2.3)
+ * 10 Core Repositories (All synced in C:\Gemini\*),
+ * 6 Live Web Apps Showcase, Category Ecosystem & Actionable To-Do Tracking
  */
 
 window.SCHUNA_HUB_DATA = {
@@ -9,14 +9,31 @@ window.SCHUNA_HUB_DATA = {
     username: "schuna",
     title: "Schuna Engineering & Project Hub",
     subtitle: "AI 에이전트 거버넌스 · 반도체/고속 인터페이스 · 인터랙티브 러닝 · 스포츠 데이터 애널리틱스",
-    bio: "단일 세션 AI의 한계를 넘는 멀티 에이전트 오케스트레이션(Squadron, CodexWorkFlow, ClaudeLearn)부터 반도체 신호 무결성 시뮬레이션(DfeLearn, SemiLearn), 인메모리 실습 플랫폼(RegexLearn, DockerLearn), 그리고 웨어러블·웨이트 피트니스 데이터 파이프라인(workout_coach, suunto-fit-analytics)까지 9개 핵심 엔지니어링 프로젝트를 통합 관리하는 관제 허브입니다.",
+    bio: "단일 세션 AI의 한계를 넘는 멀티 에이전트 오케스트레이션(Squadron, CodexWorkFlow, ClaudeLearn)부터 반도체 신호 무결성 시뮬레이션(DfeLearn, SemiLearn), 인메모리 실습 및 어학 스튜디오(RegexLearn, DockerLearn, EnglishStudio), 그리고 웨어러블·웨이트 피트니스 데이터 파이프라인(workout_coach, suunto-fit-analytics)까지 10개 핵심 엔지니어링 프로젝트를 통합 관리하는 관제 허브입니다.",
     githubUrl: "https://github.com/schuna",
     pagesUrl: "https://schuna.github.io/",
-    lastInspected: "2026-11-07",
+    lastInspected: "2026-11-13",
     localRuleNote: "로컬 개발 환경 규칙: Node.js v14.15.1 호환 유지 · 5173 포트 충돌 회피 (대체 포트: 5188 / 3200 / 8080 / 8000)"
   },
 
   liveWebApps: [
+    {
+      id: "english-studio",
+      repoName: "EnglishStudio",
+      name: "EnglishStudio (미디어 영어 스튜디오)",
+      subtitle: "타이핑 · AI 음성 스피킹(STT) · 3D 플래시카드 어학 웹앱",
+      badge: "🎧 미디어 & 여행 영어",
+      tech: "HTML5 · Tailwind CSS · Web Speech API (STT/TTS)",
+      url: "https://schuna.github.io/EnglishStudio/",
+      repoUrl: "https://github.com/schuna/EnglishStudio",
+      description: "스트리밍·리부트·더빙·자막·몰아보기·여행 등 6대 테마 24개 핵심 영어 표현을 타이핑, 음성 발화 인식, 플래시카드로 입체 복습하는 스튜디오입니다.",
+      keyPoints: [
+        "유연 채점 타이핑 연습: 단어별 Diff 비교, 첫 글자/핵심 어휘 힌트 및 표현 해설",
+        "Web Speech API 음성 스피킹: 마이크 발화 실시간 인식(STT) 및 발음 정확도 채점",
+        "3D 회전 플래시카드, 원어민 TTS 속도 조절(0.8x~1.2x), 셔플 및 중요 문장 북마크"
+      ],
+      accent: "indigo"
+    },
     {
       id: "workout-coach",
       repoName: "workout_coach",
@@ -124,12 +141,12 @@ window.SCHUNA_HUB_DATA = {
     },
     {
       id: "sw-learning",
-      name: "SW & 인프라 인터랙티브 학습",
-      shortName: "💻 SW & DevOps 학습",
+      name: "SW · 인프라 & 어학 인터랙티브 학습",
+      shortName: "💻 SW & 인터랙티브 학습",
       icon: "terminal",
       color: "emerald",
-      description: "Learn Git Branching 벤치마킹 기반 100% 클라이언트 사이드(In-Memory) 시각적 디버거 및 단계별 미션 해결 웹 플랫폼",
-      synergy: "백엔드 서버 없이 브라우저 단독으로 동작하는 AST 트레이서(RegexLearn)와 인메모리 가상 도커 엔진(DockerLearn)으로 언제 어디서나 즉시 온라인 실습이 가능합니다."
+      description: "백엔드 서버 없이 브라우저 단독(In-Memory / Web Speech API)으로 동작하는 시각적 디버거, 가상 도커 엔진 및 AI 음성 인식 영어 학습 스튜디오",
+      synergy: "AST 트레이서(RegexLearn), 인메모리 가상 도커 엔진(DockerLearn), Web Speech STT/TTS 기반 미디어 영어 복습 스튜디오(EnglishStudio) 모두 100% 클라이언트 사이드 웹앱으로 언제 어디서나 즉시 온라인 실습이 가능합니다."
     },
     {
       id: "semiconductor",
@@ -161,10 +178,10 @@ window.SCHUNA_HUB_DATA = {
     },
     {
       track: "Interactive EdTech & Hardware Track",
-      badge: "온라인 Live 시뮬레이터 4종",
+      badge: "온라인 Live 시뮬레이터 5종",
       color: "amber",
-      nodes: ["RegexLearn", "DockerLearn", "SemiLearn", "DfeLearn"],
-      summary: "4종 모두 GitHub Pages Live Demo 배포 완료 — 정규식 AST 추적, 가상 도커 네트워크, 반도체 캐리어 이동, DDR5 4-Tap DFE 파형을 브라우저에서 즉시 실습"
+      nodes: ["EnglishStudio", "RegexLearn", "DockerLearn", "SemiLearn", "DfeLearn"],
+      summary: "5종 모두 GitHub Pages Live Demo 배포 완료 — 미디어 영어 STT/타이핑, 정규식 AST 추적, 가상 도커 네트워크, 반도체 캐리어 이동, DDR5 4-Tap DFE 파형을 브라우저에서 즉시 실습"
     },
     {
       track: "Quantified-Self Fitness Track",
@@ -285,6 +302,43 @@ window.SCHUNA_HUB_DATA = {
         port: "3200",
         command: "cd C:\\Gemini\\ClaudeLearn\nnpm test\nnpm start",
         note: "외부 패키지 설치 불필요 (Node v14 내장 모듈) · http://localhost:3200 접속"
+      }
+    },
+    {
+      id: "english-studio",
+      name: "EnglishStudio",
+      title: "EnglishStudio (미디어 & 여행 영어 복습 스튜디오)",
+      subtitle: "유연 채점 타이핑 · Web Speech AI 음성 스피킹(STT) · 3D 플래시카드 어학 웹앱",
+      category: "sw-learning",
+      categoryLabel: "💻 SW & 인터랙티브 학습",
+      visibility: "public",
+      language: "HTML",
+      techStack: ["HTML5 / JS", "Tailwind CSS", "Web Speech API (STT/TTS)", "3D CSS Flip", "Zero-Dependency SPA"],
+      repoUrl: "https://github.com/schuna/EnglishStudio",
+      liveUrl: "https://schuna.github.io/EnglishStudio/",
+      liveStatus: "live",
+      deployType: "static-webapp",
+      statusBadge: "v1.0 완료 · Live 배포 중",
+      statusLevel: "completed",
+      progress: 96,
+      lastUpdated: "2026-11-13",
+      summary: "스트리밍, 리부트, 더빙, 자막, 몰아보기(Binge-watching), 해외여행 등 6개 실생활 테마 24개 핵심 영어 표현을 타이핑 연습, 실시간 마이크 음성 발화 인식(STT), 3D 플래시카드, 전체 표현 리스트의 4가지 뷰로 입체 학습하는 웹 애플리케이션입니다.",
+      highlights: [
+        "유연 채점 타이핑 뷰: 대소문자·문장부호 무관 채점, 단어 단위 Diff 비교, 첫 글자/핵심 어휘 힌트 및 핵심 숙어 해설",
+        "Web Speech API 음성 스피킹 뷰: 브라우저 마이크 음성 인식(STT) 연동 실시간 발음 정확도 점수 산출",
+        "3D 회전 플래시카드 & 전체 목록 뷰: 원어민 발음 재생(TTS 0.8x~1.2x 속도 조절), 글로벌 셔플, 중요 문장 북마크(★)",
+        "GitHub Pages (https://schuna.github.io/EnglishStudio/) 프로덕션 라이브 배포 완료"
+      ],
+      relationNote: "RegexLearn·DockerLearn과 함께 별도 백엔드 없이 브라우저 내장 API만으로 완결된 고밀도 인터랙티브 학습 경험을 제공합니다.",
+      todos: [
+        { id: "en-1", text: "비즈니스·IT 실무 영어 등 신규 카테고리 문장 팩(JSON/모듈) 확장 및 커스텀 문장 추가 기능 검토", priority: "medium", done: false },
+        { id: "en-2", text: "북마크(★) 및 오답 문장 집중 복습 모드와 PWA 오프라인 캐싱(manifest/sw.js) 적용 검토", priority: "low", done: false }
+      ],
+      localLaunch: {
+        path: "C:\\Gemini\\EnglishStudio",
+        port: "Live / 8082",
+        command: "cd C:\\Gemini\\EnglishStudio\npython -m http.server 8082",
+        note: "온라인 배포본 즉시 사용 가능: https://schuna.github.io/EnglishStudio/"
       }
     },
     {
@@ -513,11 +567,11 @@ window.SCHUNA_HUB_DATA = {
 
   syncDiagnostics: [
     {
-      repo: "9개 핵심 레포지터리 전체 (C:\\Gemini\\*)",
-      localPath: "C:\\Gemini\\[9개 폴더 전체]",
+      repo: "10개 핵심 레포지터리 전체 (C:\\Gemini\\*)",
+      localPath: "C:\\Gemini\\[10개 폴더 전체]",
       status: "ok",
-      statusLabel: "9/9 동기화 완료 (All Clean)",
-      detail: "workout_coach, suunto-fit-analytics, CodexWorkFlow, ClaudeLearn, Squadron, RegexLearn, DockerLearn, DfeLearn, SemiLearn 9개 저장소 모두 로컬 C:\\Gemini 폴더와 원격 GitHub 최신 커밋이 100% 일치합니다.",
+      statusLabel: "10/10 동기화 완료 (All Clean)",
+      detail: "EnglishStudio(신규 추가), workout_coach, suunto-fit-analytics, CodexWorkFlow, ClaudeLearn, Squadron, RegexLearn, DockerLearn, DfeLearn, SemiLearn 10개 저장소 모두 로컬 C:\\Gemini 폴더와 원격 GitHub 최신 커밋이 100% 일치합니다.",
       fixCommand: "Get-ChildItem C:\\Gemini -Directory | ForEach-Object { Write-Host $_.Name; git -C $_.FullName status -s }"
     },
     {
