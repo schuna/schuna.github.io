@@ -1,31 +1,550 @@
 /* ==========================================================================
-   Schuna Engineering & Project Command Center — Custom & Mobile Styles
-   Supports Dark (default) and Light themes via html.dark class
+   Schuna Engineering & Project Command Center — Design Token System
+   OKLCH Palette, Typography Scale (-0.3px tracking), Radius & Overlay Rules
    ========================================================================== */
 
 :root {
-  --font-sans: 'Pretendard Variable', 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Noto Sans KR', sans-serif;
-  --font-mono: 'JetBrains Mono', 'Fira Code', Consolas, Monaco, monospace;
+  /* Fonts */
+  --font-sans: "Pretendard Variable", Pretendard, "Apple SD Gothic Neo", "Helvetica Neue", Helvetica, NanumGothic, "Malgun Gothic", sans-serif;
+  --font-mono: "JetBrains Mono", "Fira Code", Consolas, Monaco, monospace;
+
+  /* Light Theme Surface & Background (OKLCH) */
+  --bg-base: oklch(1 0 0);                        /* #FFFFFF */
+  --bg-weak: oklch(0.982 0 0);                    /* #F9F9F9 */
+  --surface-weaker: oklch(0.982 0 0);             /* #F9F9F9 */
+  --surface-weak: oklch(0.958 0.002 247.8);       /* #F0F1F2 */
+  --surface-base: oklch(0.911 0.005 286.3);       /* #E1E1E5 */
+  --surface-strong: oklch(0.86 0.003 264.5);      /* #D0D1D3 */
+  --surface-strongest: oklch(0.195 0.004 264.5);  /* #141517 */
+
+  /* Light Theme Text (OKLCH) */
+  --text-primary: oklch(0.168 0.003 248);         /* #0E0F10 */
+  --text-secondary: oklch(0.251 0.005 248);       /* #202224 */
+  --text-tertiary: oklch(0.42 0 0);               /* #4D4D4D */
+  --text-weak: oklch(0.538 0.003 264.5);          /* #6D6E70 */
+
+  /* Light Theme Border (OKLCH) */
+  --border-weak: oklch(0.86 0.003 264.5);         /* #D0D1D3 */
+  --border-base: oklch(0.81 0.002 247.8);         /* #C0C1C2 */
+
+  /* Light Theme Brand Tokens (Never use raw neon on light text!) */
+  --brand-surface: oklch(0.678 0.152 158.3);      /* #1BB373 brand-strongest */
+  --brand-on-surface: oklch(1 0 0);               /* #FFFFFF */
+  --brand-stronger: oklch(0.706 0.144 160.2);     /* #32BB81 */
+  --brand-strong: oklch(0.733 0.132 162.1);       /* #49C28F */
+  --brand-base: oklch(0.793 0.104 165);           /* #76D1AB */
+  --brand-weak: oklch(0.929 0.037 168.4);         /* #D1F0E3 */
+  --brand-weaker: oklch(0.948 0.028 167.8);       /* #DDF4EA */
+  --brand-weakest: oklch(0.963 0.018 170.1);      /* #E8F7F1 */
+  --brand-text-strong: oklch(0.539 0.106 161.2);  /* #23815A */
+  --brand-text-base: oklch(0.575 0.127 158.6);    /* #168F5C */
+  --brand-text-weak: oklch(0.596 0.13 159);       /* #1A9662 */
+
+  /* Tag Chip & Input Focus Rules (Light) */
+  --chip-accent-text: oklch(0.596 0.13 159);      /* brand-text-weak */
+  --chip-accent-border: oklch(0.733 0.132 162.1); /* brand-strong */
+  --focus-border: oklch(0.733 0.132 162.1);       /* brand-strong */
+  --focus-caret: oklch(0.706 0.144 160.2);        /* brand-stronger */
+
+  /* State Overlays (Light) */
+  --overlay-lighten-hover: oklch(0 0 0 / 0.05);
+  --overlay-lighten-active: oklch(0 0 0 / 0.12);
+  --overlay-darken-hover: oklch(1 0 0 / 0.05);
+
+  /* Theme-Invariant Function Colors (OKLCH) */
+  --brand-neon-fixed: oklch(0.881 0.205 158.3);   /* #00FFA3 fixed neon for dark badges */
+  --brand-black-fixed: oklch(0 0 0);              /* #000000 */
+  --live-red: oklch(0.581 0.222 27.8);            /* #E02020 */
+  --replay-violet: oklch(0.493 0.223 278.1);      /* #4E41DB */
+  --tier-1-violet: oklch(0.421 0.187 278.4);      /* #3E34AF */
+  --tier-2-purple: oklch(0.476 0.231 296.6);      /* #6F23CB */
+  --info-blue: oklch(0.633 0.136 248.2);          /* #3B8FD8 */
+  --prime-amber: oklch(0.718 0.144 83.1);         /* #CF9A12 */
+  --static-white: oklch(1 0 0);                   /* #FFFFFF */
+
+  /* Radius Scale */
+  --radius-2xs: 2px;
+  --radius-xs: 4px;       /* badges, card tag chips */
+  --radius-sm: 6px;       /* icon-only buttons */
+  --radius-md: 8px;       /* nav items, inputs */
+  --radius-lg: 12px;      /* cards, modals */
+  --radius-xl: 16px;
+  --radius-2xl: 20px;
+  --radius-pill-btn: 17px;/* 34px height primary/secondary buttons */
+  --radius-pill-search: 19px; /* 38px height search input */
+  --radius-circular: 9999px;
+
+  /* Elevation (Light) */
+  --shadow-card: 0 4px 4px oklch(0 0 0 / 0.05), 0 4px 4px oklch(0 0 0 / 0.1);
+  --shadow-level-3: 0 3px 9px 3px oklch(0 0 0 / 0.05), 0 3px 3px 0 oklch(0 0 0 / 0.1);
 }
+
+html.dark {
+  /* Dark Theme Surface & Background (OKLCH) */
+  --bg-base: oklch(0.195 0.004 264.5);            /* #141517 */
+  --bg-weak: oklch(0.168 0.003 248);              /* #0E0F10 */
+  --surface-weaker: oklch(0.231 0.004 264.5);     /* #1C1D1F */
+  --surface-weak: oklch(0.251 0.005 248);         /* #202224 */
+  --surface-base: oklch(0.308 0.006 258.4);       /* #2E3033 */
+  --surface-strong: oklch(0.42 0 0);              /* #4D4D4D */
+  --surface-strongest: oklch(0.913 0.011 269.5);  /* #DFE2EA */
+
+  /* Dark Theme Text (Cool-toned neutrals for crisp contrast with Neon Green) */
+  --text-primary: oklch(1 0 0);                   /* #FFFFFF */
+  --text-secondary: oklch(0.913 0.011 269.5);     /* #DFE2EA */
+  --text-tertiary: oklch(0.721 0.026 265.5);      /* #9DA5B6 */
+  --text-weak: oklch(0.548 0.03 266.4);           /* #697183 */
+
+  /* Dark Theme Border */
+  --border-weak: oklch(0.308 0.006 258.4);        /* #2E3033 */
+  --border-base: oklch(0.42 0 0);                 /* #4D4D4D */
+
+  /* Dark Theme Brand Tokens */
+  --brand-surface: oklch(0.881 0.205 158.3);      /* #00FFA3 brand-neon */
+  --brand-on-surface: oklch(0.168 0.003 248);     /* #0E0F10 dark-bg-weak */
+  --brand-stronger: oklch(0.815 0.189 158.4);     /* #00E693 */
+  --brand-strong: oklch(0.745 0.173 158.5);       /* #00CC82 */
+  --brand-base: oklch(0.602 0.138 159.2);         /* #009962 */
+  --brand-weak: oklch(0.45 0.102 159.9);          /* #006641 */
+  --brand-weaker: oklch(0.309 0.049 169.6);       /* #11382C */
+  --brand-weakest: oklch(0.284 0.061 163.2);      /* #003321 */
+  --brand-text-strong: oklch(0.881 0.205 158.3);  /* #00FFA3 short accent only */
+  --brand-text-base: oklch(0.815 0.189 158.4);    /* #00E693 active nav/tab text */
+  --brand-text-weak: oklch(0.745 0.173 158.5);    /* #00CC82 tag chip accent */
+
+  /* Tag Chip & Input Focus Rules (Dark) */
+  --chip-accent-text: oklch(0.745 0.173 158.5);   /* dark-brand-strong */
+  --chip-accent-border: oklch(0.602 0.138 159.2); /* dark-brand-base */
+  --focus-border: oklch(0.602 0.138 159.2);       /* dark-brand-base */
+  --focus-caret: oklch(0.815 0.189 158.4);        /* dark-brand-stronger */
+
+  /* State Overlays (Dark) */
+  --overlay-lighten-hover: oklch(1 0 0 / 0.05);
+  --overlay-lighten-active: oklch(1 0 0 / 0.12);
+  --overlay-darken-hover: oklch(0 0 0 / 0.05);
+
+  /* Elevation (Dark) */
+  --shadow-card: 0 4px 4px oklch(0 0 0 / 0.2), 0 4px 4px oklch(0 0 0 / 0.3);
+  --shadow-level-3: 0 3px 9px 3px oklch(0 0 0 / 0.2), 0 3px 3px 0 oklch(0 0 0 / 0.3);
+}
+
+/* ==========================================================================
+   Base Document & Typography Rules
+   ========================================================================== */
 
 html {
   font-family: var(--font-sans);
+  letter-spacing: -0.3px;
   scroll-behavior: smooth;
   -webkit-tap-highlight-color: transparent;
 }
 
 body {
+  background-color: var(--bg-base);
+  color: var(--text-primary);
   word-break: keep-all;
   overflow-wrap: break-word;
 }
 
+a, button, input {
+  outline: none;
+  touch-action: manipulation;
+}
+
 code, pre, .font-mono {
   font-family: var(--font-mono);
+  letter-spacing: 0px;
   word-break: break-all;
 }
 
-button, a, label {
-  touch-action: manipulation;
+/* Typography Scale Classes */
+.typo-display-40 {
+  font-size: 40px;
+  font-weight: 800;
+  line-height: 48px;
+  letter-spacing: -0.3px;
+}
+
+.typo-display-28 {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 36px;
+  letter-spacing: -0.3px;
+}
+
+.typo-title-22 {
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 30px;
+  letter-spacing: -0.3px;
+}
+
+.typo-label-17 {
+  font-size: 17px;
+  font-weight: 800;
+  line-height: 21px;
+  letter-spacing: -0.3px;
+}
+
+.typo-label-15 {
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 19px;
+  letter-spacing: -0.3px;
+}
+
+.typo-body-15 {
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 21px;
+  letter-spacing: -0.3px;
+}
+
+.typo-body-14 {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: -0.3px;
+}
+
+.typo-label-13 {
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 17px;
+  letter-spacing: -0.3px;
+}
+
+.typo-label-12 {
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 16px;
+  letter-spacing: -0.3px;
+}
+
+/* ==========================================================================
+   Component Primitives (Header, Pill Buttons, Search, Badges, Cards)
+   ========================================================================== */
+
+/* Header: height 60px, bg-base, no bottom border */
+.hub-header {
+  height: 60px;
+  background-color: var(--bg-base);
+  color: var(--text-primary);
+  transition: transform 0.2s ease-in-out, background-color 0.2s ease;
+}
+
+.hub-subnav {
+  background-color: var(--bg-weak);
+  border-top: 1px solid var(--border-weak);
+  border-bottom: 1px solid var(--border-weak);
+}
+
+/* Nav Item: height 38px, radius 8px, label-15 */
+.hub-nav-item {
+  height: 38px;
+  padding: 0 12px;
+  border-radius: var(--radius-md);
+  color: var(--text-secondary);
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 19px;
+  letter-spacing: -0.3px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.hub-nav-item:hover {
+  background-color: var(--overlay-lighten-hover);
+  color: var(--text-primary);
+}
+
+.hub-nav-item.is-active {
+  color: var(--brand-text-base);
+  background-color: var(--overlay-lighten-active);
+}
+
+/* Search Field: height 38px, radius 19px (pill), transparent surface, 1px border-weak */
+.hub-search-input {
+  height: 38px;
+  border-radius: var(--radius-pill-search);
+  background-color: transparent;
+  border: 1px solid var(--border-weak);
+  color: var(--text-primary);
+  caret-color: var(--focus-caret);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 19px;
+  letter-spacing: -0.3px;
+  padding: 0 38px 0 16px;
+  transition: border-color 0.15s ease;
+}
+
+.hub-search-input::placeholder {
+  color: var(--text-weak);
+}
+
+.hub-search-input:focus {
+  border-color: var(--focus-border);
+}
+
+/* Primary Button: height 34px, radius 17px (pill), brand-neon in dark / brand-strongest in light */
+.btn-primary-pill {
+  height: 34px;
+  padding: 0 14px;
+  border-radius: var(--radius-pill-btn);
+  background-color: var(--brand-surface);
+  color: var(--brand-on-surface);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 18px;
+  letter-spacing: 0px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: background-image 0.15s ease, transform 0.1s ease;
+  cursor: pointer;
+}
+
+.btn-primary-pill:hover {
+  background-image: linear-gradient(var(--overlay-darken-hover), var(--overlay-darken-hover));
+}
+
+/* Secondary Button: height 34px, radius 17px (pill), surface-base */
+.btn-secondary-pill {
+  height: 34px;
+  padding: 0 14px;
+  border-radius: var(--radius-pill-btn);
+  background-color: var(--surface-base);
+  color: var(--text-primary);
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 17px;
+  letter-spacing: -0.3px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: background-image 0.15s ease;
+  cursor: pointer;
+}
+
+.btn-secondary-pill:hover {
+  background-image: linear-gradient(var(--overlay-lighten-hover), var(--overlay-lighten-hover));
+}
+
+/* Tertiary Button: height 34px, radius 17px (pill), high-contrast neutral */
+.btn-tertiary-pill {
+  height: 34px;
+  padding: 0 14px;
+  border-radius: var(--radius-pill-btn);
+  background-color: var(--surface-strongest);
+  color: var(--bg-weak);
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 17px;
+  letter-spacing: -0.3px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+/* Icon-only / Compact Button: radius 6px */
+.btn-icon-6 {
+  height: 34px;
+  padding: 0 10px;
+  border-radius: var(--radius-sm);
+  background-color: var(--surface-weak);
+  border: 1px solid var(--border-weak);
+  color: var(--text-secondary);
+  font-size: 13px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.btn-icon-6:hover {
+  background-color: var(--surface-base);
+  color: var(--text-primary);
+}
+
+/* Filter / Category Chip (Pill: height 34px, radius 17px) */
+.filter-pill {
+  height: 34px;
+  padding: 0 14px;
+  border-radius: var(--radius-pill-btn);
+  background-color: var(--surface-weak);
+  color: var(--text-secondary);
+  border: 1px solid transparent;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 17px;
+  letter-spacing: -0.3px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.filter-pill:hover {
+  background-color: var(--surface-base);
+  color: var(--text-primary);
+}
+
+.filter-pill.is-active {
+  background-color: var(--brand-surface);
+  color: var(--brand-on-surface);
+  font-weight: 700;
+}
+
+/* LIVE Badge: live-red (#E02020), white text, height 20px, radius 4px, 12px/20px 700 */
+.badge-live {
+  height: 20px;
+  padding: 0 6px;
+  border-radius: var(--radius-xs);
+  background-color: var(--live-red);
+  color: var(--static-white);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 20px;
+  letter-spacing: -0.3px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Replay / Secondary Badge: replay-violet (#4E41DB), white text, height 20px, radius 4px */
+.badge-replay {
+  height: 20px;
+  padding: 0 6px;
+  border-radius: var(--radius-xs);
+  background-color: var(--replay-violet);
+  color: var(--static-white);
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 20px;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Counter / Dark Overlay Badge: rgba(0,0,0,0.8), radius 4px, height 20px */
+.badge-counter {
+  height: 20px;
+  padding: 0 6px;
+  border-radius: var(--radius-xs);
+  background-color: var(--surface-base);
+  color: var(--text-secondary);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 20px;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Emphasized Brand Tag Chip (4px radius, 1px dark-brand-base border + dark-brand-strong text) */
+.tag-chip-brand {
+  height: 22px;
+  padding: 0 7px;
+  border-radius: var(--radius-xs);
+  background-color: transparent;
+  border: 1px solid var(--chip-accent-border);
+  color: var(--chip-accent-text);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 20px;
+  letter-spacing: -0.3px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Neutral Tech Tag Chip (4px radius) */
+.tag-chip-neutral {
+  height: 22px;
+  padding: 0 7px;
+  border-radius: var(--radius-xs);
+  background-color: var(--surface-weak);
+  border: 1px solid var(--border-weak);
+  color: var(--text-tertiary);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 20px;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Surface Cards (12px radius, depth by surface lightness step, NO hover lift or shadow change!) */
+.surface-card {
+  background-color: var(--surface-weaker);
+  border: 1px solid var(--border-weak);
+  border-radius: var(--radius-lg);
+}
+
+.surface-card-elevated {
+  background-color: var(--surface-weak);
+  border: 1px solid var(--border-weak);
+  border-radius: var(--radius-lg);
+}
+
+.surface-inset {
+  background-color: var(--bg-weak);
+  border: 1px solid var(--border-weak);
+  border-radius: var(--radius-md);
+}
+
+/* Highlight pulse when jumping to a repository card */
+.repo-card.ring-highlight {
+  animation: pulse-brand-border 1.6s ease-out;
+}
+
+@keyframes pulse-brand-border {
+  0% {
+    border-color: var(--brand-surface);
+    box-shadow: 0 0 0 2px var(--focus-border);
+  }
+  100% {
+    border-color: var(--border-weak);
+    box-shadow: none;
+  }
+}
+
+/* Progress Bar Fill */
+.progress-bar-track {
+  background-color: var(--surface-base);
+  border-radius: var(--radius-circular);
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  background-color: var(--brand-strong);
+  transition: width 0.4s ease;
+}
+
+/* Checkbox strike-through */
+.todo-item-row {
+  border-radius: var(--radius-md);
+  transition: background-color 0.15s ease;
+}
+
+.todo-item-row:hover {
+  background-color: var(--overlay-lighten-hover);
+}
+
+.todo-item-row input[type="checkbox"] {
+  accent-color: var(--brand-strong);
+}
+
+.todo-item-row input[type="checkbox"]:checked + .todo-label {
+  text-decoration: line-through;
+  color: var(--text-weak);
 }
 
 /* Hide scrollbar for mobile horizontal swipe bars */
@@ -45,68 +564,16 @@ button, a, label {
 }
 
 ::-webkit-scrollbar-track {
-  background: rgba(15, 23, 42, 0.4);
+  background: var(--bg-weak);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(100, 116, 139, 0.5);
-  border-radius: 9999px;
+  background: var(--surface-base);
+  border-radius: var(--radius-circular);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(148, 163, 184, 0.8);
-}
-
-/* Subtle Grid Background */
-.bg-grid-pattern {
-  background-size: 32px 32px;
-  background-image: 
-    linear-gradient(to right, rgba(148, 163, 184, 0.06) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(148, 163, 184, 0.06) 1px, transparent 1px);
-}
-
-html:not(.dark) .bg-grid-pattern {
-  background-image: 
-    linear-gradient(to right, rgba(15, 23, 42, 0.04) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(15, 23, 42, 0.04) 1px, transparent 1px);
-}
-
-/* Card hover & highlight transitions */
-.repo-card, .live-app-card {
-  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s ease, border-color 0.2s ease;
-}
-
-@media (hover: hover) {
-  .repo-card:hover, .live-app-card:hover {
-    transform: translateY(-3px);
-  }
-}
-
-.repo-card.ring-highlight {
-  animation: pulse-ring 1.8s ease-out;
-}
-
-@keyframes pulse-ring {
-  0% {
-    box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.7);
-  }
-  70% {
-    box-shadow: 0 0 0 12px rgba(99, 102, 241, 0);
-  }
-  100% {
-    box-shadow: 0 0 0 0 rgba(99, 102, 241, 0);
-  }
-}
-
-/* Progress Bar Shimmer */
-.progress-bar-fill {
-  transition: width 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-/* Checkbox strike-through animation */
-.todo-item-row input[type="checkbox"]:checked + .todo-label {
-  text-decoration: line-through;
-  opacity: 0.55;
+  background: var(--surface-strong);
 }
 
 /* Toast notification */
@@ -115,16 +582,21 @@ html:not(.dark) .bg-grid-pattern {
 }
 
 .toast-enter {
-  animation: toastIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  background-color: var(--surface-weaker);
+  color: var(--text-primary);
+  border: 1px solid var(--focus-border);
+  box-shadow: var(--shadow-level-3);
+  border-radius: var(--radius-md);
+  animation: toastIn 0.2s ease-out forwards;
 }
 
 @keyframes toastIn {
   from {
     opacity: 0;
-    transform: translateY(12px) scale(0.96);
+    transform: translateY(10px);
   }
   to {
     opacity: 1;
-    transform: translateY(0) scale(1);
+    transform: translateY(0);
   }
 }

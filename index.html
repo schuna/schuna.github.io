@@ -4,73 +4,64 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
   <title>Schuna Engineering & Project Hub · GitHub Pages</title>
-  <meta name="description" content="AI 에이전트 거버넌스, 반도체/고속 인터페이스 시뮬레이션, 인터랙티브 개발 학습, 피트니스 데이터 애널리틱스 9대 핵심 레포지터리 통합 관제 허브" />
+  <meta name="description" content="AI 에이전트 거버넌스, 반도체/고속 인터페이스 시뮬레이션, 인터랙티브 개발 학습, 피트니스 데이터 애널리틱스 10대 핵심 레포지터리 통합 관제 허브" />
 
-  <!-- Web Fonts: Pretendard & JetBrains Mono -->
+  <!-- Web Fonts: Pretendard Variable & JetBrains Mono -->
   <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
 
-  <!-- Tailwind CSS CDN -->
+  <!-- Tailwind CSS CDN (Layout & Grid Utilities) -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          colors: {
-            slate: {
-              950: '#060a14'
-            }
-          }
-        }
-      }
+      darkMode: 'class'
     };
   </script>
 
-  <!-- Custom Styles -->
+  <!-- Custom Design Token Styles (OKLCH Dark/Light System) -->
   <link rel="stylesheet" href="css/style.css" />
 </head>
-<body class="bg-slate-100 dark:bg-slate-950 text-slate-800 dark:text-slate-100 min-h-screen bg-grid-pattern antialiased selection:bg-indigo-500 selection:text-white transition-colors duration-200 pb-16 sm:pb-8">
+<body class="min-h-screen antialiased transition-colors duration-150 pb-20 sm:pb-10">
 
-  <!-- Top Sticky Navigation Bar (Desktop + Mobile Optimized) -->
-  <header class="sticky top-0 z-40 backdrop-blur-md bg-white/90 dark:bg-slate-950/90 border-b border-slate-200/80 dark:border-slate-800/80">
-    <div class="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8 h-14 sm:h-16 flex items-center justify-between gap-2">
-      <a href="#" class="flex items-center gap-2 group shrink-0">
-        <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-gradient-to-br from-indigo-600 to-violet-600 flex items-center justify-center text-white font-extrabold text-xs sm:text-sm shadow-md shadow-indigo-500/20">
+  <!-- Top Sticky Navigation Bar (Height 60px, bg-base, no bottom border) -->
+  <header class="sticky top-0 z-40">
+    <div class="hub-header max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8 flex items-center justify-between gap-2">
+      <!-- Brand Identity -->
+      <a href="#" class="flex items-center gap-2.5 shrink-0">
+        <div class="w-8 h-8 rounded-[8px] flex items-center justify-center font-extrabold text-sm"
+          style="background-color: var(--brand-surface); color: var(--brand-on-surface);">
           S
         </div>
-        <div>
-          <span class="text-sm sm:text-base font-extrabold tracking-tight text-slate-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition">
+        <div class="flex items-center gap-2">
+          <span class="typo-label-17" style="color: var(--text-primary);">
             schuna.github.io
           </span>
-          <span class="hidden md:inline-block ml-1.5 px-2 py-0.5 text-[11px] font-mono rounded-md bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 border border-indigo-500/20">
-            Hub v2.2
+          <span class="hidden md:inline-flex tag-chip-brand font-mono">
+            Hub v2.3
           </span>
         </div>
       </a>
 
-      <!-- Desktop Nav Links -->
-      <nav class="hidden lg:flex items-center gap-6 text-xs font-semibold text-slate-600 dark:text-slate-300">
-        <a href="#live-demos" class="hover:text-emerald-600 dark:hover:text-emerald-400 transition">🚀 Live 웹앱 6종 소개 &amp; 실행</a>
-        <a href="#repositories" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition">📦 10개 레포지터리 현황</a>
-        <a href="#ecosystem" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition">🔗 생태계 &amp; 연관성</a>
-        <a href="#action-center" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition">📋 통합 할 일 &amp; 동기화</a>
+      <!-- Desktop Navigation Links (Height 38px, 8px radius, 15px/19px 600) -->
+      <nav class="hidden lg:flex items-center gap-1">
+        <a href="#live-demos" class="hub-nav-item is-active">🚀 Live 웹앱 6종</a>
+        <a href="#repositories" class="hub-nav-item">📦 10개 레포지터리 현황</a>
+        <a href="#ecosystem" class="hub-nav-item">🔗 생태계 &amp; 연관성</a>
+        <a href="#action-center" class="hub-nav-item">📋 통합 할 일 &amp; 동기화</a>
       </nav>
 
-      <!-- Right Action Buttons (Always visible on mobile too!) -->
+      <!-- Right Action Pill Buttons (Height 34px, 17px pill radius / 6px icon button) -->
       <div class="flex items-center gap-1.5 sm:gap-2">
-        <a href="#live-demos"
-          class="inline-flex items-center gap-1 px-2.5 sm:px-3.5 py-1.5 rounded-xl text-xs font-bold bg-emerald-600 hover:bg-emerald-500 active:scale-95 text-white shadow-sm shadow-emerald-600/20 transition">
+        <a href="#live-demos" class="btn-primary-pill">
           <span>🚀 Live 웹앱 6종</span>
         </a>
         <a href="https://github.com/schuna" target="_blank" rel="noopener noreferrer"
-          class="hidden sm:inline-flex px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 transition">
-          GitHub @schuna ↗
+          class="hidden sm:inline-flex btn-secondary-pill">
+          <span>GitHub @schuna ↗</span>
         </a>
-        <button id="theme-toggle-btn" type="button" aria-label="테마 전환"
-          class="px-2.5 sm:px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 transition flex items-center gap-1 cursor-pointer">
+        <button id="theme-toggle-btn" type="button" aria-label="테마 전환" class="btn-icon-6">
           <span id="theme-toggle-icon">☀️</span>
           <span id="theme-toggle-label" class="hidden md:inline">라이트 모드</span>
         </button>
@@ -78,57 +69,61 @@
     </div>
 
     <!-- Mobile & Tablet Sub-Navigation Bar (Swipeable Horizontal Menu) -->
-    <div class="lg:hidden border-t border-slate-200/70 dark:border-slate-800/80 bg-slate-50/90 dark:bg-slate-900/90">
-      <div class="max-w-7xl mx-auto px-3 py-1.5 flex items-center gap-1.5 overflow-x-auto no-scrollbar text-xs font-semibold">
-        <a href="#live-demos" class="shrink-0 px-2.5 py-1 rounded-lg bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 border border-emerald-500/30">
+    <div class="lg:hidden hub-subnav">
+      <div class="max-w-7xl mx-auto px-3 py-1.5 flex items-center gap-1.5 overflow-x-auto no-scrollbar">
+        <a href="#live-demos" class="shrink-0 tag-chip-brand">
           🚀 Live 웹앱 6종
         </a>
-        <a href="#repositories" class="shrink-0 px-2.5 py-1 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-200/60 dark:hover:bg-slate-800">
+        <a href="#repositories" class="shrink-0 hub-nav-item !h-7 !px-2.5 !text-xs">
           📦 10개 레포지터리
         </a>
-        <a href="#action-center" class="shrink-0 px-2.5 py-1 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-200/60 dark:hover:bg-slate-800">
+        <a href="#action-center" class="shrink-0 hub-nav-item !h-7 !px-2.5 !text-xs">
           📋 통합 할 일 보드
         </a>
-        <a href="#ecosystem" class="shrink-0 px-2.5 py-1 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-200/60 dark:hover:bg-slate-800">
+        <a href="#ecosystem" class="shrink-0 hub-nav-item !h-7 !px-2.5 !text-xs">
           🔗 기술 계보
         </a>
-        <a href="https://github.com/schuna" target="_blank" rel="noopener noreferrer" class="shrink-0 px-2.5 py-1 rounded-lg text-slate-500 dark:text-slate-400">
+        <a href="https://github.com/schuna" target="_blank" rel="noopener noreferrer" class="shrink-0 hub-nav-item !h-7 !px-2.5 !text-xs">
           GitHub ↗
         </a>
       </div>
     </div>
   </header>
 
-  <main class="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8 py-5 sm:py-10 space-y-8 sm:space-y-12">
+  <main class="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8 py-4 sm:py-8 space-y-6 sm:space-y-10">
 
-    <!-- 1. Hero & Profile Overview + 4 KPI Cards (2x2 on Smartphone, 4-col on Desktop) -->
-    <section class="space-y-4 sm:space-y-6">
-      <div class="p-5 sm:p-8 rounded-2xl sm:rounded-3xl bg-gradient-to-br from-slate-900 via-slate-900 to-indigo-950 text-white border border-slate-800 shadow-xl relative overflow-hidden">
+    <!-- 1. Hero Banner & 4 KPI Cards (12px Card Radius, Surface Lightness Hierarchy) -->
+    <section class="space-y-4 sm:space-y-5">
+      <div class="surface-card p-5 sm:p-8 relative overflow-hidden">
         <div class="relative z-10 max-w-4xl">
-          <div class="inline-flex flex-wrap items-center gap-1.5 px-2.5 py-1 rounded-full bg-indigo-500/20 border border-indigo-400/30 text-indigo-200 text-[11px] sm:text-xs font-semibold mb-3">
-            <span>🚀 Engineering Portfolio &amp; Control Tower</span>
-            <span class="text-indigo-400">·</span>
-            <span class="font-mono">2026-11-13</span>
+          <div class="flex flex-wrap items-center gap-2 mb-3">
+            <span class="badge-live">LIVE HUB</span>
+            <span class="tag-chip-brand">Engineering Portfolio &amp; Control Tower</span>
+            <span class="typo-label-12 font-mono" style="color: var(--brand-text-strong);">2026.11.14 UPDATED</span>
           </div>
-          <h1 class="text-xl sm:text-4xl font-extrabold tracking-tight leading-snug">
+
+          <h1 class="typo-display-28 sm:typo-display-40" style="color: var(--text-primary);">
             Schuna Engineering &amp; Project Hub
           </h1>
-          <p class="mt-1.5 text-xs sm:text-base font-semibold text-indigo-300 leading-relaxed">
+
+          <p class="mt-2 typo-label-15" style="color: var(--brand-text-base);">
             AI 에이전트 오케스트레이션 · 반도체/DDR5 신호 무결성 · 인메모리 인터랙티브 러닝 · 스포츠 데이터 애널리틱스
           </p>
-          <p class="mt-2.5 text-xs sm:text-sm text-slate-300 leading-relaxed">
-            단일 세션 AI의 한계를 넘는 멀티 에이전트 거버넌스(<strong>Squadron</strong>, <strong>CodexWorkFlow</strong>, <strong>ClaudeLearn</strong>),
-            고속 메모리 인터페이스 및 반도체 소자 시뮬레이션(<strong>DfeLearn</strong>, <strong>SemiLearn</strong>),
-            서버리스 인메모리 개발 실습 및 어학 스튜디오(<strong>RegexLearn</strong>, <strong>DockerLearn</strong>, <strong>EnglishStudio</strong>),
-            그리고 모바일 웨이트 PWA 및 웨어러블 데이터 분석(<strong>workout_coach</strong>, <strong>suunto-fit-analytics</strong>)까지
+
+          <p class="mt-3 typo-body-15" style="color: var(--text-secondary);">
+            단일 세션 AI의 한계를 넘는 멀티 에이전트 거버넌스(<strong style="color: var(--text-primary);">Squadron</strong>, <strong style="color: var(--text-primary);">CodexWorkFlow</strong>, <strong style="color: var(--text-primary);">ClaudeLearn</strong>),
+            고속 메모리 인터페이스 및 반도체 소자 시뮬레이션(<strong style="color: var(--text-primary);">DfeLearn</strong>, <strong style="color: var(--text-primary);">SemiLearn</strong>),
+            서버리스 인메모리 개발 실습 및 어학 스튜디오(<strong style="color: var(--text-primary);">RegexLearn</strong>, <strong style="color: var(--text-primary);">DockerLearn</strong>, <strong style="color: var(--text-primary);">EnglishStudio</strong>),
+            그리고 모바일 웨이트 PWA 및 웨어러블 데이터 분석(<strong style="color: var(--text-primary);">workout_coach</strong>, <strong style="color: var(--text-primary);">suunto-fit-analytics</strong>)까지
             10개 핵심 레포지터리의 소개·연관성·현재 상태·해야 할 일을 통합 관리합니다.
           </p>
-          <div class="mt-4 pt-3 border-t border-slate-800/80 flex flex-wrap items-center gap-x-3 gap-y-1.5 text-[11px] sm:text-xs text-slate-400 font-mono">
+
+          <div class="mt-5 p-3 surface-inset flex flex-wrap items-center gap-x-3 gap-y-1.5 text-xs font-mono" style="color: var(--text-tertiary);">
             <span>⚙️ Node.js v14.15.1 호환</span>
-            <span>•</span>
+            <span>·</span>
             <span>🚫 Port 5173 회피 (5188/3200/8080/8000)</span>
-            <span>•</span>
-            <span class="text-emerald-400">✅ C:\Gemini 10개 저장소 동기화 완료</span>
+            <span>·</span>
+            <span class="font-semibold" style="color: var(--brand-text-base);">✓ C:\Gemini 10개 저장소 동기화 완료</span>
           </div>
         </div>
       </div>
@@ -139,48 +134,48 @@
 
     <!-- 2. Live Web Apps Showcase (Target of "🚀 Live 웹앱 6종" button) -->
     <section id="live-demos" class="scroll-mt-28 sm:scroll-mt-24">
-      <div class="p-4 sm:p-7 rounded-2xl sm:rounded-3xl bg-gradient-to-br from-emerald-950/10 via-indigo-950/5 to-slate-900/5 dark:from-emerald-950/35 dark:via-slate-900/95 dark:to-indigo-950/35 border-2 border-emerald-500/35 shadow-md space-y-4 sm:space-y-6">
+      <div class="surface-card p-4 sm:p-7 space-y-4 sm:space-y-6">
         
-        <!-- Section Header + Quick One-Tap Launch Chips -->
-        <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-3 pb-3 sm:pb-4 border-b border-emerald-500/20">
+        <!-- Section Header + Quick One-Tap Launch Pill Bar -->
+        <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-3 pb-4" style="border-bottom: 1px solid var(--border-weak);">
           <div>
-            <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] sm:text-xs font-bold bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 border border-emerald-500/30 mb-2">
-              <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-              <span>GitHub Pages Live Hosted · 브라우저 즉시 실행 6종</span>
+            <div class="flex items-center gap-2 mb-2">
+              <span class="badge-live">LIVE · 6 APPS</span>
+              <span class="tag-chip-brand">GitHub Pages Static Hosted</span>
             </div>
-            <h2 class="text-lg sm:text-2xl font-extrabold text-slate-900 dark:text-white">
+            <h2 class="typo-title-22" style="color: var(--text-primary);">
               🚀 Live 웹앱 6종 소개 및 바로가기
             </h2>
-            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mt-1 leading-relaxed">
+            <p class="typo-body-14 mt-1" style="color: var(--text-tertiary);">
               별도 설치나 백엔드 서버 없이 스마트폰·PC 웹 브라우저에서 즉시 실행 가능한 6종의 인터랙티브 웹 애플리케이션입니다.
             </p>
           </div>
 
-          <!-- Instant 1-Tap Launch Bar -->
+          <!-- Instant 1-Tap Launch Pill Bar (34px height, 17px pill radius) -->
           <div class="flex items-center gap-1.5 overflow-x-auto no-scrollbar py-1">
-            <span class="text-[11px] font-bold text-emerald-700 dark:text-emerald-400 shrink-0 mr-1">⚡ 즉시 실행:</span>
+            <span class="typo-label-12 shrink-0 mr-1" style="color: var(--brand-text-base);">⚡ 즉시 실행:</span>
             <a href="https://schuna.github.io/EnglishStudio/" target="_blank" rel="noopener noreferrer"
-              class="shrink-0 px-2.5 py-1.5 rounded-lg text-xs font-bold bg-indigo-600 hover:bg-indigo-500 text-white shadow-sm transition">
+              class="shrink-0 btn-primary-pill">
               🎧 EnglishStudio ↗
             </a>
             <a href="https://schuna.github.io/workout_coach/" target="_blank" rel="noopener noreferrer"
-              class="shrink-0 px-2.5 py-1.5 rounded-lg text-xs font-bold bg-emerald-600 hover:bg-emerald-500 text-white shadow-sm transition">
+              class="shrink-0 btn-primary-pill">
               🏋️ Workout Coach ↗
             </a>
             <a href="https://schuna.github.io/RegexLearn/" target="_blank" rel="noopener noreferrer"
-              class="shrink-0 px-2.5 py-1.5 rounded-lg text-xs font-bold bg-slate-800 hover:bg-slate-700 text-white shadow-sm transition">
+              class="shrink-0 btn-secondary-pill">
               💻 RegexLearn ↗
             </a>
             <a href="https://schuna.github.io/DockerLearn/" target="_blank" rel="noopener noreferrer"
-              class="shrink-0 px-2.5 py-1.5 rounded-lg text-xs font-bold bg-slate-800 hover:bg-slate-700 text-white shadow-sm transition">
+              class="shrink-0 btn-secondary-pill">
               🐳 DockerLearn ↗
             </a>
             <a href="https://schuna.github.io/DfeLearn/" target="_blank" rel="noopener noreferrer"
-              class="shrink-0 px-2.5 py-1.5 rounded-lg text-xs font-bold bg-slate-800 hover:bg-slate-700 text-white shadow-sm transition">
+              class="shrink-0 btn-secondary-pill">
               ⚡ DfeLearn ↗
             </a>
             <a href="https://schuna.github.io/SemiLearn/" target="_blank" rel="noopener noreferrer"
-              class="shrink-0 px-2.5 py-1.5 rounded-lg text-xs font-bold bg-slate-800 hover:bg-slate-700 text-white shadow-sm transition">
+              class="shrink-0 btn-secondary-pill">
               📘 SemiLearn ↗
             </a>
           </div>
@@ -195,23 +190,23 @@
     <section id="repositories" class="space-y-4 sm:space-y-5 scroll-mt-28 sm:scroll-mt-24">
       <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-3 sm:gap-4">
         <div>
-          <h2 class="text-lg sm:text-2xl font-extrabold text-slate-900 dark:text-white">
+          <h2 class="typo-title-22" style="color: var(--text-primary);">
             📦 카테고리별 레포지터리 현황 및 해야 할 일 (10)
           </h2>
-          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-0.5">
+          <p class="typo-body-14 mt-0.5" style="color: var(--text-tertiary);">
             카테고리 탭을 좌우로 스와이프하여 선택하거나, 각 카드의 체크박스를 눌러 진행 상황을 관리하세요.
           </p>
         </div>
 
-        <!-- Search Input -->
+        <!-- Search Input (Height 38px, 19px Pill Radius, Right-Side Icon) -->
         <div class="relative w-full lg:w-80">
           <input id="repo-search-input" type="search" placeholder="레포지터리, 기술 스택, 할 일 검색..."
-            class="w-full pl-9 pr-4 py-2.5 rounded-xl text-xs sm:text-sm bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-800 text-slate-800 dark:text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
-          <span class="absolute left-3 top-3 text-slate-400 text-xs select-none">🔍</span>
+            class="hub-search-input w-full" />
+          <span class="absolute right-3.5 top-2.5 text-sm select-none pointer-events-none" style="color: var(--text-tertiary);">🔍</span>
         </div>
       </div>
 
-      <!-- Category Filter Tabs (Horizontal Swipe on Smartphone, Wrap on Desktop) -->
+      <!-- Category Filter Tabs & Quick Filter Pills -->
       <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5">
         <div id="category-tabs" class="flex items-center gap-1.5 sm:gap-2 overflow-x-auto no-scrollbar pb-1 sm:pb-0 sm:flex-wrap"></div>
         <div id="quick-filter-pills" class="flex items-center gap-1.5 overflow-x-auto no-scrollbar pb-1 sm:pb-0"></div>
@@ -221,17 +216,17 @@
       <div id="category-synergy-banner" class="hidden"></div>
 
       <!-- Cards Grid -->
-      <div id="repo-cards-grid" class="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6"></div>
+      <div id="repo-cards-grid" class="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-5"></div>
     </section>
 
     <!-- 4. Ecosystem & Synergy Architecture Section -->
     <section id="ecosystem" class="space-y-3.5 sm:space-y-4 scroll-mt-28 sm:scroll-mt-24">
       <div>
-        <h2 class="text-lg sm:text-2xl font-extrabold text-slate-900 dark:text-white flex items-center gap-2">
+        <h2 class="typo-title-22 flex items-center gap-2" style="color: var(--text-primary);">
           <span>🔗 레포지터리 연관성 &amp; 시너지 아키텍처</span>
         </h2>
-        <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-0.5">
-          9개 레포지터리는 3대 기술 계보로 유기적으로 연결됩니다. (버튼 터치 시 해당 레포지터리 카드로 이동)
+        <p class="typo-body-14 mt-0.5" style="color: var(--text-tertiary);">
+          10개 레포지터리는 3대 기술 계보로 유기적으로 연결됩니다. (버튼 클릭 시 해당 레포지터리 카드로 이동)
         </p>
       </div>
 
@@ -242,49 +237,47 @@
     <section id="action-center" class="space-y-4 scroll-mt-28 sm:scroll-mt-24">
       <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-3">
         <div>
-          <h2 class="text-lg sm:text-2xl font-extrabold text-slate-900 dark:text-white">
-            📋 통합 실행 보드 &amp; 로컬 PC (<code class="text-indigo-600 dark:text-indigo-400">C:\Gemini</code>) 동기화 현황
+          <h2 class="typo-title-22" style="color: var(--text-primary);">
+            📋 통합 실행 보드 &amp; 로컬 PC (<code class="font-mono" style="color: var(--brand-text-base);">C:\Gemini</code>) 동기화 현황
           </h2>
-          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-0.5">
-            9개 레포지터리의 향후 과제를 우선순위별로 모아보고, 로컬 워크스페이스 동기화 및 재배포 원클릭 명령어를 제공합니다.
+          <p class="typo-body-14 mt-0.5" style="color: var(--text-tertiary);">
+            10개 레포지터리의 향후 과제를 우선순위별로 모아보고, 로컬 워크스페이스 동기화 및 재배포 원클릭 명령어를 제공합니다.
           </p>
         </div>
         <div class="flex items-center gap-2">
-          <button id="export-md-btn" type="button"
-            class="flex-1 sm:flex-initial px-3 py-2 rounded-xl text-xs font-semibold bg-indigo-600 hover:bg-indigo-500 text-white shadow-sm transition cursor-pointer">
+          <button id="export-md-btn" type="button" class="btn-primary-pill flex-1 sm:flex-initial">
             📋 현황 마크다운 복사
           </button>
-          <button id="reset-todo-btn" type="button"
-            class="px-3 py-2 rounded-xl text-xs font-semibold bg-white dark:bg-slate-900 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-300 dark:border-slate-700 transition cursor-pointer">
+          <button id="reset-todo-btn" type="button" class="btn-secondary-pill">
             🔄 체크 초기화
           </button>
         </div>
       </div>
 
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-6">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-5">
         <!-- Left: Unified Priority To-Do List (7 cols) -->
-        <div class="lg:col-span-7 p-4 sm:p-6 rounded-2xl bg-white/95 dark:bg-slate-900/90 border border-slate-200/90 dark:border-slate-800 shadow-sm flex flex-col">
-          <div class="flex flex-wrap items-center justify-between gap-2 mb-3.5 pb-3 border-b border-slate-200/80 dark:border-slate-800">
-            <h3 class="text-sm sm:text-base font-bold text-slate-900 dark:text-white">
+        <div class="lg:col-span-7 surface-card p-4 sm:p-6 flex flex-col">
+          <div class="flex flex-wrap items-center justify-between gap-2 mb-3.5 pb-3" style="border-bottom: 1px solid var(--border-weak);">
+            <h3 class="typo-label-15" style="color: var(--text-primary);">
               🎯 우선순위별 남은 할 일 (Action Items)
             </h3>
             <div class="flex items-center gap-1.5">
-              <button type="button" data-todo-filter="pending">미완료만</button>
-              <button type="button" data-todo-filter="high">🔥 HIGH</button>
-              <button type="button" data-todo-filter="all">전체</button>
+              <button type="button" data-todo-filter="pending" class="filter-pill !h-7 !px-3 !text-xs">미완료만</button>
+              <button type="button" data-todo-filter="high" class="filter-pill !h-7 !px-3 !text-xs">🔥 HIGH</button>
+              <button type="button" data-todo-filter="all" class="filter-pill !h-7 !px-3 !text-xs">전체</button>
             </div>
           </div>
-          <div id="unified-todo-list" class="space-y-2.5 max-h-[480px] overflow-y-auto pr-1"></div>
+          <div id="unified-todo-list" class="space-y-2 max-h-[480px] overflow-y-auto pr-1"></div>
         </div>
 
         <!-- Right: Local Environment Sync & Maintenance (5 cols) -->
-        <div class="lg:col-span-5 p-4 sm:p-6 rounded-2xl bg-white/95 dark:bg-slate-900/90 border border-slate-200/90 dark:border-slate-800 shadow-sm flex flex-col">
-          <div class="mb-3.5 pb-3 border-b border-slate-200/80 dark:border-slate-800">
-            <h3 class="text-sm sm:text-base font-bold text-slate-900 dark:text-white flex items-center gap-2">
+        <div class="lg:col-span-5 surface-card p-4 sm:p-6 flex flex-col">
+          <div class="mb-3.5 pb-3" style="border-bottom: 1px solid var(--border-weak);">
+            <h3 class="typo-label-15 flex items-center gap-2" style="color: var(--text-primary);">
               <span>✅ 로컬 워크스페이스 동기화 &amp; 유지보수</span>
             </h3>
-            <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
-              9개 저장소 모두 <code class="font-mono">C:\Gemini\*</code> 하위에 최신 상태로 동기화 완료되었습니다.
+            <p class="typo-body-14 mt-0.5" style="color: var(--text-tertiary);">
+              10개 저장소 모두 <code class="font-mono" style="color: var(--brand-text-base);">C:\Gemini\*</code> 하위에 최신 상태로 동기화 완료되었습니다.
             </p>
           </div>
           <div id="sync-diagnostics-list" class="space-y-3"></div>
@@ -295,38 +288,39 @@
   </main>
 
   <!-- Mobile Bottom Floating Quick Navigation Bar -->
-  <div class="sm:hidden fixed bottom-3 inset-x-3 z-30 flex items-center justify-between gap-2 px-3 py-2 rounded-2xl bg-slate-900/95 dark:bg-slate-900/95 text-white border border-slate-700/80 shadow-xl backdrop-blur-md">
-    <a href="#" class="flex-1 py-1.5 rounded-xl text-center text-xs font-semibold bg-slate-800 active:bg-slate-700">
+  <div class="sm:hidden fixed bottom-3 inset-x-3 z-30 flex items-center justify-between gap-2 px-3 py-2 surface-card-elevated"
+    style="box-shadow: var(--shadow-level-3);">
+    <a href="#" class="flex-1 btn-secondary-pill !h-8 !px-2 !text-xs">
       ↑ 맨 위로
     </a>
-    <a href="#live-demos" class="flex-1 py-1.5 rounded-xl text-center text-xs font-bold bg-emerald-600 active:bg-emerald-500">
+    <a href="#live-demos" class="flex-1 btn-primary-pill !h-8 !px-2 !text-xs">
       🚀 Live 웹앱 6종
     </a>
-    <a href="#repositories" class="flex-1 py-1.5 rounded-xl text-center text-xs font-semibold bg-indigo-600 active:bg-indigo-500">
+    <a href="#repositories" class="flex-1 btn-secondary-pill !h-8 !px-2 !text-xs">
       📦 10개 레포
     </a>
   </div>
 
   <!-- Footer -->
-  <footer class="border-t border-slate-200/80 dark:border-slate-800/80 py-8 mt-8 sm:mt-12 text-center text-xs text-slate-500 dark:text-slate-400">
+  <footer class="py-8 mt-8 sm:mt-12 text-center text-xs" style="border-top: 1px solid var(--border-weak); color: var(--text-tertiary);">
     <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-3">
       <p>
-        © 2026 <strong>schuna</strong> · Built as a Zero-Dependency Static Command Center on GitHub Pages
+        © 2026 <strong style="color: var(--text-primary);">schuna</strong> · Built as a Zero-Dependency Static Command Center on GitHub Pages
       </p>
       <div class="flex flex-wrap items-center justify-center gap-3">
-        <a href="https://github.com/schuna" target="_blank" rel="noopener noreferrer" class="hover:text-indigo-500 transition">GitHub @schuna</a>
+        <a href="https://github.com/schuna" target="_blank" rel="noopener noreferrer" class="hover:underline" style="color: var(--text-secondary);">GitHub @schuna</a>
         <span>·</span>
-        <a href="https://schuna.github.io/EnglishStudio/" target="_blank" rel="noopener noreferrer" class="hover:text-emerald-500 transition">EnglishStudio</a>
+        <a href="https://schuna.github.io/EnglishStudio/" target="_blank" rel="noopener noreferrer" class="hover:underline" style="color: var(--brand-text-base);">EnglishStudio</a>
         <span>·</span>
-        <a href="https://schuna.github.io/workout_coach/" target="_blank" rel="noopener noreferrer" class="hover:text-emerald-500 transition">Workout Coach</a>
+        <a href="https://schuna.github.io/workout_coach/" target="_blank" rel="noopener noreferrer" class="hover:underline" style="color: var(--brand-text-base);">Workout Coach</a>
         <span>·</span>
-        <a href="https://schuna.github.io/RegexLearn/" target="_blank" rel="noopener noreferrer" class="hover:text-emerald-500 transition">RegexLearn</a>
+        <a href="https://schuna.github.io/RegexLearn/" target="_blank" rel="noopener noreferrer" class="hover:underline" style="color: var(--text-secondary);">RegexLearn</a>
         <span>·</span>
-        <a href="https://schuna.github.io/DockerLearn/" target="_blank" rel="noopener noreferrer" class="hover:text-emerald-500 transition">DockerLearn</a>
+        <a href="https://schuna.github.io/DockerLearn/" target="_blank" rel="noopener noreferrer" class="hover:underline" style="color: var(--text-secondary);">DockerLearn</a>
         <span>·</span>
-        <a href="https://schuna.github.io/DfeLearn/" target="_blank" rel="noopener noreferrer" class="hover:text-emerald-500 transition">DfeLearn</a>
+        <a href="https://schuna.github.io/DfeLearn/" target="_blank" rel="noopener noreferrer" class="hover:underline" style="color: var(--text-secondary);">DfeLearn</a>
         <span>·</span>
-        <a href="https://schuna.github.io/SemiLearn/" target="_blank" rel="noopener noreferrer" class="hover:text-emerald-500 transition">SemiLearn</a>
+        <a href="https://schuna.github.io/SemiLearn/" target="_blank" rel="noopener noreferrer" class="hover:underline" style="color: var(--text-secondary);">SemiLearn</a>
       </div>
     </div>
   </footer>
