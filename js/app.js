@@ -142,6 +142,12 @@
   // Curated 24px SVG Icons (1.6px stroke, rounded caps, currentColor inheritance)
   function getAssetIcon(kind) {
     switch (kind) {
+      case "swords-man":
+      case "crimson-core":
+      case "game-engine":
+        return `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round"><polyline points="14.5 17.5 3 6 3 3 6 3 17.5 14.5"/><line x1="13" x2="19" y1="19" y2="13"/><line x1="16" x2="20" y1="16" y2="20"/><line x1="19" x2="21" y1="21" y2="19"/></svg>`;
+      case "google-drive-manager":
+        return `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round"><path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z"/></svg>`;
       case "english-studio":
         return `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round"><path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3"/></svg>`;
       case "workout-coach":
@@ -245,7 +251,7 @@
       <div class="surface-card p-5">
         <div class="flex items-center justify-between gap-2">
           <span class="typo-label-s" style="color: var(--grey-600);">전체 레포지터리</span>
-          <span class="badge badge-neutral num-tabular">4개 분야</span>
+          <span class="badge badge-neutral num-tabular">${(data.categories || []).length - 1}개 분야</span>
         </div>
         <div class="mt-2.5 flex items-baseline gap-1.5">
           <span class="typo-h1 num-tabular" style="color: var(--grey-900);">${totalRepos}개</span>
@@ -509,11 +515,16 @@
     const container = document.getElementById("quick-filter-pills");
     if (!container) return;
 
+    const totalCount = data.repositories.length;
+    const publicCount = data.repositories.filter((r) => r.visibility === "public").length;
+    const privateCount = totalCount - publicCount;
+    const webappCount = data.repositories.filter((r) => r.deployType === "static-webapp").length;
+
     const filters = [
-      { id: "all", label: "전체 10" },
-      { id: "public", label: "공개 6" },
-      { id: "private", label: "비공개 4" },
-      { id: "webapp", label: "웹앱 6" }
+      { id: "all", label: `전체 ${totalCount}` },
+      { id: "public", label: `공개 ${publicCount}` },
+      { id: "private", label: `비공개 ${privateCount}` },
+      { id: "webapp", label: `웹앱 ${webappCount}` }
     ];
 
     container.innerHTML = `
@@ -690,7 +701,7 @@
               <!-- Title (title-1 18px/600) & Subtitle -->
               <div class="flex items-start gap-3">
                 <div class="asset-avatar">
-                  ${getAssetIcon(repo.id in { "english-studio": 1, "workout-coach": 1, "regex-learn": 1, "docker-learn": 1, "dfe-learn": 1, "semi-learn": 1 } ? repo.id : repo.category)}
+                  ${getAssetIcon(repo.id in { "swords-man": 1, "crimson-core": 1, "google-drive-manager": 1, "english-studio": 1, "workout-coach": 1, "regex-learn": 1, "docker-learn": 1, "dfe-learn": 1, "semi-learn": 1 } ? repo.id : repo.category)}
                 </div>
                 <div class="min-w-0 flex-1">
                   <h3 class="typo-title-1" style="color: var(--grey-900);">
