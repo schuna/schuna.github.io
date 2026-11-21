@@ -142,6 +142,9 @@
   // Curated 24px SVG Icons (1.6px stroke, rounded caps, currentColor inheritance)
   function getAssetIcon(kind) {
     switch (kind) {
+      case "opencity-3d":
+      case "open-synd":
+        return `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2" ry="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01"/><path d="M16 6h.01"/><path d="M12 6h.01"/><path d="M12 10h.01"/><path d="M12 14h.01"/><path d="M16 10h.01"/><path d="M16 14h.01"/><path d="M8 10h.01"/><path d="M8 14h.01"/></svg>`;
       case "swords-man":
       case "crimson-core":
       case "game-engine":
@@ -285,7 +288,7 @@
           <span class="typo-caption num-tabular" style="color: var(--grey-500);">/ ${totalRepos}개</span>
         </div>
         <p class="mt-1.5 typo-caption truncate" style="color: var(--grey-600);">
-          CodexWorkFlow · SemiLearn 고도화 중
+          OpenSynd · CodexWorkFlow · SemiLearn
         </p>
       </div>
 
@@ -701,7 +704,7 @@
               <!-- Title (title-1 18px/600) & Subtitle -->
               <div class="flex items-start gap-3">
                 <div class="asset-avatar">
-                  ${getAssetIcon(repo.id in { "swords-man": 1, "crimson-core": 1, "google-drive-manager": 1, "english-studio": 1, "workout-coach": 1, "regex-learn": 1, "docker-learn": 1, "dfe-learn": 1, "semi-learn": 1 } ? repo.id : repo.category)}
+                  ${getAssetIcon(repo.id in { "opencity-3d": 1, "open-synd": 1, "swords-man": 1, "crimson-core": 1, "google-drive-manager": 1, "english-studio": 1, "workout-coach": 1, "regex-learn": 1, "docker-learn": 1, "dfe-learn": 1, "semi-learn": 1 } ? repo.id : repo.category)}
                 </div>
                 <div class="min-w-0 flex-1">
                   <h3 class="typo-title-1" style="color: var(--grey-900);">

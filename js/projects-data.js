@@ -1,6 +1,6 @@
 /**
- * Schuna Engineering & Project Command Center — Master Data (v3.1)
- * 13 Core Repositories (All synced in C:\Gemini\*),
+ * Schuna Engineering & Project Command Center — Master Data (v3.2)
+ * 15 Core Repositories (All synced in C:\Gemini\*),
  * 7 Live Web Apps Showcase, Category Ecosystem & Actionable To-Do Tracking
  */
 
@@ -8,11 +8,11 @@ window.SCHUNA_HUB_DATA = {
   profile: {
     username: "schuna",
     title: "Schuna Engineering & Project Hub",
-    subtitle: "AI 에이전트 거버넌스 · 2D 쿼터뷰 게임 엔진 · 반도체 시뮬레이션 · 인터랙티브 러닝 · 피트니스 애널리틱스",
-    bio: "멀티 에이전트 오케스트레이션 및 클라우드 자동화(Squadron, CodexWorkFlow, ClaudeLearn, GoogleDriveManager), 1993 클래식 쿼터뷰 무협 액션 RPG 웹 엔진(SwordsMan, CrimsonCore), 반도체 신호 무결성 시뮬레이션(DfeLearn, SemiLearn), 인메모리 실습 및 어학 스튜디오(EnglishStudio, RegexLearn, DockerLearn), 그리고 웨이트·웨어러블 데이터 파이프라인(workout_coach, suunto-fit-analytics)까지 13개 핵심 프로젝트를 통합 관리해요.",
+    subtitle: "AI 에이전트 거버넌스 · 2D/3D 게임 & 시뮬레이션 엔진 · 반도체 SI · 인터랙티브 러닝 · 피트니스 애널리틱스",
+    bio: "멀티 에이전트 오케스트레이션 및 클라우드 자동화(Squadron, CodexWorkFlow, ClaudeLearn, GoogleDriveManager), 2D 무협 액션 RPG 및 3D 도시·사이버펑크 경영 시뮬레이션 엔진(SwordsMan, CrimsonCore, opencity-3d, OpenSynd), 반도체 신호 무결성 시뮬레이션(DfeLearn, SemiLearn), 인메모리 실습 및 어학 스튜디오(EnglishStudio, RegexLearn, DockerLearn), 그리고 웨이트·유산소·웨어러블 데이터 파이프라인(workout_coach, suunto-fit-analytics)까지 15개 핵심 프로젝트를 통합 관리해요.",
     githubUrl: "https://github.com/schuna",
     pagesUrl: "https://schuna.github.io/",
-    lastInspected: "2026-11-18",
+    lastInspected: "2026-11-21",
     localRuleNote: "로컬 개발 환경 규칙: Node.js v14.15.1 호환 유지 · 5173 포트 충돌 회피 (대체 포트: 5188 / 3200 / 8080 / 8000)"
   },
 
@@ -21,15 +21,15 @@ window.SCHUNA_HUB_DATA = {
       id: "swords-man",
       repoName: "SwordsMan",
       name: "SwordsMan (청운강호전 웹/모바일 RPG)",
-      subtitle: "12챕터 장편 서사 · 프로시저럴 2D 도트 · AdLib 5음계 신스 무협 액션 RPG",
+      subtitle: "12챕터 장편 서사 · 세로/가로 풀 뷰포트 오토핏 · 프로시저럴 2D 도트 무협 RPG",
       badge: "무협 액션 RPG",
       tech: "TypeScript · HTML5 2D Canvas · Web Audio Synth · PWA",
       url: "https://schuna.github.io/SwordsMan/",
       repoUrl: "https://github.com/schuna/SwordsMan",
       description: "외부 이미지나 음원 파일 없이 100% 자체 생성 2D 도트 그래픽과 Web Audio 5음계 신스로 작동하는 1993년 감성 쿼터뷰 무협 액션 RPG예요.",
       keyPoints: [
-        "창작 오리지널 12챕터 장편 시나리오 및 선택에 따른 4종 멀티 엔딩 수록",
-        "3단계 공격 프레임, 저스트 패링(Q), 경공 도약(X), 5대 무공(1~5) 및 보스 예고 장판 전투",
+        "스마트폰 세로(Portrait)·가로(Landscape) 모든 화면에서 캔버스 뷰포트 자동 맞춤(Auto-fit) 완성",
+        "창작 오리지널 12챕터 시나리오, 4종 멀티 엔딩, 저스트 패링(Q)·경공(X)·5대 무공(1~5) 액션 전투",
         "TileAtlas 오프스크린 베이킹 60fps 최적화 및 모바일 터치 D-Pad·오프라인 PWA 지원"
       ],
       accent: "indigo"
@@ -38,33 +38,33 @@ window.SCHUNA_HUB_DATA = {
       id: "workout-coach",
       repoName: "workout_coach",
       name: "Workout Coach",
-      subtitle: "슈퍼세트 동시 진행 · 휴식 타이머 · 구글 시트 연동 모바일 웨이트 PWA",
+      subtitle: "웨이트 & 유산소/러닝머신 트래킹 · 슈퍼세트 · 구글 시트 연동 모바일 PWA",
       badge: "피트니스 PWA",
       tech: "HTML5 · Vanilla JS · PWA v2 · Google Sheets",
       url: "https://schuna.github.io/workout_coach/",
       repoUrl: "https://github.com/schuna/workout_coach",
-      description: "체육관 현장에서 스마트폰으로 바로 쓰는 웨이트 트레이닝 어시스턴트예요. 2~3개 종목 묶음(슈퍼세트·순차 진행)과 라이트/다크 테마 전환을 지원해요.",
+      description: "체육관 현장에서 스마트폰으로 바로 쓰는 웨이트 & 유산소 트레이닝 어시스턴트예요. 2~3종목 슈퍼세트 진행과 러닝머신 기록, 구글 시트 동기화를 지원해요.",
       keyPoints: [
+        "유산소/러닝머신 트래킹 신규 추가 및 구글 시트 로컬 시간·웨이트 전송 정합성 개선",
         "운동 선택 바구니(Dock) 기반 2~3종목 슈퍼세트·순차 진행 및 지난 기록 원터치 불러오기",
-        "백그라운드 오차 없는 절대시간 휴식 카운트다운 타이머 및 화면 꺼짐 방지(Wake Lock)",
-        "라이트/다크 모드 전환, 최근 10주 운동 잔디 히트맵, 구글 시트 양방향 동기화"
+        "절대시간 휴식 카운트다운 타이머, 화면 꺼짐 방지(Wake Lock), 최근 10주 잔디 히트맵"
       ],
       accent: "rose"
     },
     {
       id: "english-studio",
       repoName: "EnglishStudio",
-      name: "EnglishStudio (미디어 & 여행 영어 스튜디오)",
-      subtitle: "38개 핵심 표현 · 유연 채점 타이핑 · AI 음성 스피킹(STT) · 3D 플래시카드",
-      badge: "미디어·여행 영어",
+      name: "EnglishStudio (미디어 & 실전 영어 스튜디오)",
+      subtitle: "10개 테마 132개 핵심 문장 · 유연 채점 타이핑 · AI 음성 스피킹(STT) · 3D 플래시카드",
+      badge: "실전 영어 132문장",
       tech: "HTML5 · OKLCH Adaptive Theme · Web Speech API (STT/TTS)",
       url: "https://schuna.github.io/EnglishStudio/",
       repoUrl: "https://github.com/schuna/EnglishStudio",
-      description: "스트리밍·리부트·더빙·자막·몰아보기·해외여행 6대 테마 38개 핵심 영어 문장을 타이핑, 음성 발화 인식, 플래시카드로 복습하는 스튜디오예요.",
+      description: "미디어·해외여행·실전 회화(Speak 엄선) 등 10개 카테고리 132개 핵심 영어 문장을 타이핑, 음성 발화 인식, 플래시카드로 입체 복습하는 스튜디오예요.",
       keyPoints: [
-        "해외여행 실전 표현 14문장 신규 추가(총 38문장) 및 라이트/다크 테마 토글 지원",
+        "Speak 실전 회화 94문장 대거 추가로 총 10개 카테고리 132개 핵심 문장 커리큘럼 완비",
         "단어별 Diff 비교 타이핑 연습과 Web Speech API 마이크 실시간 발음 정확도(STT) 채점",
-        "3D 회전 플래시카드, 원어민 TTS 속도 조절(0.8x~1.2x), 셔플 및 중요 문장 북마크"
+        "3D 회전 플래시카드, 원어민 TTS 속도 조절(0.8x~1.2x), 셔플, 북마크 및 라이트/다크 테마 지원"
       ],
       accent: "indigo"
     },
@@ -145,7 +145,7 @@ window.SCHUNA_HUB_DATA = {
       shortName: "전체",
       icon: "layers",
       color: "indigo",
-      description: "13개 핵심 레포지터리 전체 현황과 할 일 요약"
+      description: "15개 핵심 레포지터리 전체 현황과 할 일 요약"
     },
     {
       id: "ai-workflow",
@@ -154,16 +154,16 @@ window.SCHUNA_HUB_DATA = {
       icon: "cpu",
       color: "violet",
       description: "멀티 에이전트 거버넌스(Squadron, CodexWorkFlow, ClaudeLearn) 및 Google Drive 시맨틱 자동 분류 대시보드(GoogleDriveManager)",
-      synergy: "ClaudeLearn(토큰 압축·코칭)과 CodexWorkFlow(작업 단위 상태·검증 루프)가 Squadron(이종 멀티 에이전트 거버넌스)으로 통합되고, GoogleDriveManager(MCP 기반 시맨틱 분류기)로 클라우드 문서 자산까지 자동 관리해요."
+      synergy: "ClaudeLearn(토큰 압축·코칭)과 CodexWorkFlow(작업 단위 상태·검증 루프)가 Squadron(이종 멀티 에이전트 거버넌스)으로 통합되고, GoogleDriveManager(영구 제외 관리 탭 포함 시맨틱 분류기)로 클라우드 문서 자산까지 자동 관리해요."
     },
     {
       id: "game-engine",
-      name: "클래식 게임 엔진 & 웹 RPG",
-      shortName: "게임 엔진 · RPG",
+      name: "2D/3D 게임 & 시뮬레이션 엔진",
+      shortName: "게임 · 시뮬 엔진",
       icon: "gamepad",
       color: "indigo",
-      description: "1993년 쿼터뷰 무협 액션 RPG 프로토타입(CrimsonCore)과 자체 프로시저럴 도트·신스 기반 12챕터 퍼블릭 에디션(SwordsMan)",
-      synergy: "CrimsonCore에서 확립한 모듈형 2D 아이소메트릭 엔진·저스트 패링 전투·AdLib 신스 아키텍처와 SwordsMan의 12챕터 장편 서사·멀티 엔딩을 결합해 저작권 이슈 없는 경량 웹/모바일 PWA RPG를 완성했어요."
+      description: "2D 쿼터뷰 무협 액션 RPG(SwordsMan, CrimsonCore), Three.js 3D 로우폴리 도시건설(opencity-3d), 사이버펑크 메가코프 경영·전술 시뮬레이션(OpenSynd)",
+      synergy: "결정론적 헤드리스 시뮬레이션 코어와 렌더링/UI 분리 원칙을 바탕으로 2D 아이소메트릭 무협 RPG(SwordsMan·CrimsonCore)부터 Three.js 3D 도시건설(opencity-3d), 거시 물류와 미시 분대 전술을 결합한 OpenSynd까지 확장하고 있어요."
     },
     {
       id: "sw-learning",
@@ -171,8 +171,8 @@ window.SCHUNA_HUB_DATA = {
       shortName: "SW · 어학 학습",
       icon: "terminal",
       color: "emerald",
-      description: "백엔드 서버 없이 브라우저 단독으로 동작하는 정규식 디버거(RegexLearn), 가상 도커(DockerLearn), AI 음성 영어 스튜디오(EnglishStudio)",
-      synergy: "AST 트레이서(RegexLearn), 인메모리 가상 도커 엔진(DockerLearn), Web Speech STT/TTS 기반 미디어·여행 영어 스튜디오(EnglishStudio) 모두 100% 클라이언트 사이드 웹앱으로 즉시 실습할 수 있어요."
+      description: "백엔드 서버 없이 브라우저 단독으로 동작하는 132문장 AI 음성 영어 스튜디오(EnglishStudio), 정규식 디버거(RegexLearn), 가상 도커(DockerLearn)",
+      synergy: "10개 테마 132문장 STT/TTS 영어 스튜디오(EnglishStudio), AST 트레이서(RegexLearn), 인메모리 가상 도커 엔진(DockerLearn) 모두 100% 클라이언트 사이드 웹앱으로 즉시 실습할 수 있어요."
     },
     {
       id: "semiconductor",
@@ -189,8 +189,8 @@ window.SCHUNA_HUB_DATA = {
       shortName: "피트니스 · 데이터",
       icon: "activity",
       color: "rose",
-      description: "슈퍼세트·휴식 타이머 지원 모바일 웨이트 코치(workout_coach)와 2,228세션 Suunto 워치 분석 대시보드(suunto-fit-analytics)",
-      synergy: "workout_coach에서 기록·동기화한 세트별 무게·슈퍼세트·1RM 데이터(Google Sheets)와 Suunto 워치의 심박·수면·회복·TSS(PMC) 지표를 결합해 훈련 부하를 정밀하게 관리해요."
+      description: "웨이트·슈퍼세트·유산소 트래킹 모바일 코치(workout_coach)와 2,228세션 Suunto 워치 분석 대시보드(suunto-fit-analytics)",
+      synergy: "workout_coach에서 기록·동기화한 웨이트(무게·1RM·슈퍼세트) 및 유산소/러닝머신 데이터(Google Sheets)와 Suunto 워치의 심박·수면·회복·TSS(PMC) 지표를 결합해 훈련 부하를 정밀하게 관리해요."
     }
   ],
 
@@ -200,32 +200,104 @@ window.SCHUNA_HUB_DATA = {
       badge: "AI 오케스트레이션 & 자동화",
       color: "violet",
       nodes: ["ClaudeLearn", "CodexWorkFlow", "Squadron", "GoogleDriveManager"],
-      summary: "단일 에이전트 토큰 절감과 상태 벡터(PROGRESS.md) 관리 기법을 이종 멀티 에이전트 거버넌스(Squadron) 및 Google Drive 시맨틱 자동 분류(GoogleDriveManager)로 확장했어요."
+      summary: "단일 에이전트 토큰 절감과 상태 벡터(PROGRESS.md) 관리 기법을 이종 멀티 에이전트 거버넌스(Squadron) 및 Google Drive 시맨틱 자동 분류·제외 관리(GoogleDriveManager)로 확장했어요."
     },
     {
-      track: "Isometric RPG & Interactive Web Apps",
-      badge: "웹 엔진 & 시뮬레이터 7종",
+      track: "2D/3D Game Engines & Interactive Simulators",
+      badge: "게임 엔진 & 웹 시뮬레이터 9종",
       color: "amber",
-      nodes: ["CrimsonCore", "SwordsMan", "EnglishStudio", "RegexLearn", "DockerLearn", "SemiLearn", "DfeLearn"],
-      summary: "프로시저럴 2D 무협 RPG(SwordsMan), 미디어·여행 영어 스튜디오(EnglishStudio), 정규식·도커·반도체·DDR5 시뮬레이터까지 설치 없이 브라우저에서 즉시 실행돼요."
+      nodes: ["opencity-3d", "OpenSynd", "SwordsMan", "CrimsonCore", "EnglishStudio", "RegexLearn", "DockerLearn", "SemiLearn", "DfeLearn"],
+      summary: "결정론적 시뮬레이션 코어 기반의 3D 도시건설(opencity-3d)·사이버펑크 전술 타이쿤(OpenSynd)·2D 무협 RPG(SwordsMan·CrimsonCore)와 5종의 브라우저 학습 시뮬레이터가 유기적으로 연결돼요."
     },
     {
       track: "Quantified-Self Fitness Track",
       badge: "스포츠 데이터 파이프라인",
       color: "rose",
       nodes: ["workout_coach", "suunto-fit-analytics"],
-      summary: "슈퍼세트·1RM·구글시트 동기화를 지원하는 모바일 PWA 웨이트 코치와 2,228세션 FIT/GPX/NDJSON 고속 분석 대시보드(CTL/ATL/TSB)가 서로 보완해요."
+      summary: "웨이트 슈퍼세트·유산소/러닝머신·구글시트 동기화를 지원하는 모바일 PWA 코치와 2,228세션 FIT/GPX/NDJSON 고속 분석 대시보드(CTL/ATL/TSB)가 서로 보완해요."
     }
   ],
 
   repositories: [
     {
+      id: "opencity-3d",
+      name: "opencity-3d",
+      title: "OpenCity 3D (3D 로우폴리 도시건설 시뮬레이터)",
+      subtitle: "TypeScript + Three.js + Vite 기반 결정론적 헤드리스 도시 시뮬레이션 코어 & 3D 디오라마 웹 빌더",
+      category: "game-engine",
+      categoryLabel: "게임 · 시뮬 엔진",
+      visibility: "private",
+      language: "TypeScript",
+      techStack: ["TypeScript", "Three.js 0.152", "Vite 2.9", "Headless Sim Core", "Glassmorphism HUD", "MIT License"],
+      repoUrl: "https://github.com/schuna/opencity-3d",
+      liveUrl: null,
+      deployType: "local-server",
+      statusBadge: "3D 시티빌더 MVP & 시뮬 테스트 완료",
+      statusLevel: "completed",
+      progress: 90,
+      lastUpdated: "2026-11-21",
+      summary: "OpenTTD에서 영감을 받아 순수 TypeScript 헤드리스 시뮬레이션 코어(src/sim/)와 Three.js 인스턴싱 3D 로우폴리 렌더러(src/render/), 한국어 웹 HUD(src/ui/)를 엄격히 분리해 구축한 3D 도시건설 시뮬레이터 MVP예요.",
+      highlights: [
+        "3D 로우폴리 디오라마 월드: 32×32 지형(평지·강물·숲·언덕), 회전하는 풍력 발전소, 분수 공원, Lv.1~3 RCI 건물 및 실시간 도로 차량 트래픽",
+        "직관적 드래그 건설 도구: L자 직교 도로 드래그(1), 사각형 구역 드래그(주거 2 / 상업 3 / 공업 4 / 철거 X), 발전소(5), 공원(6) 및 비용 프리뷰",
+        "헤드리스 도시 시뮬레이션: 전력망 BFS 전파, 지가·오염도 방사 계산, RCI 수요·행복도·건물 성장, 세율(5~15%) 조절 및 월간 세수 정산",
+        "지도 오버레이(기본 / 지가 / 전력 / 오염), localStorage 도시 저장/불러오기 및 Node 헤드리스 단위 테스트(npm run test:sim) 완비"
+      ],
+      relationNote: "로컬 C:\\Gemini\\OpenTTD 폴더와 동기화되어 있으며, 결정론적 시뮬레이션 코어 분리 설계를 OpenSynd와 공유해요.",
+      todos: [
+        { id: "oc-1", text: "GitHub Pages 정적 배포(relative base './') 또는 대중교통(버스/철도) 노선 레이어 확장 검토", priority: "medium", done: false },
+        { id: "oc-2", text: "화재·정전 등 도시 이벤트와 긴급 서비스(소방서/경찰서) 커버리지 반경 시뮬레이션 추가 검토", priority: "low", done: false }
+      ],
+      localLaunch: {
+        path: "C:\\Gemini\\OpenTTD",
+        port: "5188",
+        command: "cd C:\\Gemini\\OpenTTD\nnpm run test:sim\nnpm run dev",
+        note: "로컬 폴더명 C:\\Gemini\\OpenTTD · http://127.0.0.1:5188 접속"
+      }
+    },
+    {
+      id: "open-synd",
+      name: "OpenSynd",
+      title: "OpenSynd (Project Syndicate-Tycoon)",
+      subtitle: "OpenTTD 거시 물류 공급망 + Syndicate 4인 사이보그 분대 전술 공작을 융합한 사이버펑크 메가코프 시뮬레이션",
+      category: "game-engine",
+      categoryLabel: "게임 · 시뮬 엔진",
+      visibility: "private",
+      language: "C# / Architecture",
+      techStack: ["OpenSynd.Core (.NET Standard 2.1)", "Unity 6 LTS (URP)", "20Hz Deterministic Tick", "Dual-Resolution Grid", "HPA* / C# Job System"],
+      repoUrl: "https://github.com/schuna/OpenSynd",
+      liveUrl: null,
+      deployType: "local-app",
+      statusBadge: "마스터 아키텍처 & 개발 계획서 수립 완료",
+      statusLevel: "active",
+      progress: 40,
+      lastUpdated: "2026-11-20",
+      summary: "물류망 독점을 통한 거시적 도시 지배력 확보(OpenTTD 메커니즘)와 4인 사이보그 요원 분대를 이용한 경쟁사 노선 파괴·화물 탈취·관료 포섭(Syndicate 메커니즘)을 단일 양방향 루프로 결합한 클린룸 구현 중심 프로젝트예요.",
+      highlights: [
+        "계층형 이중 해상도 그리드: 1 Macro Tile(16m×16m 물류·건물) = 8×8 Micro Sub-cells(2m×2m 엄폐·LOS·시가전) 및 Active Tactical Bubble LOD",
+        "이원화 결정론적 클록: 20Hz(50ms) 고정 시뮬레이션 틱과 거시 경제 사이클(1 Econ Day = 60초) 분리 및 전술 일시정지(Spacebar) 익스플로잇 차단",
+        "엔진 비종속 코어 설계: UnityEngine 참조를 배제한 순수 C# OpenSynd.Core(커맨드 큐·헤드리스 테스트·MessagePack 세이브) + OpenSynd.Unity 프레젠테이션 분리",
+        "GPL 오염을 원천 차단하는 Clean-Room & Specification Wall 거버넌스 및 단계별 마일스톤(Phase 0~4) 확정"
+      ],
+      relationNote: "opencity-3d의 헤드리스 도시·물류 시뮬레이션 설계를 사이버펑크 기업 전쟁 및 실시간 분대 전술로 확장하는 차기작이에요.",
+      todos: [
+        { id: "os-1", text: "Phase 0/1: OpenSynd.Core 20Hz 결정론적 클록, 이중 해상도 그리드 자료구조 및 ICommand 큐 프로토타입 구현", priority: "high", done: false },
+        { id: "os-2", text: "3단계 자원 변환 체인(원자재 → 가공품 → 군용 의체/뉴럴 칩) 및 4인 분대 호송대 습격 버티컬 슬라이스 구축", priority: "medium", done: false }
+      ],
+      localLaunch: {
+        path: "C:\\Gemini\\OpenSynd",
+        port: "Design / Core",
+        command: "cd C:\\Gemini\\OpenSynd\nGet-Content .\\plan.md -TotalCount 60",
+        note: "C:\\Gemini\\OpenSynd\\plan.md 상용 구현 마스터 계획서 수록"
+      }
+    },
+    {
       id: "swords-man",
       name: "SwordsMan",
       title: "SwordsMan (청운강호전 · 1993 무협 액션 RPG)",
-      subtitle: "창작 12챕터 시나리오 · 프로시저럴 2D 도트 · Web Audio 5음계 신스 기반 경량 웹/모바일 액션 RPG",
+      subtitle: "창작 12챕터 시나리오 · 세로/가로 풀 뷰포트 오토핏 · 프로시저럴 2D 도트 & 5음계 신스 웹/모바일 RPG",
       category: "game-engine",
-      categoryLabel: "게임 엔진 · RPG",
+      categoryLabel: "게임 · 시뮬 엔진",
       visibility: "public",
       language: "TypeScript",
       techStack: ["TypeScript", "HTML5 2D Canvas", "TileAtlas Baking", "Web Audio Synth", "PWA (sw.js v2)", "GitHub Actions Pages"],
@@ -233,21 +305,20 @@ window.SCHUNA_HUB_DATA = {
       liveUrl: "https://schuna.github.io/SwordsMan/",
       liveStatus: "live",
       deployType: "static-webapp",
-      statusBadge: "Phase 5 완료 · Live 배포 중",
+      statusBadge: "모바일 세로/가로 오토핏 완료 · Live",
       statusLevel: "completed",
-      progress: 98,
-      lastUpdated: "2026-11-16",
+      progress: 99,
+      lastUpdated: "2026-11-19",
       summary: "1993년 클래식 쿼터뷰 무협 액션 RPG의 감성과 12챕터 장편 서사 구조를 계승하면서, 외부 저작권 이미지·음원 없이 100% 코드로 생성되는 2D 도트 그래픽과 Web Audio 5음계 신스로 구현한 퍼블릭 웹/모바일 액션 RPG예요.",
       highlights: [
+        "2026-11-19 업데이트: CSS Grid minmax(0, 1fr) 및 캔버스 리사이즈 분리로 스마트폰 세로·가로 모드 모두 빈틈없는 뷰포트 자동 맞춤 구현",
         "Phase 5 경량 모듈 아키텍처: content / systems / engine / audio / ui 분리 및 외부 에셋 의존성 0% 달성",
         "창작 오리지널 12챕터 시나리오(청운산문 → 낙양 객잔 → 태행산 → 매화장 결전) 및 4종 멀티 엔딩(em1~3, d9)",
-        "고도화된 액션 전투: 3단계 공격 프레임(WINDUP/ACTIVE/RECOVER), 저스트 패링(Q), 경공 도약(X), 5대 무공(1~5), 보스 예고 장판",
-        "GitHub Actions 자동 빌드 파이프라인 구축 및 https://schuna.github.io/SwordsMan/ 라이브 배포 완료"
+        "3단계 공격 프레임(WINDUP/ACTIVE/RECOVER), 저스트 패링(Q), 경공 도약(X), 5대 무공(1~5) 및 https://schuna.github.io/SwordsMan/ 라이브 배포"
       ],
-      relationNote: "CrimsonCore의 프로시저럴 2D 도트·액션 전투 엔진과 초기 리마스터 파이프라인의 12챕터 내러티브 구조를 결합해 완성한 공개 배포용 프로젝트예요.",
+      relationNote: "CrimsonCore와 12챕터 시나리오·전투 코어를 상호 교차 발전시켜 완성한 공개 배포용 프로젝트예요.",
       todos: [
-        { id: "sm-1", text: "모바일 터치 화면에서 보스전 패링(Q)·경공(X) 연속 입력 시 버튼 피드백 가시성 미세 조정", priority: "low", done: false },
-        { id: "sm-2", text: "클리어 후 다회차(New Game+) 무공 숙련도 인계 및 타임어택 통계 모드 검토", priority: "low", done: false }
+        { id: "sm-1", text: "클리어 후 다회차(New Game+) 무공 숙련도 인계 및 보스 타임어택 모드 검토", priority: "low", done: false }
       ],
       localLaunch: {
         path: "C:\\Gemini\\SwordsMan",
@@ -260,42 +331,42 @@ window.SCHUNA_HUB_DATA = {
       id: "crimson-core",
       name: "CrimsonCore",
       title: "CrimsonCore (1993 Classic Isometric Engine)",
-      subtitle: "6챕터 1993 시나리오 · 모듈형 아이소메트릭 렌더러 · 로컬 미디어 하이브리드 로더 프로토타입",
+      subtitle: "12챕터 전체 시나리오 통합 · 5대 무공 · 컷신 & 멀티 엔딩 · 세이브 v3 탑재 코어 엔진",
       category: "game-engine",
-      categoryLabel: "게임 엔진 · RPG",
+      categoryLabel: "게임 · 시뮬 엔진",
       visibility: "private",
       language: "TypeScript",
-      techStack: ["TypeScript", "Vite 2.9", "HTML5 Canvas", "Procedural Pixel Art", "Web Audio OPL2 Synth"],
+      techStack: ["TypeScript", "Vite 2.9", "HTML5 Canvas", "Procedural Pixel Art", "Web Audio OPL2 Synth", "Save v3"],
       repoUrl: "https://github.com/schuna/CrimsonCore",
       liveUrl: null,
       deployType: "local-server",
-      statusBadge: "6챕터 시나리오 & 엔진 구현 완료",
+      statusBadge: "12챕터·5무공·멀티엔딩·Save v3 통합 완료",
       statusLevel: "completed",
-      progress: 94,
-      lastUpdated: "2026-11-15",
-      summary: "1993년 동방불패(소오강호) DOS판의 쿼터뷰 감성을 현대 웹 기술로 재해석한 코어 엔진 레포지터리예요. 오프스크린 타일 베이킹, 3단계 프레임 전투, 로컬 동영상·음원 하이브리드 로더를 갖추고 있어요.",
+      progress: 98,
+      lastUpdated: "2026-11-19",
+      summary: "1993년 동방불패(소오강호) DOS판의 쿼터뷰 감성을 현대 웹 기술로 재해석한 코어 엔진 레포지터리예요. 최근 업데이트(f47e347)로 12챕터 전체 시나리오와 5대 무공, 컷신, 멀티 엔딩, 세이브 v3가 메인 브랜치에 완전 통합되었어요.",
       highlights: [
-        "제1장 화산파 개국부터 제6장 흑목애 결전까지 6챕터 시나리오, NPC 호위(임평지), 비급 전수 이벤트 구현",
+        "2026-11-19 업데이트: 기존 6챕터 프로토타입에서 12챕터 전체 시나리오, 5대 무공, 레터박스 컷신, 4종 멀티 엔딩 및 Save v3 통합 완료",
         "ReadOnlyUIState 스냅샷 및 CombatEvent 버스 기반의 깔끔한 로직·UI 분리 설계",
         "public/assets/ 로컬 원작 컷신(.mp4) 및 BGM 존재 시 자동 재생하고 없을 때 프로시저럴 신스로 폴백하는 하이브리드 로더",
-        "SwordsMan Phase 5 퍼블릭 경량 엔진 전환의 핵심 레퍼런스 아키텍처 역할 수행"
+        "SwordsMan과 양방향으로 엔진·시나리오 개선 사항을 공유하는 마스터 코어 저장소"
       ],
-      relationNote: "SwordsMan 프로젝트의 전투·렌더링·사운드 합성 코어를 탄생시킨 원형(Prototype) 엔진 저장소예요.",
+      relationNote: "SwordsMan 프로젝트의 전투·렌더링·사운드 합성 코어를 탄생시키고 12챕터 통합본까지 완비한 코어 엔진 저장소예요.",
       todos: [
-        { id: "cc-1", text: "SwordsMan Phase 5에서 개선된 모바일 터치 UI 컴포넌트를 CrimsonCore에도 선택적 역이식 검토", priority: "low", done: false }
+        { id: "cc-1", text: "로컬 고화질 커스텀 컷신·음원 에셋 팩 선택적 마운트 테스트 및 디버그 치트 패널 확장 검토", priority: "low", done: false }
       ],
       localLaunch: {
         path: "C:\\Gemini\\CrimsonCore",
         port: "5188",
         command: "cd C:\\Gemini\\CrimsonCore\nnpm run dev",
-        note: "classic-1993 브랜치 기준 · http://localhost:5188 접속"
+        note: "main 브랜치 12챕터 통합본 · http://localhost:5188 접속"
       }
     },
     {
       id: "google-drive-manager",
       name: "GoogleDriveManager",
       title: "GoogleDriveManager (시맨틱 탐색기 & 자동 분류기)",
-      subtitle: "Google Drive 의미 기반 5대 대분류 구조화 · 10ms 초고속 웹 탐색기 · Inbox 선택형 자동 분류 대시보드",
+      subtitle: "Google Drive 5대 대분류 구조화 · 10ms 웹 탐색기 · Inbox 선택형 분류 및 영구 제외(Ignore) 관리 대시보드",
       category: "ai-workflow",
       categoryLabel: "AI · 자동화",
       visibility: "private",
@@ -304,16 +375,16 @@ window.SCHUNA_HUB_DATA = {
       repoUrl: "https://github.com/schuna/GoogleDriveManager",
       liveUrl: null,
       deployType: "local-server",
-      statusBadge: "선택형 Inbox 분류 & 스킬 가이드 완료",
+      statusBadge: "Inbox 영구 제외 관리 탭 & API 완료",
       statusLevel: "completed",
-      progress: 95,
-      lastUpdated: "2026-11-07",
-      summary: "Google Drive에 흩어진 파일들을 의미적 유사성 기준 5대 대분류(개발/AI, 재정/자산, 개인/라이프, 미디어/앨범, 아카이브/백업)로 구조화하고, 10ms 이내 실시간 검색과 Inbox 자동 분류를 제공하는 로컬 웹 대시보드예요.",
+      progress: 98,
+      lastUpdated: "2026-11-19",
+      summary: "Google Drive에 흩어진 파일들을 의미적 유사성 기준 5대 대분류로 구조화하고, 10ms 이내 실시간 검색, 체크박스 선택형 Inbox 자동 분류, 그리고 분류 제외(Ignore) 파일 영구 관리 기능을 제공하는 로컬 웹 대시보드예요.",
       highlights: [
+        "2026-11-19 업데이트: Inbox 분류 대상에서 특정 파일을 영구 제외/무시(Ignore)하고 제외 목록 탭에서 복원·관리하는 기능 및 API 추가",
         "초고속 시맨틱 탐색기(localhost:5188): Ctrl+K 즉시 필터링, 카테고리 트리·문서 타입별 필터, 구글 웹 뷰어 원클릭 연결",
         "Inbox 스마트 자동 분류기: DDR5·반도체 등 도메인 규칙 매칭, 하위 폴더 자동 생성, 체크박스 선택형 일괄 이동 지원",
-        "무삭제 안전 원칙(삭제 권한 원천 배제) 및 data/operations.jsonl 감사 로그 기반 언제든 원상 복구 가능",
-        "Antigravity 연동용 gdrive-manager 스킬 가이드 및 프로젝트 개발 완료 보고서 문서화 완료"
+        "무삭제 안전 원칙(삭제 권한 원천 배제) 및 data/operations.jsonl 감사 로그 기반 언제든 원상 복구 가능"
       ],
       relationNote: "로컬 PC(C:\\Gemini)뿐 아니라 클라우드(Google Drive)의 연구·개발 문서 자산까지 AI 규칙 엔진으로 체계화하는 생산성 도구예요.",
       todos: [
@@ -329,8 +400,8 @@ window.SCHUNA_HUB_DATA = {
     {
       id: "workout-coach",
       name: "workout_coach",
-      title: "Workout Coach (웨이트 트레이닝 어시스턴트)",
-      subtitle: "2~3종목 슈퍼세트·순차 진행 · 절대시간 휴식 타이머 · 1RM 추적 · 구글 시트 양방향 연동 모바일 PWA",
+      title: "Workout Coach (웨이트 & 유산소 트레이닝 어시스턴트)",
+      subtitle: "웨이트 슈퍼세트 & 유산소/러닝머신 트래킹 · 절대시간 휴식 타이머 · 구글 시트 연동 모바일 PWA",
       category: "fitness-analytics",
       categoryLabel: "피트니스 · 데이터",
       visibility: "public",
@@ -340,21 +411,20 @@ window.SCHUNA_HUB_DATA = {
       liveUrl: "https://schuna.github.io/workout_coach/",
       liveStatus: "live",
       deployType: "static-webapp",
-      statusBadge: "슈퍼세트 & TDS 테마 업데이트 (Live)",
+      statusBadge: "유산소/러닝머신 추가 & 시트 동기화 개선 (Live)",
       statusLevel: "completed",
-      progress: 98,
-      lastUpdated: "2026-11-18",
-      summary: "스마트폰 홈 화면에 설치해 체육관 오프라인 환경에서도 바로 쓰는 웨이트 트레이닝 전용 PWA예요. 최근 업데이트로 운동 선택 바구니(Dock) 기반 2~3개 종목 묶음(슈퍼세트·순차 진행)과 라이트/다크 모드 전환이 추가되었어요.",
+      progress: 99,
+      lastUpdated: "2026-11-21",
+      summary: "스마트폰 홈 화면에 설치해 체육관 오프라인 환경에서도 바로 쓰는 웨이트 & 유산소 트레이닝 전용 PWA예요. 2026-11-21 업데이트로 유산소/러닝머신 트래킹이 추가되고 구글 시트 로컬 시간·웨이트 전송 정확도가 개선되었어요.",
       highlights: [
+        "2026-11-21 업데이트: 유산소/러닝머신 운동 기록 기능을 추가하고 구글 시트 로컬 시간대 및 웨이트 데이터 전송 버그 해결",
         "운동 선택 바구니(Dock) & 다중 종목 진행: 2~3개 종목을 골라 슈퍼세트 또는 순차 진행으로 끊김 없이 수행",
-        "클린 라이트/다크 테마 전환 UI 적용 및 PWA Service Worker v2 캐시 자동 갱신",
         "종목별 최근 수행 무게·횟수 원터치 불러오기, Epley 추정 1RM 트래킹, 오차 없는 절대시간 휴식 타이머",
-        "구글 스프레드시트 양방향 동기화 및 중복 업로드 방지·중복 행 제거 헬퍼 완비"
+        "클린 라이트/다크 테마 전환, 최근 10주 잔디 히트맵, 구글 스프레드시트 양방향 동기화 완비"
       ],
-      relationNote: "현재 https://schuna.github.io/workout_coach/ 에서 운영 중이며, 기록된 웨이트 데이터는 suunto-fit-analytics의 심박·회복 지표와 상호 보완돼요.",
+      relationNote: "현재 https://schuna.github.io/workout_coach/ 에서 운영 중이며, 웨이트·유산소 기록은 suunto-fit-analytics의 심박·회복 지표와 상호 보완돼요.",
       todos: [
-        { id: "wc-1", text: "자주 묶어 하는 슈퍼세트 조합 프리셋 저장 기능 검토", priority: "low", done: false },
-        { id: "wc-2", text: "종목별 최고 추정 1RM 장기 성장 추이 라인 차트 탭 보강 검토", priority: "low", done: false }
+        { id: "wc-1", text: "자주 묶어 하는 슈퍼세트·유산소 마무리 루틴 프리셋 저장 기능 검토", priority: "low", done: false }
       ],
       localLaunch: {
         path: "C:\\Gemini\\workout_coach",
@@ -366,32 +436,31 @@ window.SCHUNA_HUB_DATA = {
     {
       id: "english-studio",
       name: "EnglishStudio",
-      title: "EnglishStudio (미디어 & 여행 영어 복습 스튜디오)",
-      subtitle: "6대 테마 38개 핵심 문장 · 유연 채점 타이핑 · Web Speech AI 음성 스피킹(STT) · 3D 플래시카드 웹앱",
+      title: "EnglishStudio (미디어 & 실전 영어 복습 스튜디오)",
+      subtitle: "10개 카테고리 132개 핵심 문장 · 유연 채점 타이핑 · Web Speech AI 음성 스피킹(STT) · 3D 플래시카드",
       category: "sw-learning",
       categoryLabel: "SW · 어학 학습",
       visibility: "public",
       language: "HTML",
-      techStack: ["HTML5 / JS", "OKLCH Adaptive Theme", "Web Speech API (STT/TTS)", "3D CSS Flip", "Zero-Dependency SPA"],
+      techStack: ["HTML5 / JS", "OKLCH Adaptive Theme", "Web Speech API (STT/TTS)", "3D CSS Flip", "132 Curated Sentences"],
       repoUrl: "https://github.com/schuna/EnglishStudio",
       liveUrl: "https://schuna.github.io/EnglishStudio/",
       liveStatus: "live",
       deployType: "static-webapp",
-      statusBadge: "38문장 확장 & 테마 토글 완료 · Live",
+      statusBadge: "10개 테마 132문장 대규모 확장 · Live",
       statusLevel: "completed",
-      progress: 98,
-      lastUpdated: "2026-11-18",
-      summary: "스트리밍, 리부트, 더빙, 자막, 몰아보기, 해외여행 등 6개 테마 38개 핵심 영어 표현을 타이핑 연습, 실시간 마이크 음성 발화 인식(STT), 3D 플래시카드, 전체 표현 목록의 4가지 뷰로 입체 학습하는 웹앱이에요.",
+      progress: 99,
+      lastUpdated: "2026-11-20",
+      summary: "미디어·해외여행·실전 회화(Speak 엄선 94문장 신규 추가) 등 10개 카테고리 총 132개 핵심 영어 표현을 타이핑 연습, 실시간 마이크 음성 발화 인식(STT), 3D 플래시카드, 전체 표현 목록의 4가지 뷰로 입체 학습하는 웹앱이에요.",
       highlights: [
-        "해외여행 실전 문장 14개 추가(ID 25~38, 총 38문장) 및 OKLCH 라이트/다크 테마 토글·세그먼트 컨트롤 UI 개편",
+        "2026-11-20 업데이트: Speak 스크린샷 기반 10개 카테고리 94문장을 신규 추가해 총 132개 핵심 영어 문장으로 커리큘럼 대폭 확장",
         "유연 채점 타이핑 뷰: 대소문자·문장부호 무관 채점, 단어 단위 Diff 비교, 첫 글자/핵심 어휘 힌트 및 표현 해설",
         "Web Speech API 음성 스피킹 뷰: 브라우저 마이크 음성 인식(STT) 연동 실시간 발음 정확도 점수 산출",
-        "3D 회전 플래시카드 & 원어민 발음 재생(TTS 0.8x~1.2x 속도 조절), 글로벌 셔플, 중요 문장 북마크 지원"
+        "3D 회전 플래시카드, 원어민 발음 재생(TTS 0.8x~1.2x 속도 조절), 글로벌 셔플, 중요 문장 북마크 및 라이트/다크 테마 지원"
       ],
       relationNote: "RegexLearn·DockerLearn과 함께 별도 백엔드 없이 브라우저 내장 API만으로 완결된 인터랙티브 학습 경험을 제공해요.",
       todos: [
-        { id: "en-1", text: "비즈니스·IT 실무 영어 등 신규 카테고리 문장 팩 확장 검토", priority: "low", done: false },
-        { id: "en-2", text: "북마크 및 오답 문장 집중 복습 모드와 PWA 오프라인 캐싱 적용 검토", priority: "low", done: false }
+        { id: "en-1", text: "132개 문장 중 북마크 및 오답 문장만 모아 푸는 집중 복습 필터 고도화 검토", priority: "low", done: false }
       ],
       localLaunch: {
         path: "C:\\Gemini\\EnglishStudio",
@@ -684,7 +753,7 @@ window.SCHUNA_HUB_DATA = {
         "스포츠 과학 지표: 일별 훈련 부하(TSS) 기반 체력(CTL), 피로(ATL), 컨디션(TSB) PMC 차트 및 수면·회복 상관관계 분석",
         "로컬 C:\\Gemini\\suunto-fit-analytics 클론 동기화 완료 및 원클릭 실행 스크립트(run_dashboard.bat) 지원"
       ],
-      relationNote: "workout_coach의 세트별 중량·슈퍼세트 기록과 Suunto 워치의 심박·칼로리·수면·TSB 컨디션 지표를 연결하는 데이터 웨어하우스예요.",
+      relationNote: "workout_coach의 세트별 중량·슈퍼세트·유산소 기록과 Suunto 워치의 심박·칼로리·수면·TSB 컨디션 지표를 연결하는 데이터 웨어하우스예요.",
       todos: [
         { id: "sf-2", text: "신규 Suunto Export 압축파일 드롭 시 변경분만 반영하는 증분 ETL(Incremental Indexing) 스크립트 고도화", priority: "medium", done: false },
         { id: "sf-3", text: "workout_coach 구글 시트 데이터와 Suunto Gym 세션을 타임스탬프로 매칭하는 통합 뷰 기획", priority: "low", done: false }
@@ -700,28 +769,28 @@ window.SCHUNA_HUB_DATA = {
 
   syncDiagnostics: [
     {
-      repo: "13개 핵심 레포지터리 전체 (C:\\Gemini\\*)",
-      localPath: "C:\\Gemini\\[13개 폴더 전체]",
+      repo: "15개 핵심 레포지터리 전체 (C:\\Gemini\\*)",
+      localPath: "C:\\Gemini\\[15개 폴더 전체]",
       status: "ok",
-      statusLabel: "13/13 동기화 완료",
-      detail: "신규 추가된 SwordsMan(Live 배포), CrimsonCore, GoogleDriveManager 및 최근 업데이트된 workout_coach, EnglishStudio까지 13개 저장소 모두 로컬 C:\\Gemini 폴더와 원격 GitHub 최신 커밋이 일치해요.",
-      fixCommand: "Get-ChildItem C:\\Gemini -Directory | ForEach-Object { Write-Host $_.Name; git -C $_.FullName status -s }"
+      statusLabel: "15/15 동기화 완료",
+      detail: "신규 추가된 opencity-3d(C:\\Gemini\\OpenTTD), OpenSynd(C:\\Gemini\\OpenSynd) 및 최근 업데이트된 workout_coach, EnglishStudio, SwordsMan, CrimsonCore, GoogleDriveManager까지 15개 저장소 모두 원격 GitHub 최신 커밋과 일치해요.",
+      fixCommand: "Get-ChildItem C:\\Gemini -Directory | ForEach-Object { if (Test-Path \"$($_.FullName)\\.git\") { Write-Host $_.Name; git -C $_.FullName status -s } }"
     },
     {
-      repo: "SwordsMan & CrimsonCore 무협 RPG 엔진 동기화",
-      localPath: "C:\\Gemini\\SwordsMan · CrimsonCore",
+      repo: "opencity-3d & OpenSynd 신규 시뮬레이션 엔진",
+      localPath: "C:\\Gemini\\OpenTTD · OpenSynd",
       status: "ok",
-      statusLabel: "Phase 5 & GitHub Pages 배포 완료",
-      detail: "CrimsonCore의 프로시저럴 2D 도트·액션 전투 코어와 SwordsMan의 12챕터 창작 시나리오가 결합되어 https://schuna.github.io/SwordsMan/ 에 정식 배포되었어요.",
-      fixCommand: "git -C C:\\Gemini\\SwordsMan log -n 2 --oneline ; git -C C:\\Gemini\\CrimsonCore log -n 2 --oneline"
+      statusLabel: "2026-11-20 ~ 11-21 신규 반영",
+      detail: "Three.js 3D 로우폴리 도시건설 MVP(opencity-3d)와 사이버펑크 메가코프 물류·분대 전술 시뮬레이션 마스터 계획(OpenSynd)이 새롭게 추가되었어요.",
+      fixCommand: "git -C C:\\Gemini\\OpenTTD log -n 2 --oneline ; git -C C:\\Gemini\\OpenSynd log -n 2 --oneline"
     },
     {
-      repo: "workout_coach & EnglishStudio 최신 업데이트 반영",
-      localPath: "C:\\Gemini\\workout_coach · EnglishStudio",
+      repo: "workout_coach · EnglishStudio · SwordsMan · CrimsonCore · GoogleDriveManager",
+      localPath: "C:\\Gemini\\[5개 업데이트 저장소]",
       status: "ok",
-      statusLabel: "2026-11-18 최신 커밋 반영",
-      detail: "workout_coach(2~3종목 슈퍼세트·순차 진행 바구니 UI, 라이트/다크 테마)와 EnglishStudio(해외여행 14문장 추가 총 38문장, 라이트/다크 테마) 업데이트가 모두 라이브 페이지에 반영되어 있어요.",
-      fixCommand: "git -C C:\\Gemini\\workout_coach log -n 2 --oneline ; git -C C:\\Gemini\\EnglishStudio log -n 2 --oneline"
+      statusLabel: "2026-11-19 ~ 11-21 최신 커밋 반영",
+      detail: "workout_coach(유산소/러닝머신 추가), EnglishStudio(10개 카테고리 132문장 확장), SwordsMan(세로/가로 풀 뷰포트 오토핏), CrimsonCore(12챕터·Save v3 통합), GoogleDriveManager(Inbox 영구 제외 탭) 업데이트가 모두 반영되었어요.",
+      fixCommand: "foreach ($d in @('workout_coach','EnglishStudio','SwordsMan','CrimsonCore','GoogleDriveManager')) { Write-Host \"=== $d ===\"; git -C \"C:\\Gemini\\$d\" log -n 1 --oneline }"
     },
     {
       repo: "웹앱 3종 정적 빌드 재배포 원클릭 스크립트",
